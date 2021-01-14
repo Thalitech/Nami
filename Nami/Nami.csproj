@@ -45,9 +45,40 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DSharpPlus\DSharpPlus.CommandsNext\DSharpPlus.CommandsNext.csproj">
+      <Project>{725483d5-a9f9-4b41-8047-853f10946d08}</Project>
+      <Name>DSharpPlus.CommandsNext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSharpPlus\DSharpPlus.Interactivity\DSharpPlus.Interactivity.csproj">
+      <Project>{eb029022-6b63-4fce-83d4-81d3139bac2b}</Project>
+      <Name>DSharpPlus.Interactivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSharpPlus\DSharpPlus.Lavalink\DSharpPlus.Lavalink.csproj">
+      <Project>{b4879e72-7962-45d3-a219-0ffdd888069e}</Project>
+      <Name>DSharpPlus.Lavalink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSharpPlus\DSharpPlus.Rest\DSharpPlus.Rest.csproj">
+      <Project>{4c183302-3f10-4fb6-b64d-be8c7267b4d7}</Project>
+      <Name>DSharpPlus.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSharpPlus\DSharpPlus.VoiceNext\DSharpPlus.VoiceNext.csproj">
+      <Project>{937f1611-fd8b-4157-af96-0bd470e56f45}</Project>
+      <Name>DSharpPlus.VoiceNext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DSharpPlus\DSharpPlus\DSharpPlus.csproj">
+      <Project>{45f663e1-9a2e-4c18-b61b-996e9a2efaac}</Project>
+      <Name>DSharpPlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GScraper\src\GScraper\GScraper.csproj">
+      <Project>{75340889-d349-4a09-a5df-09aa25bd5614}</Project>
+      <Name>GScraper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

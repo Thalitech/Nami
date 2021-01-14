@@ -1,0 +1,9 @@
+[submodule "GScraper"]
+	path = GScraper
+	url = https://github.com/Thalitech/GScraper.git
+[submodule "Lavalink4NET"]
+	path = Lavalink4NET
+	url = https://github.com/Thalitech/Lavalink4NET.git
+[submodule "DSharpPlus"]
+	path = DSharpPlus
+	url = https://github.com/Thalitech/DSharpPlus.git
