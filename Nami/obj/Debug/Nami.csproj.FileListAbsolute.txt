@@ -63,3 +63,4 @@ C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\Nami.csproj.CoreCompileInpu
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\Nami.csproj.CopyComplete
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\Nami.exe
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\Nami.pdb
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\Nami.csprojAssemblyReference.cache

@@ -1,5 +1,6 @@
 ﻿using DSharpPlus;
 using DSharpPlus.CommandsNext;
+using DSharpPlus.Lavalink;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Reflection;
@@ -57,8 +58,13 @@ namespace Nami
             discord.GuildAvailable += Events.OnGuildsAvailable;
             discord.GuildMemberAdded += Events.OnMemberAdded;
             discord.GuildMemberRemoved += Events.OnMemberRemoved;
-            commands.RegisterCommands<CommandDefault>();
-
+            commands.RegisterCommands<CommandHub>();
+            var lavalink = discord.UseLavalink();
+            lavalink.ConnectAsync(new LavalinkConfiguration()
+            {
+                Password = new ResourceFile<string>()["lavalink_pass", "123456"],
+                
+            });
             await discord.ConnectAsync();
             await Task.Delay(-1);
         }

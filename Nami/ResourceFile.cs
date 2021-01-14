@@ -20,7 +20,13 @@ namespace Nami
 
                 Load();
                 if (data.ContainsKey(key)) return (T)data[key];
-                return _default != null ? _default : default;
+                if(_default != null)
+                {
+                    data.Add(key, _default);
+                    Save();
+                    return _default;
+                }
+                return default;
             }
             set
             {
