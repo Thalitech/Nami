@@ -59,7 +59,7 @@ Name            | Commands
 Register Role   | ?regrole `role_name` or `role_id` [(`true` or `false`) optional]
 Unregister Role | ?deregrole `role_name` or `role_id`
 Announcements	| ?announce *your_message*
-
+Set Announcements Channel | ?setannounce *your_channel_id*
 ### Dev tools
 
   Name                   |Commands
