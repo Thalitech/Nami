@@ -1,4 +1,6 @@
 ﻿using DSharpPlus;
+using DSharpPlus.CommandsNext;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -25,13 +27,40 @@ namespace Nami
             new Program().MainAsync().GetAwaiter().GetResult();
         }
 
+
         private async Task MainAsync()
         {
             var discord = new DiscordClient(new DiscordConfiguration()
             {
                 Token = new ResourceFile<string>()["token", "your-discord-token"],
-                TokenType = TokenType.Bot
+                TokenType = TokenType.Bot,
+                MinimumLogLevel = LogLevel.Debug,
+                 LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt",
+                Intents = DiscordIntents.DirectMessageReactions
+                    | DiscordIntents.DirectMessages
+                    | DiscordIntents.GuildBans
+                    | DiscordIntents.GuildEmojis
+                    | DiscordIntents.GuildInvites
+                    | DiscordIntents.GuildMembers
+                    | DiscordIntents.GuildMessages
+                    | DiscordIntents.Guilds
+                    | DiscordIntents.GuildVoiceStates
+                    | DiscordIntents.GuildWebhooks,
+
             });
+            var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
+            {
+                StringPrefixes = new ResourceFile<string[]>()["prefixes", new[] { "!" }],
+                DmHelp = true,
+                EnableMentionPrefix =true,
+            });
+            discord.GuildAvailable += Events.OnGuildsAvailable;
+            discord.GuildMemberAdded += Events.OnMemberAdded;
+            discord.GuildMemberRemoved += Events.OnMemberRemoved;
+            commands.RegisterCommands<CommandDefault>();
+
+            await discord.ConnectAsync();
+            await Task.Delay(-1);
         }
     }
 }
