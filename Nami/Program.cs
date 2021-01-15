@@ -10,7 +10,7 @@ namespace Nami
 {
     class Program
     {
-        static void Main(string[] args)
+        static Task Main(string[] args)
         {
             Console.Title = Assembly.GetExecutingAssembly().GetName().Name;
             if(new ResourceFile<bool>()["ftr"])
@@ -23,9 +23,8 @@ namespace Nami
                     new ResourceFile<string>()["token"] = token;
                 }
                 new ResourceFile<bool>()["ftr"] = false;
-            }    
-
-            new Program().MainAsync().GetAwaiter().GetResult();
+            }
+            return new Program().MainAsync();
         }
 
 
@@ -35,37 +34,34 @@ namespace Nami
             {
                 Token = new ResourceFile<string>()["token", "your-discord-token"],
                 TokenType = TokenType.Bot,
-                MinimumLogLevel = LogLevel.Debug,
-                 LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt",
+                MinimumLogLevel = LogLevel.Information,
+                LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt",
                 Intents = DiscordIntents.DirectMessageReactions
-                    | DiscordIntents.DirectMessages
-                    | DiscordIntents.GuildBans
-                    | DiscordIntents.GuildEmojis
-                    | DiscordIntents.GuildInvites
-                    | DiscordIntents.GuildMembers
-                    | DiscordIntents.GuildMessages
-                    | DiscordIntents.Guilds
-                    | DiscordIntents.GuildVoiceStates
-                    | DiscordIntents.GuildWebhooks,
+                     | DiscordIntents.DirectMessages
+                     | DiscordIntents.GuildBans
+                     | DiscordIntents.GuildEmojis
+                     | DiscordIntents.GuildInvites
+                     | DiscordIntents.GuildMembers
+                     | DiscordIntents.GuildMessages
+                     | DiscordIntents.Guilds
+                     | DiscordIntents.GuildVoiceStates
+                     | DiscordIntents.GuildWebhooks
+                     | DiscordIntents.GuildPresences,
 
             });
             var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
             {
                 StringPrefixes = new ResourceFile<string[]>()["prefixes", new[] { "!" }],
                 DmHelp = true,
-                EnableMentionPrefix =true,
+                EnableMentionPrefix = true,
             });
             discord.GuildAvailable += Events.OnGuildsAvailable;
             discord.GuildMemberAdded += Events.OnMemberAdded;
             discord.GuildMemberRemoved += Events.OnMemberRemoved;
             commands.RegisterCommands<CommandHub>();
             var lavalink = discord.UseLavalink();
-            lavalink.ConnectAsync(new LavalinkConfiguration()
-            {
-                Password = new ResourceFile<string>()["lavalink_pass", "123456"],
-                
-            });
             await discord.ConnectAsync();
+            await lavalink.ConnectAsync(new LavalinkConfiguration() { Password = new ResourceFile<string>()["lavalink_pass", "123456"], });
             await Task.Delay(-1);
         }
     }

@@ -6,6 +6,8 @@ A open-source muti-functional discord bot, By
 
 ![project icon](https://github.com/Thalitech/Nami/raw/main/bot-image.png)
 
+#### [Invite Our Bot](https://discord.com/oauth2/authorize?client_id=760957333697986611&scope=bot)
+
 ### Funtions
 
 -   **announcements:** syndicate to an announcment channel on your
