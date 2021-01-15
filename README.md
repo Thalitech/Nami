@@ -34,8 +34,7 @@ If you would like to invite our bot to your server **[Click Here](https://discor
   ------------------------------------| --------------------------------
   Help                                | ?help or ?help `command`
   announcements                       | ?announce `your_mesage`
-  channel config                      | ?setanncoue `your channel_id`
-  clear                               | ?clearchat
+  clear Channel                       | ?purge
   register role for bot permissons    | ?regole
   unregister role for bot permissons  | ?dregole
 
