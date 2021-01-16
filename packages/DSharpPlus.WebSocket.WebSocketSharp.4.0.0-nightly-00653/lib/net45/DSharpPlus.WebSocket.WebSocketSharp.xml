@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DSharpPlus.WebSocket.WebSocketSharp</name>
+    </assembly>
+    <members>
+        <member name="T:DSharpPlus.Net.WebSocket.WebSocketSharpClient">
+            <summary>
+            A WebSocketSharp-based WebSocket client implementation.
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.Net.WebSocket.WebSocketSharpClient.#ctor(System.Net.IWebProxy)">
+            <summary>
+            Creates a new WebSocket client.
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.Net.WebSocket.WebSocketSharpClient.ConnectAsync(System.Uri,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">
+            <summary>
+            Connects to the WebSocket server.
+            </summary>
+            <param name="uri">The URI of the WebSocket server.</param>
+            <param name="customHeaders">Custom headers to send with the request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.Net.WebSocket.WebSocketSharpClient.DisconnectAsync(DSharpPlus.EventArgs.SocketCloseEventArgs)">
+            <summary>
+            Disconnects the WebSocket connection.
+            </summary>
+            <param name="e">Disconect event arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.Net.WebSocket.WebSocketSharpClient.SendMessage(System.String)">
+            <summary>
+            Send a message to the WebSocket server.
+            </summary>
+            <param name="message">The message to send.</param>
+        </member>
+        <member name="M:DSharpPlus.Net.WebSocket.WebSocketSharpClient.OnConnectedAsync">
+            <summary>
+            Set the Action to call when the connection has been established.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.Net.WebSocket.WebSocketSharpClient.OnDisconnectedAsync(DSharpPlus.EventArgs.SocketCloseEventArgs)">
+            <summary>
+            Set the Action to call when the connection has been terminated.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.Net.WebSocket.WebSocketSharpClient.CreateNew(System.Net.IWebProxy)">
+            <summary>
+            Creates a new instance of <see cref="T:DSharpPlus.Net.WebSocket.WebSocketSharpClient"/>.
+            </summary>
+            <param name="proxy">Proxy to use for this client instance.</param>
+            <returns>An instance of <see cref="T:DSharpPlus.Net.WebSocket.WebSocketSharpClient"/>.</returns>
+        </member>
+        <member name="E:DSharpPlus.Net.WebSocket.WebSocketSharpClient.Connected">
+            <summary>
+            Triggered when the client connects successfully.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.Net.WebSocket.WebSocketSharpClient.Disconnected">
+            <summary>
+            Triggered when the client is disconnected.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.Net.WebSocket.WebSocketSharpClient.MessageReceived">
+            <summary>
+            Triggered when the client receives a message from the remote party.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.Net.WebSocket.WebSocketSharpClient.Errored">
+            <summary>
+            Triggered when an error occurs in the client.
+            </summary>
+        </member>
+    </members>
+</doc>

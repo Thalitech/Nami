@@ -22,14 +22,13 @@ namespace Nami
                 if (data.ContainsKey(key)) return (T)data[key];
                 if(_default != null)
                 {
-                    data.Add(key, _default);
-                    Save();
                     return _default;
                 }
                 return default;
             }
             set
             {
+                if (value == null) return;
                 Load();
                 key = key.ToLower();
                 key = key.Replace(' ', '-');

@@ -1,6 +1,5 @@
 ﻿using DSharpPlus;
 using DSharpPlus.CommandsNext;
-using DSharpPlus.Lavalink;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Reflection;
@@ -15,13 +14,10 @@ namespace Nami
             Console.Title = Assembly.GetExecutingAssembly().GetName().Name;
             if(new ResourceFile<bool>()["ftr"])
             {
-                Console.WriteLine("You have not setup your discord token.");
-                Console.Write("Discord Bot Token: ");
-                var token = Console.ReadLine();
-                if(!string.IsNullOrEmpty(token))
-                {
-                    new ResourceFile<string>()["token"] = token;
-                }
+                new ResourceFile<string>()["token"] = Dispatcher.Request("token");
+                new ResourceFile<string>()["lavalinkip"] = Dispatcher.Request("lavalinkip");
+                new ResourceFile<string>()["lavalinkpass"] = Dispatcher.Request("lavalinkpass");
+
                 new ResourceFile<bool>()["ftr"] = false;
             }
             return new Program().MainAsync();
@@ -30,11 +26,12 @@ namespace Nami
 
         private async Task MainAsync()
         {
-            var discord = new DiscordClient(new DiscordConfiguration()
+            // Configurations
+            var discordConfig = new DiscordConfiguration()
             {
                 Token = new ResourceFile<string>()["token", "your-discord-token"],
                 TokenType = TokenType.Bot,
-                MinimumLogLevel = LogLevel.Information,
+                MinimumLogLevel = LogLevel.Debug,
                 LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt",
                 Intents = DiscordIntents.DirectMessageReactions
                      | DiscordIntents.DirectMessages
@@ -48,20 +45,22 @@ namespace Nami
                      | DiscordIntents.GuildWebhooks
                      | DiscordIntents.GuildPresences,
 
-            });
-            var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
+            };
+            var commandConfig = new CommandsNextConfiguration()
             {
-                StringPrefixes = new ResourceFile<string[]>()["prefixes", new[] { "!" }],
+                StringPrefixes = new ResourceFile<string[]>()["prefixes", new[] { "?", "-" }],
                 DmHelp = true,
                 EnableMentionPrefix = true,
-            });
+            };
+
+            var discord = new DiscordClient(discordConfig);
+            var commands = discord.UseCommandsNext(commandConfig);
             discord.GuildAvailable += Events.OnGuildsAvailable;
             discord.GuildMemberAdded += Events.OnMemberAdded;
             discord.GuildMemberRemoved += Events.OnMemberRemoved;
             commands.RegisterCommands<CommandHub>();
-            var lavalink = discord.UseLavalink();
             await discord.ConnectAsync();
-            await lavalink.ConnectAsync(new LavalinkConfiguration() { Password = new ResourceFile<string>()["lavalink_pass", "123456"], });
+            await Dispatcher.ConnectLavalinkAsync(discord);
             await Task.Delay(-1);
         }
     }
