@@ -35,32 +35,30 @@ If you would like to invite our bot to your server **[Click Here](https://discor
   Help                                | ?help or ?help `command`
   announcements                       | ?announce `your_mesage`
   clear Channel                       | ?purge
-  register role for bot permissons    | ?regole
-  unregister role for bot permissons  | ?dregole
 
 ### Music Commands
 
-  Name           | Command
-  ---------------| --------------------------------------
-  Join           | -Join
-  Leave          | -leave
-  Play           | -play `url` or `search_query`
-  Next           | -next
-  Previous       | -previous
-  Stop           | -stop
-  Pause          | -pause
-  Resume         | -resume
-  Loop Playback  | -resume `all` / `one` / `none`
-  Clear Queue    | -clear
+  Name                      | Command
+  --------------------------| --------------------------------------
+  Join                      | -join
+  Leave                     | -leave
+  Play                      | -play `url` or `search_query`
+  Pause                     | -pause
+  Resume                    | -resume
+  Stop                      | -stop
+  Next                      | -next
+  Previous                  | -previous
+  Loop Playback             | -repeat `None` / `one` / `none`
+  Shuffule Playback         | -suffule (toggleable)
+  Clear Queue               | -clear
+  Info of the current song  | -info
 
 ### Moderator tools
 
 Name            | Commands
 ----------------|-----------------------------------
-Register Role   | ?regrole `role_name` or `role_id` [(`true` or `false`) optional]
-Unregister Role | ?deregrole `role_name` or `role_id`
 Announcements	| ?announce `your_message`
-Set Announcements Channel | ?setannounce `your_channel_id`
+
 ### Dev tools
 
   Name                   |Commands

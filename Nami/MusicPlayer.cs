@@ -53,7 +53,7 @@ namespace Nami
 
         public List<TrackInfo> tracks = new List<TrackInfo>();
         private PlayerStatus status = PlayerStatus.Ready;
-        private RepeatMode repeatMode = RepeatMode.None;
+        private RepeatMode repeatMode = RepeatMode.none;
         private bool suffleMode = false;
         private int currentIndex;
         private DiscordMessage currentMessage;
@@ -93,8 +93,8 @@ namespace Nami
         public async Task Next() 
         {
             await Stop();
-            if (repeatMode == RepeatMode.LoopAll) { currentIndex++;  if (currentIndex > tracks.Count -1) { currentIndex = 0; } }
-            else if (repeatMode == RepeatMode.Loop) { /* Don't change the index of the queue*/  if (currentIndex > tracks.Count - 1) { currentIndex = 0; } }
+            if (repeatMode == RepeatMode.all) { currentIndex++;  if (currentIndex > tracks.Count -1) { currentIndex = 0; } }
+            else if (repeatMode == RepeatMode.one) { /* Don't change the index of the queue*/  if (currentIndex > tracks.Count - 1) { currentIndex = 0; } }
             else
             {
                 if(currentIndex < tracks.Count - 1)
@@ -106,8 +106,8 @@ namespace Nami
         public async Task Previous()
         {
             await Stop();
-            if (repeatMode == RepeatMode.LoopAll) { currentIndex--; if (currentIndex < 0) { currentIndex = tracks.Count - 1; } }
-            else if (repeatMode == RepeatMode.Loop) { /* Don't change the index of the queue*/  if (currentIndex > tracks.Count - 1) { currentIndex = 0; } }
+            if (repeatMode == RepeatMode.all) { currentIndex--; if (currentIndex < 0) { currentIndex = tracks.Count - 1; } }
+            else if (repeatMode == RepeatMode.one) { /* Don't change the index of the queue*/  if (currentIndex > tracks.Count - 1) { currentIndex = 0; } }
             else
             {
                 if (currentIndex > 0)
@@ -121,6 +121,16 @@ namespace Nami
             await Stop();
             tracks.Clear();
             currentIndex = 0;
+        }
+        public async Task Repeat(RepeatMode mode)
+        {
+            repeatMode = mode;
+            await Task.CompletedTask;
+        }
+        public async Task Shuffle()
+        {
+            suffleMode = !suffleMode;
+            await Task.CompletedTask;
         }
         public async Task Info()
         {

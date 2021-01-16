@@ -2,8 +2,8 @@
 {
     public  enum RepeatMode
     {
-        None,
-        Loop,
-        LoopAll,
+        none,
+        one,
+        all,
     }
 }

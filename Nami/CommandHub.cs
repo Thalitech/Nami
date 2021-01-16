@@ -300,6 +300,39 @@ namespace Nami
         }
 
         [RequirePrefixes("-")]
+        [Command("repeat")]
+        [Description("Repeat the que, or one song in the queue.")]
+        public async Task Shuffle(CommandContext ctx, string mode)
+        {
+            await Join(ctx);
+            var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
+            if (conn.CurrentState.CurrentTrack == null)
+            {
+                await ctx.RespondAsync("There are no tracks loaded.");
+                return;
+            }
+
+            if (Enum.TryParse<RepeatMode>(mode, true, out RepeatMode _mode))
+                await MusicPlayer.Find(ctx.Guild).Repeat(_mode);
+            else await MusicPlayer.Find(ctx.Guild).Repeat(RepeatMode.none);
+        }
+
+        [RequirePrefixes("-")]
+        [Command("shuffle")]
+        [Description("Suffles the que, and the order the songs are played.")]
+        public async Task Shuffle(CommandContext ctx)
+        {
+            await Join(ctx);
+            var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
+            if (conn.CurrentState.CurrentTrack == null)
+            {
+                await ctx.RespondAsync("There are no tracks loaded.");
+                return;
+            }
+            await MusicPlayer.Find(ctx.Guild).Shuffle();
+        }
+
+        [RequirePrefixes("-")]
         [Command("info")]
         [Description("Gets or updates the info of the embed that is most recently displayed")]
         public async Task Info(CommandContext ctx)
