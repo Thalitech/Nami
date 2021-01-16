@@ -256,6 +256,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Lavalink\Lavalink.jar" />
+    <Content Include="Resources\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\youtube-dl.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

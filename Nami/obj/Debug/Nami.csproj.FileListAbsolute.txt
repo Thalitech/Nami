@@ -62,3 +62,4 @@ C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\DSharpPlus.CommandsNext.pdb
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\DSharpPlus.Lavalink.pdb
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\DSharpPlus.pdb
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\Resources\youtube-dl.exe
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\Resources\msvcr100.dll
