@@ -285,7 +285,7 @@ namespace Nami
         }
 
         [RequirePrefixes("-")]
-        [Command("stop")]
+        [Command("clear")]
         [Description("Stop the playback of the music player, and clears the queue")]
         public async Task Clear(CommandContext ctx)
         {
@@ -302,7 +302,7 @@ namespace Nami
         [RequirePrefixes("-")]
         [Command("repeat")]
         [Description("Repeat the que, or one song in the queue.")]
-        public async Task Shuffle(CommandContext ctx, string mode)
+        public async Task Shuffle(CommandContext ctx, [Description("The repeat mode `one`, `all`, or `none`")]string mode)
         {
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);

@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GScraper</name>
+    </assembly>
+    <members>
+        <member name="T:GScraper.GoogleScraper">
+            <summary>
+            Represents a simple Google Images scraper.
+            </summary>
+        </member>
+        <member name="F:GScraper.GoogleScraper.MaxLimit">
+            <summary>
+            Returns the maximum number of images that can be returned per request.
+            </summary>
+        </member>
+        <member name="M:GScraper.GoogleScraper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GScraper.GoogleScraper"/> class.
+            </summary>
+        </member>
+        <member name="M:GScraper.GoogleScraper.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GScraper.GoogleScraper"/> class with the provided User-Agent.
+            </summary>
+            <param name="userAgent">The User-Agent to use in the requests.</param>
+        </member>
+        <member name="M:GScraper.GoogleScraper.GetImagesAsync(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Gets images from Google Images.
+            </summary>
+            <param name="query">The keywords.</param>
+            <param name="limit">The results limit.</param>
+            <param name="safeSearch">Whether to use safe search filter.</param>
+            <returns>A task representing the asynchronous operation. The result contains a read-only list of <see cref="T:GScraper.ImageResult"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="query"/> is null or empty.</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException"/>
+            <exception cref="T:GScraper.GScraperException">Thrown when an error occurs during the scraping process.</exception>
+        </member>
+        <member name="M:GScraper.GoogleScraper.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:GScraper.GoogleScraper.Dispose(System.Boolean)">
+            <inheritdoc cref="M:GScraper.GoogleScraper.Dispose"/>
+        </member>
+        <member name="T:GScraper.GScraperException">
+            <summary>
+            The exception that is thrown during the scraping process.
+            </summary>
+        </member>
+        <member name="M:GScraper.GScraperException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GScraper.GScraperException"/> class.
+            </summary>
+        </member>
+        <member name="M:GScraper.GScraperException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GScraper.GScraperException"/> class with a specified error message.
+            </summary>
+        </member>
+        <member name="M:GScraper.GScraperException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GScraper.GScraperException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+        </member>
+        <member name="T:GScraper.GScraperExtensions">
+            <summary>
+            Represents the extension methods that <see cref="T:GScraper.GoogleScraper"/> uses.
+            </summary>
+        </member>
+        <member name="M:GScraper.GScraperExtensions.ValueOrDefault``1(System.Collections.Generic.IEnumerable{Newtonsoft.Json.Linq.JToken})">
+            <summary>
+            Gets the value of <paramref name="token"/> converted to the specified type or gets the default value if <paramref name="token"/> is not a <see cref="T:Newtonsoft.Json.Linq.JValue"/>.
+            </summary>
+            <typeparam name="T">The type to convert the value to.</typeparam>
+            <param name="token">A <see cref="T:Newtonsoft.Json.Linq.JToken"/> cast as a <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</param>
+            <returns>default(<typeparamref name="T"/>) if <paramref name="token"/> is not a <see cref="T:Newtonsoft.Json.Linq.JValue"/>; otherwise, the converted value.</returns>
+        </member>
+        <member name="M:GScraper.GScraperExtensions.ValueOrDefault``1(Newtonsoft.Json.Linq.JToken,System.Object)">
+            <summary>
+            Gets the <see cref="T:Newtonsoft.Json.Linq.JToken"/> with the specified key converted to the specified type or the default value.
+            </summary>
+            <typeparam name="T">The type to convert the token to.</typeparam>
+            <param name="token">The token.</param>
+            <param name="key">The token key.</param>
+            <returns>
+            The converted token value if <paramref name="key"/> is an <see cref="T:System.Int32"/> and <paramref name="token"/> is a <see cref="T:Newtonsoft.Json.Linq.JArray"/>,
+            or if <paramref name="key"/> is a <see cref="T:System.String"/> and <paramref name="token"/> is a <see cref="T:Newtonsoft.Json.Linq.JValue"/> or a <see cref="T:Newtonsoft.Json.Linq.JObject"/>;
+            otherwise, default(<typeparamref name="T"/>).</returns>
+        </member>
+        <member name="M:GScraper.GScraperExtensions.ValueOrDefault(Newtonsoft.Json.Linq.JToken,System.Object)">
+            <inheritdoc cref="M:GScraper.GScraperExtensions.ValueOrDefault``1(Newtonsoft.Json.Linq.JToken,System.Object)"/>
+        </member>
+        <member name="T:GScraper.ImageResult">
+            <summary>
+            Represents a Google Images result.
+            </summary>
+        </member>
+        <member name="P:GScraper.ImageResult.Height">
+            <summary>
+            Gets the height of the image, in pixels.
+            </summary>
+        </member>
+        <member name="P:GScraper.ImageResult.Width">
+            <summary>
+            Gets the width of the image, in pixels.
+            </summary>
+        </member>
+        <member name="P:GScraper.ImageResult.Link">
+            <summary>
+            Gets a URL pointing to the image.
+            </summary>
+        </member>
+        <member name="P:GScraper.ImageResult.Title">
+            <summary>
+            Gets the title of the image result.
+            </summary>
+        </member>
+        <member name="P:GScraper.ImageResult.DisplayLink">
+            <summary>
+            Gets an abridged version of <see cref="P:GScraper.ImageResult.ContextLink"/>, e.g. www.example.com.
+            </summary>
+        </member>
+        <member name="P:GScraper.ImageResult.ContextLink">
+            <summary>
+            Gets A URL pointing to the webpage hosting the image.
+            </summary>
+        </member>
+        <member name="P:GScraper.ImageResult.ThumbnailLink">
+            <summary>
+            Gets a URL pointing to the thumbnail image.
+            </summary>
+        </member>
+    </members>
+</doc>
