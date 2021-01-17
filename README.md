@@ -77,5 +77,6 @@ Credits
   SharpPlusTeam       | DSharpPlus  | [GitHub](https://github.com/DSharpPlus/)  | For code base libraries
   Frederik Mikkelsen  | Frederikam  | [GitHub](https://github.com/Frederikam)  | for lava link
   WildaSarah          | WildaSarah  | [Website](https://artistsnclients.com/slots/68822-cute-anime-icons) | For project icon usage
+  Sirkris             | sirkris     | [GitHub](https://github.com/sirkris/Reddit.NET) | Redit feeds
 
 

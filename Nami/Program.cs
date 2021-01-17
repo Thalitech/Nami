@@ -12,24 +12,33 @@ namespace Nami
         static Task Main(string[] args)
         {
             Console.Title = Assembly.GetExecutingAssembly().GetName().Name;
-            if(new ResourceFile<bool>()["ftr"])
-            {
-                new ResourceFile<string>()["token"] = Dispatcher.Request("token");
-                new ResourceFile<string>()["lavalinkip"] = Dispatcher.Request("lavalinkip");
-                new ResourceFile<string>()["lavalinkpass"] = Dispatcher.Request("lavalinkpass");
+            
+            if (new ResourceFile<bool>()["ftr"] || string.IsNullOrEmpty(new ResourceFile<string>()["token", encrypt: true]))
+                new ResourceFile<string>()["token", encrypt: true] = Dispatcher.Request("token");
+            if (new ResourceFile<bool>()["ftr"] || string.IsNullOrEmpty(new ResourceFile<string>()["lavalink_ip"]))
+                new ResourceFile<string>()["lavalink_ip"] = Dispatcher.Request("lavalink_ip");
+            if (new ResourceFile<bool>()["ftr"] || string.IsNullOrEmpty(new ResourceFile<string>()["lavalink_pass", encrypt: true]))
+                new ResourceFile<string>()["lavalink_pass", encrypt: true] = Dispatcher.Request("lavalink_pass");
 
-                new ResourceFile<bool>()["ftr"] = false;
-            }
+
+            if (new ResourceFile<bool>()["ftr"] || string.IsNullOrEmpty(new ResourceFile<string>()["reddit_appid", encrypt: true]))
+                new ResourceFile<string>()["reddit_appid", encrypt: true] = Dispatcher.Request("reddit_appid");
+            if (new ResourceFile<bool>()["ftr"] || string.IsNullOrEmpty(new ResourceFile<string>()["reddit_secret", encrypt: true]))
+                new ResourceFile<string>()["reddit_secret", encrypt: true] = Dispatcher.Request("reddit_secret");
+            if (new ResourceFile<bool>()["ftr"])
+            new ResourceFile<bool>()["ftr"] = false;
             return new Program().MainAsync();
+
         }
 
 
         private async Task MainAsync()
         {
+            using (var reddit = new RedditManager()) { }
             // Configurations
             var discordConfig = new DiscordConfiguration()
             {
-                Token = new ResourceFile<string>()["token", "your-discord-token"],
+                Token = new ResourceFile<string>()["token", "your-discord-token", true],
                 TokenType = TokenType.Bot,
                 MinimumLogLevel = LogLevel.Debug,
                 LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt",
@@ -48,7 +57,7 @@ namespace Nami
             };
             var commandConfig = new CommandsNextConfiguration()
             {
-                StringPrefixes = new ResourceFile<string[]>()["prefixes", new[] { "?", "-" }],
+                StringPrefixes = new ResourceFile<string[]>()["prefixes", new[] { "?", "-", "*" }],
                 DmHelp = true,
                 EnableMentionPrefix = true,
             };

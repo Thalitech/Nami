@@ -62,3 +62,14 @@ C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Release\Nami.csproj.CoreCompileIn
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Release\Nami.csproj.CopyComplete
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Release\Nami.exe
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Release\Nami.pdb
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\Resources\msvcr100.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\AuthTokenRetriever.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\AuthTokenRetrieverLib.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\Reddit.NET.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\RestSharp.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\AuthTokenRetrieverLib.pdb
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\AuthTokenRetriever.pdb
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\Reddit.NET.pdb
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\Reddit.NET.xml
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Release\RestSharp.xml
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Release\Nami.exe.config

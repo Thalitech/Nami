@@ -27,9 +27,9 @@ namespace Nami
             var lavalink = discord.UseLavalink();
             var lavalinkConfig = new LavalinkConfiguration
             {
-                RestEndpoint = new ConnectionEndpoint   { Hostname = new ResourceFile<string>()["lavalinkip", $"{IPAddress.Loopback}"], Port = 2336 },
-                SocketEndpoint = new ConnectionEndpoint { Hostname = new ResourceFile<string>()["lavalinkip", $"{IPAddress.Loopback}"], Port = 2336 },
-                Password = new ResourceFile<string>()["lavalinkpass", "dev_pass"]
+                RestEndpoint = new ConnectionEndpoint   { Hostname = new ResourceFile<string>()["lavalink_ip", $"{IPAddress.Loopback}"], Port = 2336 },
+                SocketEndpoint = new ConnectionEndpoint { Hostname = new ResourceFile<string>()["lavalink_ip", $"{IPAddress.Loopback}"], Port = 2336 },
+                Password = new ResourceFile<string>()["lavalink_pass", "dev_pass", true]
             };
             await lavalink.ConnectAsync(lavalinkConfig);
         }

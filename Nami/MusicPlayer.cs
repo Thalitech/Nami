@@ -168,16 +168,16 @@ namespace Nami
                 status = PlayerStatus.Playing;
                 await connection.PlayAsync(tracks[currentIndex]);
                 await PlaybackStarted(connection, new TrackStartEventArgs(connection, tracks[currentIndex]));
-                while (tracks[currentIndex].Position < tracks[currentIndex].Length)
+                while (tracks[currentIndex].Position.TotalSeconds < tracks[currentIndex].Length.TotalSeconds)
                 {
                     while (status == PlayerStatus.Paused) { }
                     var seconds = tracks[currentIndex].Position.TotalSeconds;
                     seconds++;
                     tracks[currentIndex].Position = TimeSpan.FromSeconds(seconds);
                     Thread.Sleep(1000);
-                    if (status != PlayerStatus.Stopped) break;
+                    if (status == PlayerStatus.Stopped) break;
                 };
-                if(status != PlayerStatus.Stopped)
+                if(status == PlayerStatus.Playing)
                 {
                     status = PlayerStatus.Finished;
                     await PlaybackFinished(connection, new TrackFinishEventArgs(connection, tracks[currentIndex], status != PlayerStatus.Stopped ? TrackEndReason.Finished : TrackEndReason.Stopped));

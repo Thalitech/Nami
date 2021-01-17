@@ -347,5 +347,24 @@ namespace Nami
             await MusicPlayer.Find(ctx.Guild).Info();
         }
         #endregion
+
+        #region LewdCommands
+        [RequirePrefixes("?")]
+        [Description("Request a lew embed from the bot")]
+        [Command("lewd")]
+        public async Task Lewd(CommandContext ctx)
+        {
+            var _18Plus = ctx.Member.Roles.ToList().Find(x => x.Name.Contains("18+"));
+            if (_18Plus == null)
+            {
+                await ctx.Member.SendMessageAsync("Sorry, but you are not authorized to run this command. If you find this an error please contact one of the server admin, or moderators.");
+                return;
+            }
+            var _NSFW = ctx.Guild.Channels.ToList().FindAll(x => x.Value.IsNSFW).Select(x => x.Value).ToList();
+            var embed = new RedditManager(ctx).RequestNSFW();
+            await _NSFW.First().SendMessageAsync(embed: embed);
+        }
+
+        #endregion
     }
 }

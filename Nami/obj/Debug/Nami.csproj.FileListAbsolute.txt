@@ -63,3 +63,13 @@ C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\DSharpPlus.Lavalink.pdb
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\DSharpPlus.pdb
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\Resources\youtube-dl.exe
 C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\Resources\msvcr100.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\Reddit.NET.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\Reddit.NET.pdb
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\Reddit.NET.xml
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\AuthTokenRetriever.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\AuthTokenRetrieverLib.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\AuthTokenRetrieverLib.pdb
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\AuthTokenRetriever.pdb
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\RestSharp.dll
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\bin\Debug\RestSharp.xml
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\Nami.exe.config

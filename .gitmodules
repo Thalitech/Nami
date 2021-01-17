@@ -7,3 +7,6 @@
 [submodule "DSharpPlus"]
 	path = DSharpPlus
 	url = https://github.com/Thalitech/DSharpPlus.git
+[submodule "Reddit.NET"]
+	path = Reddit.NET
+	url = https://github.com/Thalitech/Reddit.NET.git
