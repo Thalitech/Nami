@@ -23,9 +23,6 @@ namespace Nami
             var appID = new ResourceFile<string>()["reddit_appid", encrypt: true];
             var appSecret = new ResourceFile<string>()["reddit_secret", encrypt: true];
             reddit = new RedditClient(appID, appSecret: appSecret, userAgent: "Nami");
-            reddit.Account.Me.Over18 = true;
-            reddit.Account.UpdatePrefsAsync(new AccountPrefsSubmit(reddit.Account.Prefs(), null, false, null)).GetAwaiter().GetResult();
-            Console.WriteLine($"Reddit Nami is {(reddit.Account.Me.Over18 ? "18+" : "Under age")}");
             if(ctx != null)
             {
                 this.context = ctx;
