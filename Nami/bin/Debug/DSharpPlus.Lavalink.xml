@@ -11,6 +11,11 @@
             <param name="client">Discord client to create Lavalink instance for.</param>
             <returns>Lavalink client instance.</returns>
         </member>
+        <member name="P:DSharpPlus.Lavalink.DiscordClientExtensions.IsUsingLavalink">
+            <summary>
+            Returned if we are using lavalink
+            </summary>
+        </member>
         <member name="M:DSharpPlus.Lavalink.DiscordClientExtensions.UseLavalinkAsync(DSharpPlus.DiscordShardedClient)">
             <summary>
             Creates new Lavalink clients on all shards in a given sharded client.

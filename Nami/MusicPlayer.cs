@@ -149,9 +149,8 @@ namespace Nami
             builder.Title = track.Name;
             var field = builder.AddField("** **", "** **");
             field.ImageUrl = track.AlbumeImage;
-            field.WithImageUrl(track.Uri);
             var _result = builder.Build();
-            _result.Video = new DiscordEmbedVideo() { Url = track.Uri, Width = 133, Height = 100 };
+            //_result.Video = new DiscordEmbedVideo() { Url = track.Uri, Width = 133, Height = 100 };
 
             if (currentMessage == null)
                 currentMessage = await context.RespondAsync(embed: _result);
@@ -182,14 +181,30 @@ namespace Nami
                     status = PlayerStatus.Finished;
                     await PlaybackFinished(connection, new TrackFinishEventArgs(connection, tracks[currentIndex], status != PlayerStatus.Stopped ? TrackEndReason.Finished : TrackEndReason.Stopped));
                     tracks[currentIndex].Position = TimeSpan.FromSeconds(0);
-                    if (currentIndex < tracks.Count - 1)
+                    if (repeatMode == RepeatMode.all)
                     {
-                        if(suffleMode)
+                        if (suffleMode)
                         {
                             currentIndex = new Random().Next(0, tracks.Count - 1);
                         }
-                        else currentIndex++;
+                        else { currentIndex++;  if (currentIndex > tracks.Count - 1) currentIndex = 0; }
                         goto playNext;
+                    }
+                    else if (repeatMode == RepeatMode.one)
+                    {
+                        goto playNext;
+                    }
+                    else
+                    {
+                        if (currentIndex < tracks.Count - 1)
+                        {
+                            if (suffleMode)
+                            {
+                                currentIndex = new Random().Next(0, tracks.Count - 1);
+                            }
+                            else currentIndex++;
+                            goto playNext;
+                        }
                     }
                 }
                 else

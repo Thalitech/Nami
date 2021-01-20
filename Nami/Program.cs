@@ -2,12 +2,14 @@
 using DSharpPlus.CommandsNext;
 using Microsoft.Extensions.Logging;
 using System;
+using System.IO;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Nami
 {
-    class Program
+    class Program : IDisposable
     {
         static Task Main(string[] args)
         {
@@ -31,9 +33,31 @@ namespace Nami
 
         }
 
+        public static Program instance;
+        public Program()
+        {
+            if(instance == null)
+            {
+                instance = this;
+            }
+            else if(instance != this)
+            {
+                this.Dispose();
+            }
+        }
 
+        public enum CommandCode { Running, stop, Reset, }
+        public CommandCode commandCode;
         private async Task MainAsync()
         {
+            AssetDatabase.Init();
+            if (commandCode == CommandCode.stop)
+            {
+                Console.ReadLine();
+                return;
+            }
+        initialize:
+            Console.Clear();
             using (var reddit = new RedditManager()) { }
             // Configurations
             var discordConfig = new DiscordConfiguration()
@@ -61,16 +85,28 @@ namespace Nami
                 DmHelp = true,
                 EnableMentionPrefix = true,
             };
-
             var discord = new DiscordClient(discordConfig);
             var commands = discord.UseCommandsNext(commandConfig);
             discord.GuildAvailable += Events.OnGuildsAvailable;
             discord.GuildMemberAdded += Events.OnMemberAdded;
             discord.GuildMemberRemoved += Events.OnMemberRemoved;
             commands.RegisterCommands<CommandHub>();
+            if (AssetDatabase.compiledAssembly != null)
+                commands.RegisterCommands(AssetDatabase.compiledAssembly);
+
             await discord.ConnectAsync();
             await Dispatcher.ConnectLavalinkAsync(discord);
-            await Task.Delay(-1);
+            commandCode = CommandCode.Running;
+            while (commandCode != CommandCode.stop && commandCode != CommandCode.Reset) { };
+            await discord.DisconnectAsync();
+            if (commandCode == CommandCode.Reset) 
+                goto initialize;
+
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

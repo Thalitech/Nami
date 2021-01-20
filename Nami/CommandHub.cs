@@ -13,6 +13,25 @@ namespace Nami
 {
     public class CommandHub : BaseCommandModule
     {
+        #region System Command
+        [RequirePrefixes("*")]
+        [Command("restart")]
+        [Description("This command will reset the discord bot")]
+        public async Task Restart(CommandContext ctx)
+        {
+            var permissinGranted = await PermissionManager.CheckPermissions(ctx, PermissionManager.PermissionType.Admin);
+            if (!permissinGranted) return;
+
+            await Task.Run(async () =>
+            {
+                await ctx.RespondAsync("Nami is restarting, please wait a few seconds before trying to run any bot commands");
+                Console.Clear();
+                Program.instance.commandCode = Program.CommandCode.Reset;
+            }).ConfigureAwait(false);
+        }
+
+        #endregion
+
         #region Moderator Commands
         [RequirePrefixes("?")]
         [Command("announce")]
@@ -130,6 +149,34 @@ namespace Nami
                 }
             }).ConfigureAwait(false);
         }
+
+        [RequirePrefixes("?")]
+        [Command("respite")]
+        [Description("This command will server mute a play for 1m for the first attempt, 3m for the second attempt, 5 for the sixed attempt and add two everytime the command is used for that member.")]
+        public async Task Respite(CommandContext ctx, DiscordMember member, [RemainingText]string reason = default)
+        {
+            var permissinGranted = await PermissionManager.CheckPermissions(ctx, PermissionManager.PermissionType.Admin);
+            if (!permissinGranted) return;
+
+            await Task.Run(async () =>
+            {
+                await RespiteEngine.Add(ctx.Guild, member, reason);
+            }).ConfigureAwait(false);
+        }
+        [RequirePrefixes("?")]
+        [Command("rm-respite")]
+        [Description("This command will remove server mute on a muted member.")]
+        public async Task RemoveRespite(CommandContext ctx, DiscordMember member, [RemainingText]string reason = default)
+        {
+            var permissinGranted = await PermissionManager.CheckPermissions(ctx, PermissionManager.PermissionType.Admin);
+            if (!permissinGranted) return;
+
+            await Task.Run(async () =>
+            {
+                await RespiteEngine.Remove(ctx.Guild, member, reason);
+
+            }).ConfigureAwait(false);
+        }
         #endregion
 
         #region Music Commands
@@ -172,6 +219,8 @@ namespace Nami
         [Description("Has the bot leave the voice channel that it was currently in.")]
         public async Task Leave(CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
+
             var lava = ctx.Client.GetLavalink();
             if (!lava.ConnectedNodes.Any())
             {
@@ -196,6 +245,8 @@ namespace Nami
         [Description("This is the music play command, this is also used to add songs to the queue.")]
         public async Task Play(CommandContext ctx, [Description("The url or search query to be played")][RemainingText] string query)
         {
+            if(ctx.Client.GetExtension<LavalinkExtension>() == null) return;
+
             await Join(ctx);
             var loadResult = await ctx.Client.GetLavalink().ConnectedNodes.Values.First().Rest.GetTracksAsync(query);
             if (loadResult.LoadResultType == LavalinkLoadResultType.LoadFailed || loadResult.LoadResultType == LavalinkLoadResultType.NoMatches)
@@ -214,6 +265,7 @@ namespace Nami
         [Description("Pause the playback of the music player.")]
         public async Task Pause (CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)
@@ -229,6 +281,7 @@ namespace Nami
         [Description("Resume the playback of the music player.")]
         public async Task Resume(CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)
@@ -244,6 +297,7 @@ namespace Nami
         [Description("Stop the playback of the music player")]
         public async Task Stop(CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)
@@ -259,6 +313,7 @@ namespace Nami
         [Description("Stop the playback of the music player, and plays the next song in the queue")]
         public async Task Next(CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)
@@ -274,6 +329,7 @@ namespace Nami
         [Description("Stop the playback of the music player, and plays the previous song in the queue")]
         public async Task Previous(CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)
@@ -289,6 +345,7 @@ namespace Nami
         [Description("Stop the playback of the music player, and clears the queue")]
         public async Task Clear(CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)
@@ -304,6 +361,7 @@ namespace Nami
         [Description("Repeat the que, or one song in the queue.")]
         public async Task Shuffle(CommandContext ctx, [Description("The repeat mode `one`, `all`, or `none`")]string mode)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)
@@ -322,6 +380,7 @@ namespace Nami
         [Description("Suffles the que, and the order the songs are played.")]
         public async Task Shuffle(CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)
@@ -337,6 +396,7 @@ namespace Nami
         [Description("Gets or updates the info of the embed that is most recently displayed")]
         public async Task Info(CommandContext ctx)
         {
+            if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
             if (conn.CurrentState.CurrentTrack == null)

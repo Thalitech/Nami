@@ -10,3 +10,6 @@
 [submodule "Reddit.NET"]
 	path = Reddit.NET
 	url = https://github.com/Thalitech/Reddit.NET.git
+[submodule "roslyn"]
+	path = roslyn
+	url = https://github.com/Thalitech/roslyn.git
