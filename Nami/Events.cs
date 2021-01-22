@@ -40,7 +40,7 @@ namespace Nami
                 embed.Timestamp = new DateTimeOffset(DateTime.Now);
                 embed.Title = "Member Left";
                 embed.Color = DiscordColor.Red;
-                embed.Description = $"{e.Member.Mention} has left, so sad to see you go :cry:";
+                embed.Description = $"{e.Member.DisplayName} has left, so sad to see you go :cry:";
                 embed.Footer = new DiscordEmbedBuilder.EmbedFooter()
                 {
                     Text = $"Thank you for your time. {e.Guild.Name} Team",

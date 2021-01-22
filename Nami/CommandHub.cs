@@ -13,7 +13,7 @@ namespace Nami
 {
     public class CommandHub : BaseCommandModule
     {
-        #region System Command
+        #region System Command (*)
         [RequirePrefixes("*")]
         [Command("restart")]
         [Description("This command will reset the discord bot")]
@@ -32,7 +32,7 @@ namespace Nami
 
         #endregion
 
-        #region Moderator Commands
+        #region Moderator Commands (?)
         [RequirePrefixes("?")]
         [Command("announce")]
         [Description("This command is use to send announcments to the current server.")]
@@ -135,17 +135,24 @@ namespace Nami
         [RequirePrefixes("?")]
         [Command("purge")]
         [Description("This command will remove all messages that are in the text channel that the command was ran in.")]
-        public async Task Purge(CommandContext ctx)
+        public async Task Purge(CommandContext ctx, int amount = 0)
         {
             var permissinGranted = await PermissionManager.CheckPermissions(ctx, PermissionManager.PermissionType.Admin);
             if (!permissinGranted) return;
 
             await Task.Run(async () =>
             {
-                var messages = ctx.Channel.GetMessagesAsync(1000).Result.ToList();
-                for(int i = 0; i < messages.Count; i++)
+                var messages = ctx.Channel.GetMessagesAsync(amount > 0 ? amount : 1000).Result.ToList();
+                if(amount <= 100)
                 {
-                    await messages[i].DeleteAsync();
+                    await ctx.Channel.DeleteMessagesAsync(await ctx.Channel.GetMessagesAsync(amount), "The purge command on this channel has been called by a admin.");
+                }
+                else
+                {
+                    for (int i = 0; i < messages.Count; i++)
+                    {
+                        await messages[i].DeleteAsync("The purge command on this channel has been called by a admin.");
+                    }
                 }
             }).ConfigureAwait(false);
         }
@@ -179,7 +186,7 @@ namespace Nami
         }
         #endregion
 
-        #region Music Commands
+        #region Music Commands (-)
         [RequirePrefixes("-")]
         [Command("join")]
         [Description("Has the bot join the voice channel that the user that ran the command is in. if user is not in voice channel it will join a channel that is name Music.")]
@@ -195,19 +202,21 @@ namespace Nami
             var conn = node.GetGuildConnection(ctx.Guild);
             if (conn == null)
             {
+                var channel = default(DiscordChannel);
                 if (ctx.Member.VoiceState != null)
                 {
-                    var channel = ctx.Member.VoiceState.Channel;
+                    channel = ctx.Member.VoiceState.Channel;
                     if (channel.Type != ChannelType.Voice)
                     {
                         await ctx.RespondAsync("Not a valid voice channel.");
                         return;
                     }
                     conn = await node.ConnectAsync(channel);
-                    await ctx.RespondAsync($"DJ Nami has joined {channel.Name}!");
+                    await ctx.RespondAsync($"Connected!\nNow bound to {ctx.Channel.Mention} Text Channel and {channel.Mention} Voice Channel");
                 }
+                else return;
                 // Create Music Instacne  for current guild
-                var player = MusicPlayer.Connect(conn, ctx.Guild, ctx);
+                var player = MusicPlayer.Connect(conn, ctx.Guild, ctx, channel, ctx.Channel);
                 conn.PlaybackStarted += player.PlaybackStarted;
                 conn.PlayerUpdated += player.PlaybackUpdated;
                 conn.PlaybackFinished += player.PlaybackFinished;
@@ -235,7 +244,7 @@ namespace Nami
                 return;
             }
             await conn.DisconnectAsync();
-            await ctx.RespondAsync($"DJ Nami has left!");
+            await ctx.RespondAsync($"Disconnected!");
             MusicPlayer.Disconnect(ctx.Guild);
         }
 
@@ -248,16 +257,19 @@ namespace Nami
             if(ctx.Client.GetExtension<LavalinkExtension>() == null) return;
 
             await Join(ctx);
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot.");  return; }
+
             var loadResult = await ctx.Client.GetLavalink().ConnectedNodes.Values.First().Rest.GetTracksAsync(query);
             if (loadResult.LoadResultType == LavalinkLoadResultType.LoadFailed || loadResult.LoadResultType == LavalinkLoadResultType.NoMatches)
             {
                 await ctx.RespondAsync($"Track search failed for {query}.");
                 return;
             }
-            //await ctx.Message.DeleteAsync();
             var track = loadResult.Tracks.First();
+
             await ctx.RespondAsync($"Now queued `{track.Author} | {track.Title}`");
-            await MusicPlayer.Find(ctx.Guild).Play(ctx, track);
+            var result = Dispatcher.Load<NamiTrack>(track.Title);
+            await MusicPlayer.Find(ctx.Guild).Play(ctx, result != null ? result : track);
         }
 
         [RequirePrefixes("-")]
@@ -265,6 +277,9 @@ namespace Nami
         [Description("Pause the playback of the music player.")]
         public async Task Pause (CommandContext ctx)
         {
+
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
+
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -281,6 +296,7 @@ namespace Nami
         [Description("Resume the playback of the music player.")]
         public async Task Resume(CommandContext ctx)
         {
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -297,6 +313,7 @@ namespace Nami
         [Description("Stop the playback of the music player")]
         public async Task Stop(CommandContext ctx)
         {
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -313,6 +330,7 @@ namespace Nami
         [Description("Stop the playback of the music player, and plays the next song in the queue")]
         public async Task Next(CommandContext ctx)
         {
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -329,6 +347,7 @@ namespace Nami
         [Description("Stop the playback of the music player, and plays the previous song in the queue")]
         public async Task Previous(CommandContext ctx)
         {
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -345,6 +364,7 @@ namespace Nami
         [Description("Stop the playback of the music player, and clears the queue")]
         public async Task Clear(CommandContext ctx)
         {
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -359,8 +379,9 @@ namespace Nami
         [RequirePrefixes("-")]
         [Command("repeat")]
         [Description("Repeat the que, or one song in the queue.")]
-        public async Task Shuffle(CommandContext ctx, [Description("The repeat mode `one`, `all`, or `none`")]string mode)
+        public async Task Repeat(CommandContext ctx, [Description("The repeat mode `one`, `all`, or `none`")]string mode)
         {
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -380,6 +401,7 @@ namespace Nami
         [Description("Suffles the que, and the order the songs are played.")]
         public async Task Shuffle(CommandContext ctx)
         {
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -396,6 +418,7 @@ namespace Nami
         [Description("Gets or updates the info of the embed that is most recently displayed")]
         public async Task Info(CommandContext ctx)
         {
+            if (MusicPlayer.Find(ctx.Guild).TextCh != ctx.Channel) { await ctx.RespondAsync($"You are not int the right text channel you must be in {MusicPlayer.Find(ctx.Guild).TextCh.Mention} or unbind the bot."); return; }
             if (ctx.Client.GetExtension<LavalinkExtension>() == null) return;
             await Join(ctx);
             var conn = ctx.Client.GetLavalink().ConnectedNodes.Values.First().GetGuildConnection(ctx.Guild);
@@ -408,7 +431,7 @@ namespace Nami
         }
         #endregion
 
-        #region LewdCommands
+        #region LewdCommands (?)
         [RequirePrefixes("?")]
         [Description("Request a lew embed from the bot")]
         [Command("lewd")]

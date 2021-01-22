@@ -1,0 +1,3 @@
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\net5.0\Nami.csprojAssemblyReference.cache
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\net5.0\Nami.Properties.Resources.resources
+C:\Users\Senpai\Documents\GitPor\Nami\Nami\obj\Debug\net5.0\Nami.csproj.GenerateResource.cache

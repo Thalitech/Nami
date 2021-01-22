@@ -13,12 +13,14 @@ namespace Nami
     {
         private static Dictionary<DiscordGuild, MusicPlayer> players = new Dictionary<DiscordGuild, MusicPlayer>();
 
-        internal static MusicPlayer Connect(LavalinkGuildConnection conn, DiscordGuild guild, CommandContext ctx)
+        internal static MusicPlayer Connect(LavalinkGuildConnection conn, DiscordGuild guild, CommandContext ctx, DiscordChannel voiceChannel, DiscordChannel textChannel)
         {
             var player = new MusicPlayer();
             player.connection = conn;
             player.server = guild;
             player.context = ctx;
+            player.voiceChannel = voiceChannel;
+            player.textChannel = textChannel;
             players.Add(guild, player);
             return player;
         }
@@ -45,36 +47,61 @@ namespace Nami
             return Task.CompletedTask;
         }
 
-        internal static MusicPlayer Find(DiscordGuild guild) => players[guild];
+        internal static MusicPlayer Find(DiscordGuild guild)
+        {
+            if (players.Count > 0)
+                return players[guild];
+            return null;
+        }
 
         private LavalinkGuildConnection connection;
         private DiscordGuild server;
         private CommandContext context;
-
-        public List<TrackInfo> tracks = new List<TrackInfo>();
+        private DiscordChannel voiceChannel;
+        private DiscordChannel textChannel;
+        public List<NamiTrack> tracks = new List<NamiTrack>();
         private PlayerStatus status = PlayerStatus.Ready;
         private RepeatMode repeatMode = RepeatMode.none;
         private bool suffleMode = false;
-        private int currentIndex;
+        private int currentIndex = -1;
         private DiscordMessage currentMessage;
 
-        public Task Play(CommandContext ctx, LavalinkTrack _track)
+
+        public DiscordChannel TextCh => textChannel;
+        public DiscordChannel VoiceCh => voiceChannel;
+
+        public async Task Play(CommandContext ctx, NamiTrack _track)
         {
-            new Thread(async () =>
+
+            var _hasTrack = tracks.Find(x => x.Title == _track.Title) != null;
+
+            if(_hasTrack)
             {
-                var track = new TrackInfo(_track);
-                track.AuthorImage = await Dispatcher.Generate<string>(GenType.AuthorImageUrl, _track);
-                track.AlbumeImage = await Dispatcher.Generate<string>(GenType.AlbumeImageUrl, _track);
-                track.Description = await Dispatcher.Generate<string>(GenType.Description, _track);
-                tracks.Add(track);
-            }).Start();
+                var index = tracks.IndexOf(tracks.Find(x => x.Title == _track.Title));
+                if (status != PlayerStatus.Playing) await Next();
+                return;
+            }
+
+            await AddTrack(_track);
             new Thread(async () =>
             {
                 while (tracks.Count <= 0) { };
+                currentIndex = 0;
                 await Playing();
             }).Start();
-            return Task.CompletedTask;
+            return;
         }
+
+        private async Task AddTrack(NamiTrack track)
+        {
+            track.AuthorImage = await Dispatcher.Generate<string>(GenType.AuthorImageUrl, track);
+            track.AlbumeImage = await Dispatcher.Generate<string>(GenType.AlbumeImageUrl, track);
+            track.Description = await Dispatcher.Generate<string>(GenType.Description, track);
+            Dispatcher.Save(track);
+            tracks.Add(track);
+            if (status != PlayerStatus.Playing) await Next();
+        }
+
         public async Task Pause()
         {
             status = PlayerStatus.Paused;
@@ -85,9 +112,12 @@ namespace Nami
             status = PlayerStatus.Playing;
             await connection.ResumeAsync();
         }
-        public async Task Stop()
+        public async Task Stop(bool changeStatus = true)
         {
-            status = PlayerStatus.Stopped;
+            if (changeStatus)
+                status = PlayerStatus.Stopped;
+            if (currentIndex > -1)
+                tracks[currentIndex].Position = TimeSpan.FromSeconds(0);
             await connection.StopAsync();
         }
         public async Task Next() 
@@ -125,11 +155,13 @@ namespace Nami
         public async Task Repeat(RepeatMode mode)
         {
             repeatMode = mode;
+            await TextCh.SendMessageAsync($"Repeat Mode has been changed to {mode}");
             await Task.CompletedTask;
         }
         public async Task Shuffle()
         {
             suffleMode = !suffleMode;
+            await TextCh.SendMessageAsync($"Shuffle Mode has been changed to {(suffleMode ? "Enabled" : "Disabled")}");
             await Task.CompletedTask;
         }
         public async Task Info()
@@ -146,16 +178,21 @@ namespace Nami
             builder.Author = new DiscordEmbedBuilder.EmbedAuthor() { Name = track.Author, };
             builder.Description = track.Description;
             builder.Color = DiscordColor.Azure;
-            builder.Title = track.Name;
+            builder.Title = track.Title;
             var field = builder.AddField("** **", "** **");
+            builder.AddField("** **", track.Uri);
+
             field.ImageUrl = track.AlbumeImage;
             var _result = builder.Build();
-            //_result.Video = new DiscordEmbedVideo() { Url = track.Uri, Width = 133, Height = 100 };
 
             if (currentMessage == null)
                 currentMessage = await context.RespondAsync(embed: _result);
             else
                 currentMessage = await currentMessage.ModifyAsync(embed: _result);
+
+            var jumpEmbed = new DiscordEmbedBuilder();
+            jumpEmbed.AddField("Song Info Jump>", currentMessage.JumpLink.OriginalString, true);
+            await textChannel.SendMessageAsync(embed: jumpEmbed);
         }
         private async Task Playing()
         {
@@ -176,11 +213,11 @@ namespace Nami
                     Thread.Sleep(1000);
                     if (status == PlayerStatus.Stopped) break;
                 };
-                if(status == PlayerStatus.Playing)
+               if(status == PlayerStatus.Playing)
                 {
                     status = PlayerStatus.Finished;
                     await PlaybackFinished(connection, new TrackFinishEventArgs(connection, tracks[currentIndex], status != PlayerStatus.Stopped ? TrackEndReason.Finished : TrackEndReason.Stopped));
-                    tracks[currentIndex].Position = TimeSpan.FromSeconds(0);
+                    await Stop(false);
                     if (repeatMode == RepeatMode.all)
                     {
                         if (suffleMode)
@@ -209,7 +246,7 @@ namespace Nami
                 }
                 else
                 {
-                    tracks[currentIndex].Position = TimeSpan.FromSeconds(0);
+                    await Stop();
                     await PlaybackFinished(connection, new TrackFinishEventArgs(connection, tracks[currentIndex], status != PlayerStatus.Stopped ? TrackEndReason.Finished : TrackEndReason.Stopped));
                 }
                 

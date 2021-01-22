@@ -2,6 +2,7 @@
 using DSharpPlus.Lavalink;
 using DSharpPlus.Net;
 using GScraper;
+using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -45,7 +46,7 @@ namespace Nami
         
 
 
-        public static async Task<T> Generate<T>(GenType type, TrackInfo info)
+        public static async Task<T> Generate<T>(GenType type, NamiTrack info)
         {
             switch (type)
             {
@@ -65,7 +66,7 @@ namespace Nami
                         {
                             process.StartInfo.FileName = "cmd.exe";
                             var file = new FileInfo("Resources/youtube-dl.exe");
-                            process.StartInfo.Arguments = $"/c call {file.FullName} --get-thumbnail {info.Uri.OriginalString}";
+                            process.StartInfo.Arguments = $"/c call {file.FullName} --get-thumbnail {info.Uri}";
                             process.StartInfo.WorkingDirectory = new FileInfo("Resources").Directory.FullName;
                             process.StartInfo.UseShellExecute = false;
                             process.StartInfo.RedirectStandardOutput = true;
@@ -89,7 +90,7 @@ namespace Nami
                         {
                             process.StartInfo.FileName = "cmd.exe";
                             var file = new FileInfo("Resources/youtube-dl.exe");
-                            process.StartInfo.Arguments = $"/c call {file.FullName} --get-description {info.Uri.OriginalString}";
+                            process.StartInfo.Arguments = $"/c call {file.FullName} --get-description {info.Uri}";
                             process.StartInfo.WorkingDirectory = new FileInfo("Resources").Directory.FullName;
                             process.StartInfo.UseShellExecute = false;
                             process.StartInfo.RedirectStandardOutput = true;
@@ -106,6 +107,34 @@ namespace Nami
                     while (string.IsNullOrEmpty(desc)) { }
                     return (T)(object)desc;
 
+            }
+            return default;
+        }
+
+        internal static void Save<T>(T value)
+        {
+            if (typeof(T).Equals(typeof(NamiTrack)))
+            {
+                var track = (NamiTrack)(object)value;
+
+                var json = JsonConvert.SerializeObject(track, Formatting.Indented);
+                var dir = Directory.CreateDirectory("Resources/SongLibrary/");
+                var file = new FileInfo(Path.Combine(dir.FullName, $"{track.Title}.json"));
+                if (!file.Exists)
+                    File.WriteAllText(file.FullName, json);
+            }
+        }
+        internal static T Load<T>(string title)
+        {
+            if (typeof(T).Equals(typeof(NamiTrack)))
+            {
+                var dir = Directory.CreateDirectory("Resources/SongLibrary/");
+                var file = new FileInfo(Path.Combine(dir.FullName, $"{title}.json"));
+                if (!file.Exists) return default;
+                var json = File.ReadAllText(file.FullName);
+                var track = (NamiTrack)JsonConvert.DeserializeObject<NamiTrack>(json);
+                if (track != null)
+                    return (T)(object)track;
             }
             return default;
         }
