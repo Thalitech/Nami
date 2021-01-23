@@ -211,6 +211,8 @@ namespace Nami
             {
                 await ctx.RespondAsync($"The member {member}'s rank has pass the threshold but thre hasn't been a role for use to add.");
                 // Add role to user and keep track just incase we want to remove a time.
+                await member.GrantRoleAsync(ctx.Guild.Roles.ToList().Find(x => x.Value.Name == "Thicc Players").Value,
+                    $"The member {member}'s rank has pass the threshold but thre hasn't been a role for use to add.");
             }
         }
         [RequirePrefixes("?")]
@@ -227,15 +229,16 @@ namespace Nami
             if (data.Count <= 0 || data[member.Id] > 0)
             {
                 if (data.ContainsKey(member.Id)) data[member.Id]--;
-                else data.Add(member.Id, 1);
+                else data.Add(member.Id, 0);
                 await ctx.RespondAsync($"An SRJ has beend removed to **{member.Username}** they have **{data[member.Id]}** SRJ's remaining...");
                 File.WriteAllText(file, JsonConvert.SerializeObject(data, Formatting.Indented));
+
+                if(data[member.Id] < 3 && member.Roles.ToList().Find(x => x.Name == "Thicc Players") != null)
+                {
+                    await member.RevokeRoleAsync(ctx.Guild.Roles.ToList().Find(x => x.Value.Name == "Thicc Players").Value,
+                   $"The member {member}'s rank has went below the threshold but thre hasn't been a role for use to remove.");
+                }    
                 return;
-            }
-            else
-            {
-                await ctx.RespondAsync($"The member {member}'s rank has went below the threshold but thre hasn't been a role for use to remove.");
-                // Remove role to user and keep track just incase we want to remove a time.
             }
         }
         #endregion
@@ -485,23 +488,5 @@ namespace Nami
         }
         #endregion
 
-        #region LewdCommands (?)
-        [RequirePrefixes("?")]
-        [Description("Request a lew embed from the bot")]
-        [Command("lewd")]
-        public async Task Lewd(CommandContext ctx)
-        {
-            var _18Plus = ctx.Member.Roles.ToList().Find(x => x.Name.Contains("18+"));
-            if (_18Plus == null)
-            {
-                await ctx.Member.SendMessageAsync("Sorry, but you are not authorized to run this command. If you find this an error please contact one of the server admin, or moderators.");
-                return;
-            }
-            var _NSFW = ctx.Guild.Channels.ToList().FindAll(x => x.Value.IsNSFW).Select(x => x.Value).ToList();
-            var embed = new RedditManager(ctx).RequestNSFW();
-            await _NSFW.First().SendMessageAsync(embed: embed);
-        }
-
-        #endregion
     }
 }

@@ -1,7 +1,7 @@
 [
   {
     "Key": "UseLavalink",
-    "Value": false
+    "Value": true
   },
   {
     "Key": "LavalinkIP",
