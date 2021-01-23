@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nc15OC2XrEbudWRBREMbKOQ7TdAQWIPWQQQek2L9v6C2NnpQUywotMRKZGuJQq+xcGwuGplIDEoOKWyegqxQQg==",
+  "dgSpecHash": "62o01rhNMm8UFyykr3vRfL5QiJH1bjcDaMXQkF9WtV95vnrdAFw7b4NFjoCaoVLaDb4CoyGEDr8IBgHdPnoNBQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\ ThiccGamesBot\\ThiccGamesBot.csproj",
+  "projectFilePath": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\Nami.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Senpai\\.nuget\\packages\\concurrenthashset\\1.1.0\\concurrenthashset.1.1.0.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus\\4.0.0-nightly-00783\\dsharpplus.4.0.0-nightly-00783.nupkg.sha512",
