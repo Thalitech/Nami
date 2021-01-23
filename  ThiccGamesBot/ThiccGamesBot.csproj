@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Nami</RootNamespace>
+    <ApplicationIcon>Resources\bot-image.ico</ApplicationIcon>
+    <AssemblyName>NamiBot</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DSharpPlus" Version="4.0.0-nightly-00783" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.0.0-nightly-00783" />
+    <PackageReference Include="DSharpPlus.Interactivity" Version="4.0.0-nightly-00783" />
+    <PackageReference Include="DSharpPlus.Rest" Version="4.0.0-nightly-00783" />
+    <PackageReference Include="DSharpPlus.VoiceNext" Version="4.0.0-nightly-00783" />
+    <PackageReference Include="DSharpPlus.WebSocket.WebSocket4Net" Version="4.0.0-nightly-00653" />
+    <PackageReference Include="DSharpPlus.WebSocket.WebSocket4NetCore" Version="4.0.0-nightly-00653" />
+    <PackageReference Include="DSharpPlus.WebSocket.WebSocketSharp" Version="4.0.0-nightly-00653" />
+    <PackageReference Include="GScraper" Version="0.5.1" />
+    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="3.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Reddit" Version="1.4.0" />
+    <PackageReference Include="System.CodeDom" Version="5.0.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Nami\DSharpPlus\DSharpPlus.Lavalink\DSharpPlus.Lavalink.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Lavalink\application.yml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Lavalink\Lavalink.jar">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Lavalink\run.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\msvcr100.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\youtube-dl.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

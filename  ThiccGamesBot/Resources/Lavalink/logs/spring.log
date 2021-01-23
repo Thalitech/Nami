@@ -1,0 +1,249 @@
+2021-01-22 11:17:58.335  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:53194 -- CloseStatus[code=1006, reason=]
+2021-01-22 11:17:58.526  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 11:27:38.806  INFO 22508 --- [XNIO-1 task-2] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:61834
+2021-01-22 11:27:39.042  INFO 22508 --- [XNIO-1 task-2] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:61834
+2021-01-22 11:28:18.872  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"sessionId":"0cc3ea44056e941fb8438861f5d2a50d","event":{"token":"5547b15b70b50a00","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 11:28:37.787  INFO 22508 --- [XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Anime openings"
+2021-01-22 11:28:38.764  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Anime openings
+2021-01-22 11:29:34.103  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"track":"QAAAlwIAOEJFU1QgQU5JTUUgT1BFTklOR1MgQU5EIEVORElOR1MgQ09NUElMQVRJT04gW0ZVTEwgU09OR1NdAAVCdWJiegAAAAAAp9yoAAtNbjdCdjhyR1J6ZwABACtodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PU1uN0J2OHJHUnpnAAd5b3V0dWJlAAAAAAAAAAA=","op":"play","guildId":"717551924139786250"}
+2021-01-22 11:32:27.566  INFO 22508 --- [XNIO-1 task-5] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 11:32:28.533  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 11:32:37.324  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 11:32:37.539  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 11:36:33.654  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:61834 -- CloseStatus[code=1006, reason=]
+2021-01-22 11:36:33.656  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 11:45:39.950  INFO 22508 --- [XNIO-1 task-7] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:61926
+2021-01-22 11:45:39.954  INFO 22508 --- [XNIO-1 task-7] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:61926
+2021-01-22 11:45:48.719  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : {"sessionId":"0a305ad60a091e1e8fdbc8afb45fd18a","event":{"token":"49187e06d945298a","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 11:48:46.624  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:61926 -- CloseStatus[code=1006, reason=]
+2021-01-22 11:48:46.626  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 11:48:50.511  INFO 22508 --- [XNIO-1 task-8] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62058
+2021-01-22 11:48:50.514  INFO 22508 --- [XNIO-1 task-8] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62058
+2021-01-22 11:49:18.204  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : {"sessionId":"ace9c363abde321a94c7006fb7d1b82b","event":{"token":"e13672524d12f2f7","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 11:49:33.656  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : {"op":"destroy","guildId":"717551924139786250"}
+2021-01-22 11:51:06.580  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62058 -- CloseStatus[code=1006, reason=]
+2021-01-22 11:51:06.581  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 11:51:10.157  INFO 22508 --- [XNIO-1 task-9] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62070
+2021-01-22 11:51:10.160  INFO 22508 --- [XNIO-1 task-9] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62070
+2021-01-22 11:51:28.259  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : {"sessionId":"5b128b24fbc4ace5a5f2decb0d1989ae","event":{"token":"28b997361e767716","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 11:51:28.547  INFO 22508 --- [XNIO-1 task-10] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 11:51:29.306  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 11:51:35.890  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 11:56:48.642  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62070 -- CloseStatus[code=1006, reason=]
+2021-01-22 11:56:48.644  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 12:03:18.242  INFO 22508 --- [XNIO-1 task-12] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62239
+2021-01-22 12:03:18.246  INFO 22508 --- [XNIO-1 task-12] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62239
+2021-01-22 12:03:28.031  INFO 22508 --- [XNIO-1 I/O-4] lavalink.server.io.SocketServer          : {"sessionId":"b7029c2a898e0c2780fc2f714606028d","event":{"token":"182c321b998ccae1","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:03:28.216  INFO 22508 --- [XNIO-1 task-13] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 12:03:29.139  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 12:03:35.521  INFO 22508 --- [XNIO-1 I/O-4] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:04:48.454  INFO 22508 --- [XNIO-1 I/O-4] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62239 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:04:48.456  INFO 22508 --- [XNIO-1 I/O-4] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 12:04:52.104  INFO 22508 --- [XNIO-1 task-15] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62271
+2021-01-22 12:04:52.110  INFO 22508 --- [XNIO-1 task-15] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62271
+2021-01-22 12:05:03.423  INFO 22508 --- [XNIO-1 I/O-12] lavalink.server.io.SocketServer          : {"sessionId":"52dec09837e8dab1080266303f195198","event":{"token":"182c321b998ccae1","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:05:03.662  INFO 22508 --- [XNIO-1 task-16] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 12:05:04.517  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 12:05:10.833  INFO 22508 --- [XNIO-1 I/O-12] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:06:11.594  INFO 22508 --- [XNIO-1 I/O-12] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62271 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:06:11.596  INFO 22508 --- [XNIO-1 I/O-12] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 12:06:15.251  INFO 22508 --- [XNIO-1 task-18] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62284
+2021-01-22 12:06:15.255  INFO 22508 --- [XNIO-1 task-18] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62284
+2021-01-22 12:06:26.119  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"sessionId":"88aefc5c7fa18a480f7319405ef70656","event":{"token":"182c321b998ccae1","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:06:26.338  INFO 22508 --- [XNIO-1 task-19] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:The Bigger Picture by lil baby"
+2021-01-22 12:06:27.039  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: The Bigger Picture by lil baby
+2021-01-22 12:06:32.854  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"track":"QAAAowIANExpbCBCYWJ5IC0gVGhlIEJpZ2dlciBQaWN0dXJlIChPZmZpY2lhbCBNdXNpYyBWaWRlbykAFUxpbCBCYWJ5IE9mZmljaWFsIDRQRgAAAAAAA+voAAtfVkRHeXNKR05vSQABACtodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PV9WREd5c0pHTm9JAAd5b3V0dWJlAAAAAAAAAAA=","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:07:30.977  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62284 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:07:30.979  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 12:07:34.959  INFO 22508 --- [XNIO-1 task-21] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62302
+2021-01-22 12:07:34.962  INFO 22508 --- [XNIO-1 task-21] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62302
+2021-01-22 12:07:59.678  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"sessionId":"aa5d26aa77a688de697a71c15f9c075c","event":{"token":"182c321b998ccae1","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:07:59.828  INFO 22508 --- [XNIO-1 task-22] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:The bigger picture by lil baby"
+2021-01-22 12:08:00.553  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: The bigger picture by lil baby
+2021-01-22 12:08:06.147  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"track":"QAAAowIANExpbCBCYWJ5IC0gVGhlIEJpZ2dlciBQaWN0dXJlIChPZmZpY2lhbCBNdXNpYyBWaWRlbykAFUxpbCBCYWJ5IE9mZmljaWFsIDRQRgAAAAAAA+voAAtfVkRHeXNKR05vSQABACtodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PV9WREd5c0pHTm9JAAd5b3V0dWJlAAAAAAAAAAA=","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:09:10.764  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62302 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:09:10.767  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 12:09:14.014  INFO 22508 --- [XNIO-1 task-24] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62314
+2021-01-22 12:09:14.017  INFO 22508 --- [XNIO-1 task-24] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62314
+2021-01-22 12:09:21.450  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"sessionId":"bebbe17db4e51da2f39f9d5f32f29abd","event":{"token":"182c321b998ccae1","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:09:21.577  INFO 22508 --- [XNIO-1 task-25] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:The bigger picture by lil baby"
+2021-01-22 12:09:22.435  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: The bigger picture by lil baby
+2021-01-22 12:09:27.924  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"track":"QAAAowIANExpbCBCYWJ5IC0gVGhlIEJpZ2dlciBQaWN0dXJlIChPZmZpY2lhbCBNdXNpYyBWaWRlbykAFUxpbCBCYWJ5IE9mZmljaWFsIDRQRgAAAAAAA+voAAtfVkRHeXNKR05vSQABACtodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PV9WREd5c0pHTm9JAAd5b3V0dWJlAAAAAAAAAAA=","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:15:18.802  INFO 22508 --- [XNIO-1 task-27] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 12:15:19.650  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 12:16:18.629  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 12:16:18.936  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:18:04.754  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62314 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:18:04.756  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 12:18:08.156  INFO 22508 --- [XNIO-1 task-29] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62376
+2021-01-22 12:18:08.159  INFO 22508 --- [XNIO-1 task-29] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62376
+2021-01-22 12:18:27.789  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62376 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:18:27.791  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 12:18:30.848  INFO 22508 --- [XNIO-1 task-30] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62380
+2021-01-22 12:18:30.851  INFO 22508 --- [XNIO-1 task-30] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62380
+2021-01-22 12:19:39.553  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"sessionId":"373a43122af990ee44db9c8077b11894","event":{"token":"182c321b998ccae1","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:19:39.719  INFO 22508 --- [XNIO-1 task-31] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 12:19:40.814  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 12:21:06.075  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 12:21:06.422  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:21:06.538  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:25:03.360  INFO 22508 --- [XNIO-1 task-33] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Lil boosie"
+2021-01-22 12:25:04.094  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Lil boosie
+2021-01-22 12:25:15.035  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 12:25:15.323  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"track":"QAAAfgIAHExpbCBCb29zaWU6IE1pbmQgb2YgYSBNYW5pYWMACHRyaWxsZW50AAAAAAADjigACzJ4SWNXWnZMLXYwAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9MnhJY1dadkwtdjAAB3lvdXR1YmUAAAAAAAAAAA==","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:27:16.944  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62380 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:27:16.946  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 12:44:38.118  INFO 22508 --- [XNIO-1 task-35] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62494
+2021-01-22 12:44:38.121  INFO 22508 --- [XNIO-1 task-35] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62494
+2021-01-22 12:44:51.804  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"sessionId":"18641bf91e60dc8ed0153506a71aefe1","event":{"token":"02d3b4535ab9dde2","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:44:51.940  INFO 22508 --- [XNIO-1 task-36] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Lil boosie"
+2021-01-22 12:44:52.560  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Lil boosie
+2021-01-22 12:44:57.586  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 12:44:58.017  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"track":"QAAAfgIAHExpbCBCb29zaWU6IE1pbmQgb2YgYSBNYW5pYWMACHRyaWxsZW50AAAAAAADjigACzJ4SWNXWnZMLXYwAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9MnhJY1dadkwtdjAAB3lvdXR1YmUAAAAAAAAAAA==","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:44:58.092  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"track":"QAAAfgIAHExpbCBCb29zaWU6IE1pbmQgb2YgYSBNYW5pYWMACHRyaWxsZW50AAAAAAADjigACzJ4SWNXWnZMLXYwAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9MnhJY1dadkwtdjAAB3lvdXR1YmUAAAAAAAAAAA==","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:45:13.895  INFO 22508 --- [XNIO-1 task-38] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Lil boosie"
+2021-01-22 12:45:14.686  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Lil boosie
+2021-01-22 12:46:11.589  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62494 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:46:11.592  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 12:46:19.733  INFO 22508 --- [XNIO-1 task-40] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62513
+2021-01-22 12:46:19.737  INFO 22508 --- [XNIO-1 task-40] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62513
+2021-01-22 12:46:27.203  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : {"sessionId":"0f6b4efd26b2cf088111450033fa5c87","event":{"token":"02d3b4535ab9dde2","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:46:27.347  INFO 22508 --- [XNIO-1 task-41] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Lil boosie"
+2021-01-22 12:46:27.984  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Lil boosie
+2021-01-22 12:46:33.504  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 12:46:33.760  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : {"track":"QAAAfgIAHExpbCBCb29zaWU6IE1pbmQgb2YgYSBNYW5pYWMACHRyaWxsZW50AAAAAAADjigACzJ4SWNXWnZMLXYwAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9MnhJY1dadkwtdjAAB3lvdXR1YmUAAAAAAAAAAA==","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:46:33.812  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : {"track":"QAAAfgIAHExpbCBCb29zaWU6IE1pbmQgb2YgYSBNYW5pYWMACHRyaWxsZW50AAAAAAADjigACzJ4SWNXWnZMLXYwAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9MnhJY1dadkwtdjAAB3lvdXR1YmUAAAAAAAAAAA==","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:47:06.755  INFO 22508 --- [XNIO-1 task-43] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Lil boosie"
+2021-01-22 12:47:07.323  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Lil boosie
+2021-01-22 12:48:39.966  INFO 22508 --- [XNIO-1 task-45] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Lil boosie"
+2021-01-22 12:48:40.562  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Lil boosie
+2021-01-22 12:49:16.456  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : {"op":"destroy","guildId":"717551924139786250"}
+2021-01-22 12:49:19.735  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : {"sessionId":"bf519dc4388a717ecae97d0a80b42126","event":{"token":"b8e5aea718a406ae","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:49:19.857  INFO 22508 --- [XNIO-1 task-47] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Lil boosie"
+2021-01-22 12:49:20.447  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Lil boosie
+2021-01-22 12:50:06.169  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62513 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:50:06.171  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 12:50:09.489  INFO 22508 --- [XNIO-1 task-49] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62547
+2021-01-22 12:50:09.493  INFO 22508 --- [XNIO-1 task-49] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62547
+2021-01-22 12:50:52.559  INFO 22508 --- [XNIO-1 I/O-12] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62547 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:50:52.561  INFO 22508 --- [XNIO-1 I/O-12] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 12:50:55.993  INFO 22508 --- [XNIO-1 task-50] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62552
+2021-01-22 12:50:55.998  INFO 22508 --- [XNIO-1 task-50] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62552
+2021-01-22 12:51:05.233  INFO 22508 --- [XNIO-1 I/O-5] lavalink.server.io.SocketServer          : {"sessionId":"3c0a2f0edf90aab9b3e2c97224784c5f","event":{"token":"2a5e69e9cf7cde41","guild_id":"717551924139786250","endpoint":"us-west30.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 12:51:05.459  INFO 22508 --- [XNIO-1 task-51] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:Lil boosie"
+2021-01-22 12:51:06.064  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: Lil boosie
+2021-01-22 12:51:11.298  INFO 22508 --- [XNIO-1 I/O-5] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 12:51:11.568  INFO 22508 --- [XNIO-1 I/O-5] lavalink.server.io.SocketServer          : {"track":"QAAAfgIAHExpbCBCb29zaWU6IE1pbmQgb2YgYSBNYW5pYWMACHRyaWxsZW50AAAAAAADjigACzJ4SWNXWnZMLXYwAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9MnhJY1dadkwtdjAAB3lvdXR1YmUAAAAAAAAAAA==","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:51:11.902  INFO 22508 --- [XNIO-1 I/O-5] lavalink.server.io.SocketServer          : {"track":"QAAAfgIAHExpbCBCb29zaWU6IE1pbmQgb2YgYSBNYW5pYWMACHRyaWxsZW50AAAAAAADjigACzJ4SWNXWnZMLXYwAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9MnhJY1dadkwtdjAAB3lvdXR1YmUAAAAAAAAAAA==","op":"play","guildId":"717551924139786250"}
+2021-01-22 12:51:55.389  INFO 22508 --- [XNIO-1 I/O-5] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62552 -- CloseStatus[code=1006, reason=]
+2021-01-22 12:51:55.391  INFO 22508 --- [XNIO-1 I/O-5] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 12:58:25.559  INFO 22508 --- [XNIO-1 task-53] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62608
+2021-01-22 12:58:25.562  INFO 22508 --- [XNIO-1 task-53] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62608
+2021-01-22 13:06:25.988  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62608 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:06:25.990  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:25:35.425  INFO 22508 --- [XNIO-1 task-54] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62748
+2021-01-22 13:25:35.428  INFO 22508 --- [XNIO-1 task-54] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62748
+2021-01-22 13:26:11.925  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62748 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:26:11.926  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:26:15.198  INFO 22508 --- [XNIO-1 task-55] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62753
+2021-01-22 13:26:15.205  INFO 22508 --- [XNIO-1 task-55] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62753
+2021-01-22 13:27:33.140  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62753 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:27:33.141  INFO 22508 --- [XNIO-1 I/O-2] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:27:36.434  INFO 22508 --- [XNIO-1 task-56] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62764
+2021-01-22 13:27:36.437  INFO 22508 --- [XNIO-1 task-56] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62764
+2021-01-22 13:28:32.948  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62764 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:28:32.950  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:28:36.133  INFO 22508 --- [XNIO-1 task-57] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62776
+2021-01-22 13:28:36.137  INFO 22508 --- [XNIO-1 task-57] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62776
+2021-01-22 13:29:27.954  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62776 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:29:27.955  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:29:31.473  INFO 22508 --- [XNIO-1 task-58] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62781
+2021-01-22 13:29:31.475  INFO 22508 --- [XNIO-1 task-58] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62781
+2021-01-22 13:30:30.896  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62781 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:30:30.897  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:30:38.847  INFO 22508 --- [XNIO-1 task-59] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62790
+2021-01-22 13:30:38.850  INFO 22508 --- [XNIO-1 task-59] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62790
+2021-01-22 13:30:42.129  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : {"sessionId":"e022a4a4bb6bb91a78d6084f8e480c7c","event":{"token":"d54304796dfe5e2f","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 13:30:42.415  INFO 22508 --- [XNIO-1 task-60] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 13:30:43.288  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 13:30:54.477  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 13:31:40.646  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62790 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:31:40.648  INFO 22508 --- [XNIO-1 I/O-3] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:31:44.120  INFO 22508 --- [XNIO-1 task-62] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62800
+2021-01-22 13:31:44.124  INFO 22508 --- [XNIO-1 task-62] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62800
+2021-01-22 13:31:54.709  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"sessionId":"1ea9f898664e9695d34a925dec390e4d","event":{"token":"d54304796dfe5e2f","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 13:31:54.840  INFO 22508 --- [XNIO-1 task-63] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 13:31:55.807  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 13:32:03.134  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 13:32:33.298  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 13:36:07.813  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62800 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:36:07.815  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 1 playing players.
+2021-01-22 13:36:58.608  INFO 22508 --- [XNIO-1 task-65] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62832
+2021-01-22 13:36:58.612  INFO 22508 --- [XNIO-1 task-65] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62832
+2021-01-22 13:37:20.604  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketServer          : {"sessionId":"0df51041941cef043a515aa3465808c3","event":{"token":"d54304796dfe5e2f","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 13:37:20.854  INFO 22508 --- [XNIO-1 task-66] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:boosie"
+2021-01-22 13:37:21.479  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: boosie
+2021-01-22 13:37:35.193  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 13:37:59.574  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketServer          : {"track":"QAAAtAIAPUJvb3NpZSBFeHByZXNzZXMgRnJ1c3RyYXRpb24gQWZ0ZXIgQy1NdXJkZXIgV2FzIERlbmllZCBQYXJkb24AHUJyZWFrZmFzdCBDbHViIFBvd2VyIDEwNS4xIEZNAAAAAAADtTgAC1NaUkpfSld6VTI4AAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9U1pSSl9KV3pVMjgAB3lvdXR1YmUAAAAAAAAAAA==","op":"play","guildId":"717551924139786250"}
+2021-01-22 13:44:50.269  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62832 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:44:50.271  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:46:02.612  INFO 22508 --- [XNIO-1 task-68] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62892
+2021-01-22 13:46:02.615  INFO 22508 --- [XNIO-1 task-68] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62892
+2021-01-22 13:47:41.643  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketServer          : {"sessionId":"f56b1b3afb8624df08f4320bbdedad05","event":{"token":"8c7c10117558b4a8","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 13:47:41.851  INFO 22508 --- [XNIO-1 task-69] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 13:47:42.709  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 13:50:16.621  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62892 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:50:16.623  INFO 22508 --- [XNIO-1 I/O-9] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:50:20.215  INFO 22508 --- [XNIO-1 task-71] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62918
+2021-01-22 13:50:20.220  INFO 22508 --- [XNIO-1 task-71] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62918
+2021-01-22 13:50:35.989  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : {"sessionId":"154f30a3f7413f3ff4bfb1745f385551","event":{"token":"57ee8246a75f5d04","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 13:50:36.168  INFO 22508 --- [XNIO-1 task-72] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 13:50:37.037  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 13:50:42.873  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 13:50:43.227  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 13:52:46.010  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 13:53:09.840  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 13:53:26.233  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 13:54:33.934  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62918 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:54:33.935  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:54:37.441  INFO 22508 --- [XNIO-1 task-74] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62977
+2021-01-22 13:54:37.443  INFO 22508 --- [XNIO-1 task-74] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62977
+2021-01-22 13:54:41.726  INFO 22508 --- [XNIO-1 I/O-10] lavalink.server.io.SocketServer          : {"sessionId":"bc14e9fc9f9dd94091a2f456eea2d55b","event":{"token":"57ee8246a75f5d04","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 13:54:42.041  INFO 22508 --- [XNIO-1 task-75] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 13:54:42.948  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 13:55:03.106  INFO 22508 --- [XNIO-1 I/O-10] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62977 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:55:03.108  INFO 22508 --- [XNIO-1 I/O-10] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:55:06.294  INFO 22508 --- [XNIO-1 task-77] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62990
+2021-01-22 13:55:06.297  INFO 22508 --- [XNIO-1 task-77] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62990
+2021-01-22 13:55:20.131  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : {"sessionId":"174504af20bd06cf44bffb649c26c98f","event":{"token":"57ee8246a75f5d04","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 13:55:20.473  INFO 22508 --- [XNIO-1 task-78] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 13:55:21.387  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 13:55:59.505  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62990 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:55:59.506  INFO 22508 --- [XNIO-1 I/O-11] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 13:56:21.123  INFO 22508 --- [XNIO-1 task-80] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:62998
+2021-01-22 13:56:21.127  INFO 22508 --- [XNIO-1 task-80] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:62998
+2021-01-22 13:56:31.886  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : {"sessionId":"5bbc73a397fd3e6a0abc2e5dcb2a8327","event":{"token":"57ee8246a75f5d04","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 13:56:39.258  INFO 22508 --- [XNIO-1 task-81] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 13:56:39.991  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 13:57:55.173  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:62998 -- CloseStatus[code=1006, reason=]
+2021-01-22 13:57:55.174  INFO 22508 --- [XNIO-1 I/O-7] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 14:01:51.678  INFO 22508 --- [XNIO-1 task-83] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:63045
+2021-01-22 14:01:51.682  INFO 22508 --- [XNIO-1 task-83] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:63045
+2021-01-22 14:02:12.269  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : {"sessionId":"f460961f7ef98f9fbfacf4cd923eb84a","event":{"token":"18f304cbb33e0337","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 14:02:14.148  INFO 22508 --- [XNIO-1 task-84] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 14:02:15.183  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 14:02:40.076  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 14:02:40.493  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 14:03:29.204  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 14:03:33.484  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 14:03:56.278  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : {"track":"QAAAkgIAI0xpbCBCYWJ5IC0gRXJyYm9keSAoT2ZmaWNpYWwgVmlkZW8pABVMaWwgQmFieSBPZmZpY2lhbCA0UEYAAAAAAANXeAALcEt0VXBCaklsLWcAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1wS3RVcEJqSWwtZwAHeW91dHViZQAAAAAAAAAA","op":"play","guildId":"717551924139786250"}
+2021-01-22 14:04:03.926  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : {"op":"stop","guildId":"717551924139786250"}
+2021-01-22 14:04:13.364  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:63045 -- CloseStatus[code=1006, reason=]
+2021-01-22 14:04:13.366  INFO 22508 --- [XNIO-1 I/O-6] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2021-01-22 14:04:27.439  INFO 22508 --- [XNIO-1 task-86] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:63076
+2021-01-22 14:04:27.442  INFO 22508 --- [XNIO-1 task-86] lavalink.server.io.SocketServer          : Connection successfully established from /127.0.0.1:63076
+2021-01-22 14:04:37.475  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : {"sessionId":"eddd1619c6c25736e3843297f53d5903","event":{"token":"18f304cbb33e0337","guild_id":"717551924139786250","endpoint":"us-west5733.discord.media:443"},"op":"voiceUpdate","guildId":"717551924139786250"}
+2021-01-22 14:04:40.221  INFO 22508 --- [XNIO-1 task-87] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:lil baby"
+2021-01-22 14:04:40.825  INFO 22508 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Loaded playlist Search results for: lil baby
+2021-01-22 14:05:43.665  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:63076 -- CloseStatus[code=1006, reason=]
+2021-01-22 14:05:43.667  INFO 22508 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
