@@ -18,7 +18,7 @@
     <PackageTags>Discord, Bot, C#, Music</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <Version>5.1</Version>
+    <Version>5.2</Version>
     <PackageId>Thalitech.NamiBot</PackageId>
     <PackageReleaseNotes>Nothing changed so far</PackageReleaseNotes>
   </PropertyGroup>

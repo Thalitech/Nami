@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "NamiBot/5.1": {
+      "NamiBot/5.2": {
         "dependencies": {
           "DSharpPlus": "4.0.0-nightly-00783",
           "DSharpPlus.CommandsNext": "4.0.0-nightly-00783",
@@ -1109,7 +1109,7 @@
     }
   },
   "libraries": {
-    "NamiBot/5.1": {
+    "NamiBot/5.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
