@@ -6,7 +6,7 @@ A open-source muti-functional discord bot, By
 
 ![project icon](https://github.com/Thalitech/Nami/raw/main/bot-image.png)
 
-If you would like to invite our bot to your server **[Click Here](https://discord.com/oauth2/authorize?client_id=760957333697986611&scope=bot)**
+If you would like to invite our bot to your server **[Click Here](https://top.gg/bot/760957333697986611/invite)**
 
 ### Funtions
 
@@ -26,57 +26,57 @@ If you would like to invite our bot to your server **[Click Here](https://discor
     6.  pause audio playback
     7.  resume audio playback
     8.  track & queue looging
--   restarting of the bot service
+*   restarting of the bot service
 
 ### Basic Commands
 
   Name                                | Commands
-  ------------------------------------| --------------------------------
-  Help                                | ?help or ?help `command`
-  announcements                       | ?announce `your_mesage`
-  clear Channel                       | ?purge
+  ------------------------------------| ----------------------------------------
+  Help                                | *help or *help `command`
+  announcements                       | *announce `your_mesage`
+  clear Channel                       | *purge
 
 ### Music Commands
 
   Name                      | Command
-  --------------------------| --------------------------------------
-  Join                      | -join
-  Leave                     | -leave
-  Play                      | -play `url` or `search_query`
-  Pause                     | -pause
-  Resume                    | -resume
-  Stop                      | -stop
-  Next                      | -next
-  Previous                  | -previous
-  Loop Playback             | -repeat `None` / `one` / `none`
-  Shuffule Playback         | -suffule (toggleable)
-  Clear Queue               | -clear
-  Info of the current song  | -info
+  --------------------------| ----------------------------------------
+  Join                      | *join
+  Leave                     | *leave
+  Play                      | *play `url` or `search_query`
+  Pause                     | *pause
+  Resume                    | *resume
+  Stop                      | *stop
+  Next                      | *next
+  Previous                  | *previous
+  Loop Playback             | *repeat `None` / `one` / `none`
+  Shuffule Playback         | *suffule (toggleable)
+  Clear Queue               | *clear
+  Info of the current song  | *info
 
 ### Moderator tools
 
 Name            | Commands
-----------------|-----------------------------------
-Announcements	| ?announce `your_message`
+----------------| ---------------------------------------
+Announcements	  | *announce `your_message`
 
 ### Dev tools
 
-  Name                   |Commands
-  ---------------------- |-------------------------------
-  Restart                |?restart
-  Globle Announcements   |?announce-all `your_message`
+  Name                   | Commands
+  ---------------------- | ------------------------------------
+  Restart                | *restart
+  Globle Announcements   | *announce*all `your_message`
 
 Credits
 -------
 
-  Name                | Sudoneim    | Git       | Job
-  --------------------| ------------| --------- | --------------------------------------
-  Jean Gustave        | Thalitech   | [GitHub](https://github.com/Thalitech/)  | Author
-  Julia               | thebigowo   | [Gitea](https://gitea.thebigowo.xyz/julia)   | for help
-  ytdl-org            | ytdl-org    | [GitHub](https://github.com/ytdl-org/)  | for youtube-dl thumbnail downloading
-  SharpPlusTeam       | DSharpPlus  | [GitHub](https://github.com/DSharpPlus/)  | For code base libraries
-  Frederik Mikkelsen  | Frederikam  | [GitHub](https://github.com/Frederikam)  | for lava link
-  WildaSarah          | WildaSarah  | [Website](https://artistsnclients.com/slots/68822-cute-anime-icons) | For project icon usage
+  Name                | Sudoneim    | Git                                                                 | Job
+  --------------------| ------------| --------------------------------------------------------------------| ----------------------------
+  Jean Gustave        | Thalitech   | [GitHub](https://github.com/Thalitech/)                             | Author
+  Julia               | thebigowo   | [Gitea](https://gitea.thebigowo.xyz/julia)                          | for help
+  ytdl-org            | ytdl-org    | [GitHub](https://github.com/ytdl*org/)                              | for youtube*dl thumbnail downloading
+  SharpPlusTeam       | DSharpPlus  | [GitHub](https://github.com/DSharpPlus/)                            | For code base libraries
+  Frederik Mikkelsen  | Frederikam  | [GitHub](https://github.com/Frederikam)                             | for lava link
+  WildaSarah          | WildaSarah  | [Website](https://artistsnclients.com/slots/68822*cute*anime*icons) | For project icon usage
   Sirkris             | sirkris     | [GitHub](https://github.com/sirkris/Reddit.NET) | Redit feeds
 
 
