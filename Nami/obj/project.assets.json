@@ -6031,13 +6031,13 @@
     "C:\\Users\\Senpai\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "5.2.0",
+    "version": "5.3.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\Nami.csproj",
+      "projectUniqueName": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj",
       "projectName": "Thalitech.NamiBot",
-      "projectPath": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\Nami.csproj",
+      "projectPath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj",
       "packagesPath": "C:\\Users\\Senpai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\obj\\",
+      "outputPath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Senpai\\AppData\\Roaming\\NuGet\\NuGet.Config",

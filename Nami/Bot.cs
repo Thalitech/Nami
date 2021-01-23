@@ -1,5 +1,8 @@
 ﻿using DSharpPlus;
 using DSharpPlus.CommandsNext;
+using DSharpPlus.Interactivity;
+using DSharpPlus.Interactivity.Enums;
+using DSharpPlus.Interactivity.Extensions;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
@@ -48,11 +51,18 @@ namespace Nami
                 EnableMentionPrefix = true,
             };
             var discord = new DiscordClient(discordConfig);
+            discord.UseInteractivity(new InteractivityConfiguration()
+            {
+                PollBehaviour = PollBehaviour.KeepEmojis,
+                Timeout = TimeSpan.FromMinutes(5)
+            });
+
             var commands = discord.UseCommandsNext(commandConfig);
             discord.GuildAvailable += Events.OnGuildsAvailable;
             discord.GuildMemberAdded += Events.OnMemberAdded;
             discord.GuildMemberRemoved += Events.OnMemberRemoved;
-            commands.RegisterCommands<CommandHub>();
+            commands.RegisterCommands<AdminCommands>();
+            commands.RegisterCommands<MusicCommands>();
             if (AssetDatabase.compiledAssembly != null)
                 commands.RegisterCommands(AssetDatabase.compiledAssembly);
 

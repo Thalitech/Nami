@@ -18,9 +18,9 @@
     <PackageTags>Discord, Bot, C#, Music</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <Version>5.2</Version>
+    <Version>5.4</Version>
     <PackageId>Thalitech.NamiBot</PackageId>
-    <PackageReleaseNotes>Nothing changed so far</PackageReleaseNotes>
+    <PackageReleaseNotes>Fixed the music player and embed builder.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -52,7 +52,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\youtube-dl.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="..\bot-image.png">
       <Pack>True</Pack>

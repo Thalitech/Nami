@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Thalitech.NamiBot</id>
-    <version>5.2.0</version>
+    <version>5.3.0</version>
     <authors>Jean Wicky Gustave</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
@@ -10,7 +10,7 @@
     <icon>bot-image.png</icon>
     <projectUrl>https://github.com/Thalitech/Nami</projectUrl>
     <description>This is a custome discord bot that was made to just make it easy for end users. This a full console application</description>
-    <releaseNotes>Nothing changed so far</releaseNotes>
+    <releaseNotes>Fixed the music player and embed builder.</releaseNotes>
     <copyright>Copyright (c) 2020  Jean Wicky Gustave</copyright>
     <tags>Discord, Bot, C#, Music</tags>
     <repository type="Git" url="https://github.com/Thalitech/Nami" />

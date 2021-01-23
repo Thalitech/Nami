@@ -72,6 +72,7 @@ namespace Nami
 
         public async Task Play(CommandContext ctx, NamiTrack _track)
         {
+            await ctx.RespondAsync($"Now queued `{_track.Author} | {_track.Title}`");
 
             var _hasTrack = tracks.Find(x => x.Title == _track.Title) != null;
 
@@ -97,9 +98,7 @@ namespace Nami
             track.AuthorImage = await Dispatcher.Generate<string>(GenType.AuthorImageUrl, track);
             track.AlbumeImage = await Dispatcher.Generate<string>(GenType.AlbumeImageUrl, track);
             track.Description = await Dispatcher.Generate<string>(GenType.Description, track);
-            Dispatcher.Save(track);
             tracks.Add(track);
-            if (status != PlayerStatus.Playing) await Next();
         }
 
         public async Task Pause()
@@ -176,7 +175,7 @@ namespace Nami
             DiscordEmbedBuilder builder = new DiscordEmbedBuilder();
             builder.Thumbnail = new DiscordEmbedBuilder.EmbedThumbnail() { Url = track.AuthorImage };
             builder.Author = new DiscordEmbedBuilder.EmbedAuthor() { Name = track.Author, };
-            builder.Description = track.Description;
+            builder.Description = track.Description.Substring(0, 1024);
             builder.Color = DiscordColor.Azure;
             builder.Title = track.Title;
             var field = builder.AddField("** **", "** **");

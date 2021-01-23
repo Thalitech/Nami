@@ -31,7 +31,7 @@ namespace Nami
                     new Asset<string, object>(ValueType.LavalinkIP.ToString(), "127.0.0.1"),
                     new Asset<string, object>(ValueType.LavalinkPassword.ToString(), Convert.ToBase64String(Encoding.UTF8.GetBytes("dev_pass"))),
                     new Asset<string, object>(ValueType.UseReddit.ToString(), false),
-                    new Asset<string, object>(ValueType.Prefixes.ToString(), new[] { "?", "-", "*" }),
+                    new Asset<string, object>(ValueType.Prefixes.ToString(), new[] { "*" }),
                 };
             }
         }

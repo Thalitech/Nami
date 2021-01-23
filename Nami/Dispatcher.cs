@@ -52,7 +52,7 @@ namespace Nami
                     using (var google = new GoogleScraper())
                     {
                         var _result = await google.GetImagesAsync(info.Author, 5, false);
-                        if (_result.Count > 0) result = _result[new Random().Next(0, 5)];
+                        if (_result.Count > 0) result = _result[new Random().Next(0, 3)];
                     }
                     return (T)(object)result.Link;
                 case GenType.AlbumeImageUrl:
@@ -62,7 +62,14 @@ namespace Nami
                         using (var process = new Process())
                         {
                             process.StartInfo.FileName = "cmd.exe";
-                            var file = new FileInfo("Resources/youtube-dl.exe");
+                            var dir = Directory.CreateDirectory("Resources");
+                            var file = new FileInfo(Path.Combine(dir.FullName, "youtube-dl.exe"));
+                            if(!file.Exists)
+                            {
+                                Console.WriteLine("youtube-dl.exe is not in project!");
+                                albume = default;
+                                return;
+                            }
                             process.StartInfo.Arguments = $"/c call {file.FullName} --get-thumbnail {info.Uri}";
                             process.StartInfo.WorkingDirectory = new FileInfo("Resources").Directory.FullName;
                             process.StartInfo.UseShellExecute = false;
@@ -86,7 +93,14 @@ namespace Nami
                         using(var process = new Process())
                         {
                             process.StartInfo.FileName = "cmd.exe";
-                            var file = new FileInfo("Resources/youtube-dl.exe");
+                            var dir = Directory.CreateDirectory("Resources");
+                            var file = new FileInfo(Path.Combine(dir.FullName, "youtube-dl.exe"));
+                            if (!file.Exists)
+                            {
+                                Console.WriteLine("youtube-dl.exe is not in project!");
+                                albume = default;
+                                return;
+                            }
                             process.StartInfo.Arguments = $"/c call {file.FullName} --get-description {info.Uri}";
                             process.StartInfo.WorkingDirectory = new FileInfo("Resources").Directory.FullName;
                             process.StartInfo.UseShellExecute = false;
