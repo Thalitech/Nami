@@ -5,10 +5,10 @@
   },
   "projects": {
     "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\Nami.csproj": {
-      "version": "1.0.0",
+      "version": "5.1.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\Nami.csproj",
-        "projectName": "NamiBot",
+        "projectName": "Thalitech.NamiBot",
         "projectPath": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\Nami.csproj",
         "packagesPath": "C:\\Users\\Senpai\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\obj\\",

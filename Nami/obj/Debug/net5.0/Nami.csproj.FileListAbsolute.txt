@@ -42,3 +42,4 @@ C:\Users\Senpai\Documents\GitPor\ ThiccGamesBot\Nami\obj\Debug\net5.0\NamiBot.dl
 C:\Users\Senpai\Documents\GitPor\ ThiccGamesBot\Nami\obj\Debug\net5.0\ref\NamiBot.dll
 C:\Users\Senpai\Documents\GitPor\ ThiccGamesBot\Nami\obj\Debug\net5.0\NamiBot.pdb
 C:\Users\Senpai\Documents\GitPor\ ThiccGamesBot\Nami\obj\Debug\net5.0\Nami.genruntimeconfig.cache
+C:\Users\Senpai\Documents\GitPor\ ThiccGamesBot\Nami\obj\Debug\net5.0\Nami.csprojAssemblyReference.cache

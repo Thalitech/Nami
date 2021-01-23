@@ -12,12 +12,15 @@
     <RepositoryType>Git</RepositoryType>
     <Authors>Jean Wicky Gustave</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>This is a custome discord bot that was made to just make it easy for end users</Description>
+    <Description>This is a custome discord bot that was made to just make it easy for end users. This a full console application</Description>
     <PackageLicenseExpression></PackageLicenseExpression>
     <Copyright>Copyright (c) 2020  Jean Wicky Gustave</Copyright>
     <PackageTags>Discord, Bot, C#, Music</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <Version>5.1</Version>
+    <PackageId>Thalitech.NamiBot</PackageId>
+    <PackageReleaseNotes>Nothing changed so far</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
