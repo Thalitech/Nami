@@ -56,6 +56,18 @@
           "lib/netstandard2.0/DSharpPlus.Interactivity.dll": {}
         }
       },
+      "DSharpPlus.Lavalink/4.0.0-nightly-00783": {
+        "type": "package",
+        "dependencies": {
+          "DSharpPlus": "4.0.0-nightly-00783"
+        },
+        "compile": {
+          "lib/netstandard2.0/DSharpPlus.Lavalink.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DSharpPlus.Lavalink.dll": {}
+        }
+      },
       "DSharpPlus.Rest/4.0.0-nightly-00783": {
         "type": "package",
         "dependencies": {
@@ -103,15 +115,6 @@
           }
         }
       },
-      "DSharpPlus.WebSocket.WebSocket4Net/4.0.0-nightly-00653": {
-        "type": "package",
-        "compile": {
-          "lib/net45/DSharpPlus.WebSocket.WebSocket4Net.dll": {}
-        },
-        "runtime": {
-          "lib/net45/DSharpPlus.WebSocket.WebSocket4Net.dll": {}
-        }
-      },
       "DSharpPlus.WebSocket.WebSocket4NetCore/4.0.0-nightly-00653": {
         "type": "package",
         "dependencies": {
@@ -123,15 +126,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/DSharpPlus.WebSocket.WebSocket4NetCore.dll": {}
-        }
-      },
-      "DSharpPlus.WebSocket.WebSocketSharp/4.0.0-nightly-00653": {
-        "type": "package",
-        "compile": {
-          "lib/net45/DSharpPlus.WebSocket.WebSocketSharp.dll": {}
-        },
-        "runtime": {
-          "lib/net45/DSharpPlus.WebSocket.WebSocketSharp.dll": {}
         }
       },
       "Emzi0767.Common/2.2.2": {
@@ -160,18 +154,6 @@
         },
         "runtime": {
           "lib/netstandard1.1/GScraper.dll": {}
-        }
-      },
-      "Microsoft.CodeDom.Providers.DotNetCompilerPlatform/3.6.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll": {}
-        },
-        "build": {
-          "build/net46/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets": {}
         }
       },
       "Microsoft.CSharp/4.5.0": {
@@ -1798,19 +1780,6 @@
         "runtime": {
           "lib/netstandard1.3/WebSocket4Net.dll": {}
         }
-      },
-      "DSharpPlus.Lavalink/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "DSharpPlus": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DSharpPlus.Lavalink.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DSharpPlus.Lavalink.dll": {}
-        }
       }
     }
   },
@@ -1868,6 +1837,18 @@
         "lib/netstandard2.0/DSharpPlus.Interactivity.xml"
       ]
     },
+    "DSharpPlus.Lavalink/4.0.0-nightly-00783": {
+      "sha512": "ZOPQyhaD+U1oyZVWB6zVKW3PGHVgIYUVakQsfSC8QuXAes6vnuiBtjyFGX8SpSIi8zCW9utEPf8MTXUz5UnDJQ==",
+      "type": "package",
+      "path": "dsharpplus.lavalink/4.0.0-nightly-00783",
+      "files": [
+        ".nupkg.metadata",
+        "dsharpplus.lavalink.4.0.0-nightly-00783.nupkg.sha512",
+        "dsharpplus.lavalink.nuspec",
+        "lib/netstandard2.0/DSharpPlus.Lavalink.dll",
+        "lib/netstandard2.0/DSharpPlus.Lavalink.xml"
+      ]
+    },
     "DSharpPlus.Rest/4.0.0-nightly-00783": {
       "sha512": "SZbnPQxDjMp82F1/9ObiJUWMVBwRzI5L5mDRQvo0VQjKjysuu0do1wjrQgOzHgQ2iPRzYFFCSmbtk78o6/ZMFQ==",
       "type": "package",
@@ -1907,18 +1888,6 @@
         "runtimes/win-x86/native/libsodium.dll"
       ]
     },
-    "DSharpPlus.WebSocket.WebSocket4Net/4.0.0-nightly-00653": {
-      "sha512": "rJAU9oQi6XQmOCnqxLcr270wA3j1NnA7YxhR/ML49hA35LStifCJVNzr+QZY9lNWn1nPVgR1fBDf45yWUMUidg==",
-      "type": "package",
-      "path": "dsharpplus.websocket.websocket4net/4.0.0-nightly-00653",
-      "files": [
-        ".nupkg.metadata",
-        "dsharpplus.websocket.websocket4net.4.0.0-nightly-00653.nupkg.sha512",
-        "dsharpplus.websocket.websocket4net.nuspec",
-        "lib/net45/DSharpPlus.WebSocket.WebSocket4Net.dll",
-        "lib/net45/DSharpPlus.WebSocket.WebSocket4Net.xml"
-      ]
-    },
     "DSharpPlus.WebSocket.WebSocket4NetCore/4.0.0-nightly-00653": {
       "sha512": "hBvserh24OmzuygXG0PGyuzMM3mivQ3XsOL9YU8SL7o6s9FPhgXMyz/SgoTep//PhpXEX13yxA5RTuO45zAANQ==",
       "type": "package",
@@ -1931,18 +1900,6 @@
         "lib/netstandard1.3/DSharpPlus.WebSocket.WebSocket4NetCore.xml",
         "lib/netstandard2.0/DSharpPlus.WebSocket.WebSocket4NetCore.dll",
         "lib/netstandard2.0/DSharpPlus.WebSocket.WebSocket4NetCore.xml"
-      ]
-    },
-    "DSharpPlus.WebSocket.WebSocketSharp/4.0.0-nightly-00653": {
-      "sha512": "xOp8NZAYSK0PvS+lZ7KmHfWxaSBbTM+eArhcOPi2ESKsQww7hk4LD54y3uHRawT5CW2UOljnIQ2JF9N9M/zHIA==",
-      "type": "package",
-      "path": "dsharpplus.websocket.websocketsharp/4.0.0-nightly-00653",
-      "files": [
-        ".nupkg.metadata",
-        "dsharpplus.websocket.websocketsharp.4.0.0-nightly-00653.nupkg.sha512",
-        "dsharpplus.websocket.websocketsharp.nuspec",
-        "lib/net45/DSharpPlus.WebSocket.WebSocketSharp.dll",
-        "lib/net45/DSharpPlus.WebSocket.WebSocketSharp.xml"
       ]
     },
     "Emzi0767.Common/2.2.2": {
@@ -1974,148 +1931,6 @@
         "gscraper.nuspec",
         "lib/netstandard1.1/GScraper.dll",
         "lib/netstandard1.1/GScraper.xml"
-      ]
-    },
-    "Microsoft.CodeDom.Providers.DotNetCompilerPlatform/3.6.0": {
-      "sha512": "Wxo1vjgqJDawdtSBYegfe7fqUfdKn5vMtAMgHHxjV5rW9rSyQZMQ5t0YTCxyQ/IUyAOoUkrHMVXNLCdqAtH72w==",
-      "type": "package",
-      "path": "microsoft.codedom.providers.dotnetcompilerplatform/3.6.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.targets",
-        "build/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets",
-        "build/net46/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.targets",
-        "build/net46/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets",
-        "build/net472/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.targets",
-        "build/net472/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets",
-        "content/net45/app.config.install.xdt",
-        "content/net45/app.config.uninstall.xdt",
-        "content/net45/web.config.install.xdt",
-        "content/net45/web.config.uninstall.xdt",
-        "content/net46/app.config.install.xdt",
-        "content/net46/app.config.uninstall.xdt",
-        "content/net46/web.config.install.xdt",
-        "content/net46/web.config.uninstall.xdt",
-        "content/net472/app.config.install.xdt",
-        "content/net472/app.config.uninstall.xdt",
-        "content/net472/web.config.install.xdt",
-        "content/net472/web.config.uninstall.xdt",
-        "lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll",
-        "lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml",
-        "microsoft.codedom.providers.dotnetcompilerplatform.3.6.0.nupkg.sha512",
-        "microsoft.codedom.providers.dotnetcompilerplatform.nuspec",
-        "tasks/DotNetCompilerPlatformTasks.dll",
-        "tasks/System.Management.dll",
-        "tools/Roslyn45/Microsoft.Build.Tasks.CodeAnalysis.dll",
-        "tools/Roslyn45/Microsoft.CSharp.Core.targets",
-        "tools/Roslyn45/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
-        "tools/Roslyn45/Microsoft.CodeAnalysis.CSharp.dll",
-        "tools/Roslyn45/Microsoft.CodeAnalysis.Scripting.dll",
-        "tools/Roslyn45/Microsoft.CodeAnalysis.VisualBasic.dll",
-        "tools/Roslyn45/Microsoft.CodeAnalysis.dll",
-        "tools/Roslyn45/Microsoft.DiaSymReader.Native.amd64.dll",
-        "tools/Roslyn45/Microsoft.DiaSymReader.Native.x86.dll",
-        "tools/Roslyn45/Microsoft.VisualBasic.Core.targets",
-        "tools/Roslyn45/System.AppContext.dll",
-        "tools/Roslyn45/System.Collections.Immutable.dll",
-        "tools/Roslyn45/System.Diagnostics.StackTrace.dll",
-        "tools/Roslyn45/System.IO.FileSystem.Primitives.dll",
-        "tools/Roslyn45/System.IO.FileSystem.dll",
-        "tools/Roslyn45/System.Reflection.Metadata.dll",
-        "tools/Roslyn45/VBCSCompiler.exe",
-        "tools/Roslyn45/VBCSCompiler.exe.config",
-        "tools/Roslyn45/csc.exe",
-        "tools/Roslyn45/csc.exe.config",
-        "tools/Roslyn45/csc.rsp",
-        "tools/Roslyn45/csi.exe",
-        "tools/Roslyn45/csi.rsp",
-        "tools/Roslyn45/vbc.exe",
-        "tools/Roslyn45/vbc.exe.config",
-        "tools/Roslyn45/vbc.rsp",
-        "tools/Roslyn46/Microsoft.Build.Tasks.CodeAnalysis.dll",
-        "tools/Roslyn46/Microsoft.CSharp.Core.targets",
-        "tools/Roslyn46/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
-        "tools/Roslyn46/Microsoft.CodeAnalysis.CSharp.dll",
-        "tools/Roslyn46/Microsoft.CodeAnalysis.Scripting.dll",
-        "tools/Roslyn46/Microsoft.CodeAnalysis.VisualBasic.dll",
-        "tools/Roslyn46/Microsoft.CodeAnalysis.dll",
-        "tools/Roslyn46/Microsoft.DiaSymReader.Native.amd64.dll",
-        "tools/Roslyn46/Microsoft.DiaSymReader.Native.x86.dll",
-        "tools/Roslyn46/Microsoft.Managed.Core.targets",
-        "tools/Roslyn46/Microsoft.VisualBasic.Core.targets",
-        "tools/Roslyn46/Microsoft.Win32.Primitives.dll",
-        "tools/Roslyn46/System.AppContext.dll",
-        "tools/Roslyn46/System.Collections.Immutable.dll",
-        "tools/Roslyn46/System.Console.dll",
-        "tools/Roslyn46/System.Diagnostics.DiagnosticSource.dll",
-        "tools/Roslyn46/System.Diagnostics.FileVersionInfo.dll",
-        "tools/Roslyn46/System.Diagnostics.StackTrace.dll",
-        "tools/Roslyn46/System.Globalization.Calendars.dll",
-        "tools/Roslyn46/System.IO.Compression.ZipFile.dll",
-        "tools/Roslyn46/System.IO.Compression.dll",
-        "tools/Roslyn46/System.IO.FileSystem.Primitives.dll",
-        "tools/Roslyn46/System.IO.FileSystem.dll",
-        "tools/Roslyn46/System.Net.Http.dll",
-        "tools/Roslyn46/System.Net.Sockets.dll",
-        "tools/Roslyn46/System.Reflection.Metadata.dll",
-        "tools/Roslyn46/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "tools/Roslyn46/System.Security.Cryptography.Algorithms.dll",
-        "tools/Roslyn46/System.Security.Cryptography.Encoding.dll",
-        "tools/Roslyn46/System.Security.Cryptography.Primitives.dll",
-        "tools/Roslyn46/System.Security.Cryptography.X509Certificates.dll",
-        "tools/Roslyn46/System.Text.Encoding.CodePages.dll",
-        "tools/Roslyn46/System.Threading.Tasks.Extensions.dll",
-        "tools/Roslyn46/System.ValueTuple.dll",
-        "tools/Roslyn46/System.Xml.ReaderWriter.dll",
-        "tools/Roslyn46/System.Xml.XPath.XDocument.dll",
-        "tools/Roslyn46/System.Xml.XPath.dll",
-        "tools/Roslyn46/System.Xml.XmlDocument.dll",
-        "tools/Roslyn46/VBCSCompiler.exe",
-        "tools/Roslyn46/VBCSCompiler.exe.config",
-        "tools/Roslyn46/csc.exe",
-        "tools/Roslyn46/csc.exe.config",
-        "tools/Roslyn46/csc.rsp",
-        "tools/Roslyn46/csi.exe",
-        "tools/Roslyn46/csi.exe.config",
-        "tools/Roslyn46/csi.rsp",
-        "tools/Roslyn46/vbc.exe",
-        "tools/Roslyn46/vbc.exe.config",
-        "tools/Roslyn46/vbc.rsp",
-        "tools/Roslyn472/Microsoft.Build.Tasks.CodeAnalysis.dll",
-        "tools/Roslyn472/Microsoft.CSharp.Core.targets",
-        "tools/Roslyn472/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
-        "tools/Roslyn472/Microsoft.CodeAnalysis.CSharp.dll",
-        "tools/Roslyn472/Microsoft.CodeAnalysis.Scripting.dll",
-        "tools/Roslyn472/Microsoft.CodeAnalysis.VisualBasic.dll",
-        "tools/Roslyn472/Microsoft.CodeAnalysis.dll",
-        "tools/Roslyn472/Microsoft.DiaSymReader.Native.amd64.dll",
-        "tools/Roslyn472/Microsoft.DiaSymReader.Native.x86.dll",
-        "tools/Roslyn472/Microsoft.Managed.Core.targets",
-        "tools/Roslyn472/Microsoft.VisualBasic.Core.targets",
-        "tools/Roslyn472/System.Buffers.dll",
-        "tools/Roslyn472/System.Collections.Immutable.dll",
-        "tools/Roslyn472/System.Memory.dll",
-        "tools/Roslyn472/System.Numerics.Vectors.dll",
-        "tools/Roslyn472/System.Reflection.Metadata.dll",
-        "tools/Roslyn472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/Roslyn472/System.Text.Encoding.CodePages.dll",
-        "tools/Roslyn472/System.Threading.Tasks.Extensions.dll",
-        "tools/Roslyn472/VBCSCompiler.exe",
-        "tools/Roslyn472/VBCSCompiler.exe.config",
-        "tools/Roslyn472/csc.exe",
-        "tools/Roslyn472/csc.exe.config",
-        "tools/Roslyn472/csc.rsp",
-        "tools/Roslyn472/csi.exe",
-        "tools/Roslyn472/csi.exe.config",
-        "tools/Roslyn472/csi.rsp",
-        "tools/Roslyn472/vbc.exe",
-        "tools/Roslyn472/vbc.exe.config",
-        "tools/Roslyn472/vbc.rsp",
-        "tools/net45/common.ps1",
-        "tools/net45/install.ps1",
-        "tools/net45/uninstall.ps1"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -6194,11 +6009,6 @@
         "websocket4net.0.15.0.nupkg.sha512",
         "websocket4net.nuspec"
       ]
-    },
-    "DSharpPlus.Lavalink/1.0.0": {
-      "type": "project",
-      "path": "../../Nami/DSharpPlus/DSharpPlus.Lavalink/DSharpPlus.Lavalink.csproj",
-      "msbuildProject": "../../Nami/DSharpPlus/DSharpPlus.Lavalink/DSharpPlus.Lavalink.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6206,14 +6016,11 @@
       "DSharpPlus >= 4.0.0-nightly-00783",
       "DSharpPlus.CommandsNext >= 4.0.0-nightly-00783",
       "DSharpPlus.Interactivity >= 4.0.0-nightly-00783",
-      "DSharpPlus.Lavalink >= 1.0.0",
+      "DSharpPlus.Lavalink >= 4.0.0-nightly-00783",
       "DSharpPlus.Rest >= 4.0.0-nightly-00783",
       "DSharpPlus.VoiceNext >= 4.0.0-nightly-00783",
-      "DSharpPlus.WebSocket.WebSocket4Net >= 4.0.0-nightly-00653",
       "DSharpPlus.WebSocket.WebSocket4NetCore >= 4.0.0-nightly-00653",
-      "DSharpPlus.WebSocket.WebSocketSharp >= 4.0.0-nightly-00653",
       "GScraper >= 0.5.1",
-      "Microsoft.CodeDom.Providers.DotNetCompilerPlatform >= 3.6.0",
       "Newtonsoft.Json >= 12.0.3",
       "Reddit >= 1.4.0",
       "System.CodeDom >= 5.0.0",
@@ -6247,11 +6054,7 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {
-            "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\DSharpPlus\\DSharpPlus.Lavalink\\DSharpPlus.Lavalink.csproj": {
-              "projectPath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\DSharpPlus\\DSharpPlus.Lavalink\\DSharpPlus.Lavalink.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -6276,6 +6079,10 @@
             "target": "Package",
             "version": "[4.0.0-nightly-00783, )"
           },
+          "DSharpPlus.Lavalink": {
+            "target": "Package",
+            "version": "[4.0.0-nightly-00783, )"
+          },
           "DSharpPlus.Rest": {
             "target": "Package",
             "version": "[4.0.0-nightly-00783, )"
@@ -6284,25 +6091,13 @@
             "target": "Package",
             "version": "[4.0.0-nightly-00783, )"
           },
-          "DSharpPlus.WebSocket.WebSocket4Net": {
-            "target": "Package",
-            "version": "[4.0.0-nightly-00653, )"
-          },
           "DSharpPlus.WebSocket.WebSocket4NetCore": {
-            "target": "Package",
-            "version": "[4.0.0-nightly-00653, )"
-          },
-          "DSharpPlus.WebSocket.WebSocketSharp": {
             "target": "Package",
             "version": "[4.0.0-nightly-00653, )"
           },
           "GScraper": {
             "target": "Package",
             "version": "[0.5.1, )"
-          },
-          "Microsoft.CodeDom.Providers.DotNetCompilerPlatform": {
-            "target": "Package",
-            "version": "[3.6.0, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -6339,37 +6134,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'DSharpPlus.WebSocket.WebSocket4Net 4.0.0-nightly-00653' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
-      "libraryId": "DSharpPlus.WebSocket.WebSocket4Net",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'DSharpPlus.WebSocket.WebSocketSharp 4.0.0-nightly-00653' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
-      "libraryId": "DSharpPlus.WebSocket.WebSocketSharp",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.CodeDom.Providers.DotNetCompilerPlatform 3.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.CodeDom.Providers.DotNetCompilerPlatform",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

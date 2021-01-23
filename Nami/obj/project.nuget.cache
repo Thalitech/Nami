@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "62o01rhNMm8UFyykr3vRfL5QiJH1bjcDaMXQkF9WtV95vnrdAFw7b4NFjoCaoVLaDb4CoyGEDr8IBgHdPnoNBQ==",
+  "dgSpecHash": "P6cMYttFn0I1LpAvGVcJ8RAJ8PczJSUCpNEwCxaToSAPD1vAU4MuPTiKyYDBSJhfy9hPO0/pe7rfKbUArfw3fw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Senpai\\Documents\\GitPor\\ ThiccGamesBot\\Nami\\Nami.csproj",
   "expectedPackageFiles": [
@@ -8,15 +8,13 @@
     "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus\\4.0.0-nightly-00783\\dsharpplus.4.0.0-nightly-00783.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.commandsnext\\4.0.0-nightly-00783\\dsharpplus.commandsnext.4.0.0-nightly-00783.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.interactivity\\4.0.0-nightly-00783\\dsharpplus.interactivity.4.0.0-nightly-00783.nupkg.sha512",
+    "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.lavalink\\4.0.0-nightly-00783\\dsharpplus.lavalink.4.0.0-nightly-00783.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.rest\\4.0.0-nightly-00783\\dsharpplus.rest.4.0.0-nightly-00783.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.voicenext\\4.0.0-nightly-00783\\dsharpplus.voicenext.4.0.0-nightly-00783.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.voicenext.natives\\1.0.0\\dsharpplus.voicenext.natives.1.0.0.nupkg.sha512",
-    "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.websocket.websocket4net\\4.0.0-nightly-00653\\dsharpplus.websocket.websocket4net.4.0.0-nightly-00653.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.websocket.websocket4netcore\\4.0.0-nightly-00653\\dsharpplus.websocket.websocket4netcore.4.0.0-nightly-00653.nupkg.sha512",
-    "C:\\Users\\Senpai\\.nuget\\packages\\dsharpplus.websocket.websocketsharp\\4.0.0-nightly-00653\\dsharpplus.websocket.websocketsharp.4.0.0-nightly-00653.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\emzi0767.common\\2.2.2\\emzi0767.common.2.2.2.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\gscraper\\0.5.1\\gscraper.0.5.1.nupkg.sha512",
-    "C:\\Users\\Senpai\\.nuget\\packages\\microsoft.codedom.providers.dotnetcompilerplatform\\3.6.0\\microsoft.codedom.providers.dotnetcompilerplatform.3.6.0.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
@@ -118,36 +116,5 @@
     "C:\\Users\\Senpai\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\websocket4net\\0.15.0\\websocket4net.0.15.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'DSharpPlus.WebSocket.WebSocket4Net 4.0.0-nightly-00653' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
-      "libraryId": "DSharpPlus.WebSocket.WebSocket4Net",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'DSharpPlus.WebSocket.WebSocketSharp 4.0.0-nightly-00653' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
-      "libraryId": "DSharpPlus.WebSocket.WebSocketSharp",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.CodeDom.Providers.DotNetCompilerPlatform 3.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.CodeDom.Providers.DotNetCompilerPlatform",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeDom.Providers.DotNetCompilerPlatform;
+﻿using Microsoft.CSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

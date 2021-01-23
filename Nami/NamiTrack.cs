@@ -16,6 +16,8 @@ namespace Nami
         [JsonProperty("Description")] public string Description { get; internal set; }
         [JsonProperty("Position")] public TimeSpan Position { get; internal set; }
         [JsonProperty("IsStream")] public bool IsStream { get; private set; }
+        [JsonProperty("Clip")]public  LavalinkTrack clip { get; private set; }
+
         [JsonProperty("Length")] public TimeSpan Length { get; internal set; }
         [JsonProperty("AuthorImage")] public string AuthorImage { get; internal set; }
         [JsonProperty("AlbumeImage")] public string AlbumeImage { get; internal set; }
@@ -23,17 +25,7 @@ namespace Nami
 
         public static implicit operator LavalinkTrack(NamiTrack track) 
         {
-            var ltrack = new LavalinkTrack();
-            ltrack.TrackString = track.ID;
-            ltrack.Identifier = track.Identifier;
-            ltrack.IsSeekable = track.IsSeekable;
-            ltrack.Title = track.Title;
-            ltrack.Author = track.Author;
-            ltrack.Uri = new Uri(track.Uri);
-            ltrack.SetLength(track.Length.TotalMilliseconds);
-            ltrack.SetPosition(track.Position.TotalMilliseconds);
-            ltrack.IsStream = track.IsStream;
-            return ltrack;
+            return track.clip;
         }
         public static implicit operator NamiTrack(LavalinkTrack track)
         {
@@ -47,6 +39,7 @@ namespace Nami
             ntrack.Length = track.Length;
             ntrack.Position = track.Position;
             ntrack.IsStream = track.IsStream;
+            ntrack.clip = track;
             return ntrack;
         }
     }
