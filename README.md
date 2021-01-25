@@ -6,17 +6,16 @@
 ![project icon](https://github.com/Thalitech/Nami/raw/main/bot-image.png)
 ===
 A open-source muti-functional discord bot, By [ThaliTech!](https://github.com/Thalitech)<br>
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9d6e1baa1ea94567a93575dc003b9b3c)](https://app.codacy.com/gh/ivan-ristovic/the-godfather?utm_source=github.com&utm_medium=referral&utm_content=ivan-ristovic/the-godfather&utm_campaign=Badge_Grade)
 [![Build Status](https://ci.appveyor.com/api/projects/status/axn087nlq6ha783x?svg=true)](https://ci.appveyor.com/project/ivan-ristovic/the-godfather)
 [![Issues](https://img.shields.io/github/issues/Thalitech/Nami)](https://github.com/ivan-ristovic/the-godfather/issues)
 [![Discord Server](https://discord.com/api/guilds/758592329807429633/embed.png)](https://discord.gg/C77BjRvRJP)
 [![Stable release](https://img.shields.io/github/release/ivan-ristovic/the-godfather.svg?label=stable)](https://github.com/ivan-ristovic/the-godfather/releases)
 [![Latest release](https://img.shields.io/github/tag-pre/ivan-ristovic/the-godfather.svg?label=latest)](https://github.com/ivan-ristovic/the-godfather/releases)
-[![License](https://img.shields.io/github/license/Thalitech/Nami)]
+[![License](https://img.shields.io/github/license/Thalitech/Nami)](https://github.com/Thalitech/Nami/blob/main/LICENSE.md)
 
 Just another general-purpose Discord bot developed with the goal to remove all other bots from the guild and create one that will do everything as efficiently as possible while keeping simplicity in mind when it comes to usage. Written in C# using [DSharpPlus](https://github.com/DSharpPlus/DSharpPlus).
 
-[![TheGodfather](https://discord.com/api/guilds/794671727291531274/embed.png?style=banner2)](https://discord.gg/z7KZGQQxRz)
+[![TheGodfather](https://discord.com/api/guilds/758592329807429633/embed.png?style=banner2)](https://discord.gg/C77BjRvRJP)
 
 > *Discord bots have grown very rapidly over the past few years and due to that growth it usually becomes hard to use them because of the unintuitive command system or due to performance issues. I have had a scenario where we had ten bots in the guild, because every bot did a unique job. Managing many bots and permissions for those bots quickly became overwhelming. Apart from that, only a handful of bots provided a customizable protection system against common destructive actions on Discord, yet it was still not enough - either the performance was poor due to it being a public bot instance, or the system was not customizable enough - that is if the system worked well to begin with. So, I have decided to create TheGodfather - one bot that will oversee and be in charge of everything.*
 > 
@@ -99,7 +98,7 @@ A command argument can have exactly one of the following types (only the the mos
   - ``double`` : A floating point number, can also be an integer. Valid examples: ``5.64`` , ``-3.2`` , ``5`` , ``123456.5646``.
   - ``string`` : Unicode character sequence without spaces. If you wish to include spaces, then surround the sequence with quotation marks (`"`). Valid examples: ``testtest`` , ``T3S7``, ``"quotes"`` , ``"I need quotes for spaces!"``
   - ``string...`` : Unicode characrer sequence which includes spaces. Since this is a very general argument type, it will always come last in argument queue. Valid examples: ``This is a text so I do not need quotes``.
-  - ``boolean`` : A truth value, either ``true`` or ``false`` (can also be converted from ``yes`` or ``no`` in various forms, see: [CustomBoolConverter](TheGodfather/Common/Converters/CustomBoolConverter.cs)). Valid examples: ``true`` , ``yes`` , ``no`` , ``0``.
+  - ``boolean`` : A truth value, either ``true`` or ``false`` (can also be converted from ``yes`` or ``no`` in various forms, see: [CustomBoolConverter](Nami/Common/Converters/CustomBoolConverter.cs)). Valid examples: ``true`` , ``yes`` , ``no`` , ``0``.
   - ``user`` : Discord user - given by mention, username or UID (User ID). Valid examples: ``@Someone`` , ``Someone`` , ``123456789123456``.
   - ``member`` : Discord guild member - given by mention, username or UID (User ID). Valid examples: ``@Someone`` , ``Someone`` , ``123456789123456``.
   - ``channel`` : Discord channel - given by mention, channel name or CID (Channel ID). Valid examples: ``#channel`` , ``MyChannel`` , ``123456789123456``.
