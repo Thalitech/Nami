@@ -1,0 +1,13 @@
+# Command modules:
+  - [Administration](Parts/Administration.md)
+  - [Chickens](Parts/Chickens.md)
+  - [Currency](Parts/Currency.md)
+  - [Games](Parts/Games.md)
+  - [Misc](Parts/Misc.md)
+  - [Music](Parts/Music.md)
+  - [Owner](Parts/Owner.md)
+  - [Polls](Parts/Polls.md)
+  - [Reactions](Parts/Reactions.md)
+  - [Reminders](Parts/Reminders.md)
+  - [Searches](Parts/Searches.md)
+  - [Uncategorized](Parts/Uncategorized.md)

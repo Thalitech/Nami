@@ -1,19 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj": {}
+    "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\Nami.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj": {
-      "version": "5.4.0",
+    "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\Nami.csproj": {
+      "version": "5.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj",
-        "projectName": "Thalitech.NamiBot",
-        "projectPath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj",
+        "projectUniqueName": "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\Nami.csproj",
+        "projectName": "Nami",
+        "projectPath": "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\Nami.csproj",
         "packagesPath": "C:\\Users\\Senpai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\obj\\",
+        "outputPath": "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\NuGet.Config",
           "C:\\Users\\Senpai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,51 +44,145 @@
           "dependencies": {
             "DSharpPlus": {
               "target": "Package",
-              "version": "[4.0.0-nightly-00783, )"
+              "version": "[4.0.0-rc1, )"
             },
             "DSharpPlus.CommandsNext": {
               "target": "Package",
-              "version": "[4.0.0-nightly-00783, )"
+              "version": "[4.0.0-rc1, )"
             },
             "DSharpPlus.Interactivity": {
               "target": "Package",
-              "version": "[4.0.0-nightly-00783, )"
+              "version": "[4.0.0-rc1, )"
             },
             "DSharpPlus.Lavalink": {
               "target": "Package",
-              "version": "[4.0.0-nightly-00783, )"
-            },
-            "DSharpPlus.Rest": {
-              "target": "Package",
-              "version": "[4.0.0-nightly-00783, )"
+              "version": "[4.0.0-rc1, )"
             },
             "DSharpPlus.VoiceNext": {
               "target": "Package",
-              "version": "[4.0.0-nightly-00783, )"
+              "version": "[4.0.0-rc1, )"
             },
-            "DSharpPlus.WebSocket.WebSocket4NetCore": {
+            "EFCore.BulkExtensions": {
               "target": "Package",
-              "version": "[4.0.0-nightly-00653, )"
+              "version": "[3.2.7, )"
             },
-            "GScraper": {
+            "GiphyDotNet": {
               "target": "Package",
-              "version": "[0.5.1, )"
+              "version": "[2.0.0, )"
+            },
+            "Google.Apis.YouTube.v3": {
+              "target": "Package",
+              "version": "[1.49.0.2173, )"
+            },
+            "Humanizer.Core": {
+              "target": "Package",
+              "version": "[2.8.26, )"
+            },
+            "Imgur.API": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp.Scripting": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
             },
-            "Reddit": {
+            "Npgsql": {
               "target": "Package",
-              "version": "[1.4.0, )"
+              "version": "[5.0.2, )"
             },
-            "System.CodeDom": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "RedditSharp": {
+              "target": "Package",
+              "version": "[2.0.0-CI00075, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Formatting.Compact": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "SteamWebAPI2": {
+              "target": "Package",
+              "version": "[4.2.6, )"
+            },
+            "System.Drawing.Common": {
               "target": "Package",
               "version": "[5.0.0, )"
             },
-            "System.Collections": {
+            "System.IO": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "System.ServiceModel.Syndication": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "TexasHoldemGameEngine": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "TimeZoneConverter": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "YoutubeExplode": {
+              "target": "Package",
+              "version": "[5.1.9, )"
             }
           },
           "imports": [
