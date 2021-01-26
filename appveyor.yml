@@ -20,14 +20,14 @@ dotnet_csproj:
 
 before_build:
   - cmd: dotnet --version
-  - cmd: nuget restore "./TheGodfather.sln"
-  - cmd: dotnet restore ./TheGodfather/TheGodfather.csproj --verbosity m
+  - cmd: nuget restore "./Nami.sln"
+  - cmd: dotnet restore ./Nami/Nami.csproj --verbosity m
 
 clone_depth: 1
 
 test_script:
-  - cmd: dotnet restore ./TheGodfather.Tests/TheGodfather.Tests.csproj --verbosity m
-  - cmd: cd TheGodfather.Tests
+  - cmd: dotnet restore ./Nami.Tests/Nami.Tests.csproj --verbosity m
+  - cmd: cd Nami.Tests
   - cmd: dotnet test
 
 on_success:
