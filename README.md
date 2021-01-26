@@ -6,8 +6,8 @@
 A open-source muti-functional discord bot, By [ThaliTech!](https://github.com/Thalitech)<br>
 [![Build Status](https://ci.appveyor.com/api/projects/status/axn087nlq6ha783x?svg=true)](https://ci.appveyor.com/project/Thalitech/nami)
 [![Issues](https://img.shields.io/github/issues/Thalitech/Nami)](https://github.com/Thalitech/Nami/issues)
-[![Discord Server](https://discord.com/api/guilds/758592329807429633/embed.png)](https://discord.gg/C77BjRvRJP)
 [![Stable release](https://img.shields.io/github/release/Thalitech/Nami.svg?label=stable)](https://github.com/Thalitech/Nami/releases)
+[![Discord Server](https://discord.com/api/guilds/758592329807429633/embed.png)](https://discord.gg/C77BjRvRJP)
 [![Latest release](https://img.shields.io/github/tag-pre/Thalitech/Nami.svg?label=latest)](https://github.com/Thalitech/Nami/releases)
 [![License](https://img.shields.io/github/license/Thalitech/Nami)](https://github.com/Thalitech/Nami/blob/main/LICENSE.md)
 [![Nuget](https://img.shields.io/nuget/v/Nami)](https://www.nuget.org/packages/Nami/5.2.0)
