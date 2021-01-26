@@ -16,8 +16,8 @@ fi
 rm Nami*.zip &2> /dev/null
 
 echo "Downloading ... "
-execute wget "https://ci.appveyor.com/api/projects/Thalitech/Nami/artifacts/TheGodfather.zip" -q --show-progress
-execute wget "https://ci.appveyor.com/api/projects/Thalitech/Nami/artifacts/TheGodfatherResources.zip" -q --show-progress
+execute wget "https://ci.appveyor.com/api/projects/Thalitech/Nami/artifacts/Nami.zip" -q --show-progress
+execute wget "https://ci.appveyor.com/api/projects/Thalitech/Nami/artifacts/NamiResources.zip" -q --show-progress
 
 echo "Extracting ... "
 execute unzip -o Nami.zip

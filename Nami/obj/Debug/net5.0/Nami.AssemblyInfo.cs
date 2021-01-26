@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Nami")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Thalitech™ Studios")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © All Rights Reserved")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("5.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("5.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("5.1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nami")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nami")]
 [assembly: System.Reflection.AssemblyVersionAttribute("5.0.0")]

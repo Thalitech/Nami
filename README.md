@@ -133,3 +133,17 @@ This way, the ordering of the arguments does not matter and therefore does not n
 
 **Note:** It is always preferred to surround arguments of type ``string`` with quotes, although not nececary. This prevents the accidental misinterpretation of the second word in a given string as a different argument. Also note that, in case of ``string...`` type, the quotes will also be captured.
 
+===
+
+Credits
+-------
+
+  Name                | Sudoneim    | Git                                                                 | Job
+  --------------------| ------------| --------------------------------------------------------------------| ----------------------------
+  Jean Gustave        | Thalitech   | [GitHub](https://github.com/Thalitech/)                             | Author
+  Julia               | thebigowo   | [Gitea](https://gitea.thebigowo.xyz/julia)                          | for help
+  ytdl-org            | ytdl-org    | [GitHub](https://github.com/ytdl*org/)                              | for youtube*dl thumbnail downloading
+  SharpPlusTeam       | DSharpPlus  | [GitHub](https://github.com/DSharpPlus/)                            | For code base libraries
+  Frederik Mikkelsen  | Frederikam  | [GitHub](https://github.com/Frederikam)                             | for lava link
+  WildaSarah          | WildaSarah  | [Website](https://artistsnclients.com/slots/68822*cute*anime*icons) | For project icon usage
+  Sirkris             | sirkris     | [GitHub](https://github.com/sirkris/Reddit.NET) | Redit feeds

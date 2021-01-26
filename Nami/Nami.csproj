@@ -10,16 +10,24 @@
     <LangVersion>latest</LangVersion>
     <StartupObject />
     <RepositoryUrl>https://github.com/Thalitech/Nami</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/ivan-ristovic/the-godfather/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Thalitech/Nami</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/Thalitech/Nami/blob/main/bot-image.png?raw=true</PackageIconUrl>
-    <Version>5.0.0</Version>
-    <PackageVersion>5.0.0.0</PackageVersion>
-    <AssemblyVersion>5.0.0</AssemblyVersion>
-    <FileVersion>5.0.0</FileVersion>
-	<Copyright />
+    <PackageIconUrl></PackageIconUrl>
+    <Version>5.2</Version>
+    <PackageVersion>5.2.0.0</PackageVersion>
+    <AssemblyVersion>5.2.0</AssemblyVersion>
+    <FileVersion>5.2.0</FileVersion>
+	<Copyright>Copyright © All Rights Reserved</Copyright>
 	<AssemblyName>Nami</AssemblyName>
 	<RootNamespace>Nami</RootNamespace>
+	<Authors>Thalitech</Authors>
+	<Company>Thalitech™ Studios</Company>
+	<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+	<PackageIcon>bot-image.png</PackageIcon>
+	<RepositoryType>Git</RepositoryType>
+	<PackageTags>Discord Bot, Bot, Discord, Music, Games, Admin</PackageTags>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
   
   <Target Name="AddAssemblyAliasToReactiveAsync" AfterTargets="ResolveAssemblyReferences">
@@ -51,6 +59,14 @@
   <ItemGroup>
     <None Remove="gfdb.db" />
     <None Remove="icon.ico" />
+    <None Include="..\bot-image.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
