@@ -13,16 +13,16 @@ if [ "$#" -ne 0 ]; then
 	wait "$1"
 fi
 
-rm TheGodfather*.zip &2> /dev/null
+rm Nami*.zip &2> /dev/null
 
 echo "Downloading ... "
-execute wget "https://ci.appveyor.com/api/projects/ivan-ristovic/the-godfather/artifacts/TheGodfather.zip" -q --show-progress
-execute wget "https://ci.appveyor.com/api/projects/ivan-ristovic/the-godfather/artifacts/TheGodfatherResources.zip" -q --show-progress
+execute wget "https://ci.appveyor.com/api/projects/Thalitech/Nami/artifacts/TheGodfather.zip" -q --show-progress
+execute wget "https://ci.appveyor.com/api/projects/Thalitech/Nami/artifacts/TheGodfatherResources.zip" -q --show-progress
 
 echo "Extracting ... "
-execute unzip -o TheGodfather.zip
+execute unzip -o Nami.zip
 mkdir -p Resources
-execute unzip -o TheGodfatherResources.zip -d Resources/
+execute unzip -o NamiResources.zip -d Resources/
 
 echo "Starting the bot... "
-execute dotnet TheGodfather.dll
+execute dotnet Nami.dll
