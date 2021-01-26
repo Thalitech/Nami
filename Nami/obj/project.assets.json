@@ -244,6 +244,19 @@
           "lib/netstandard2.0/Google.Apis.YouTube.v3.dll": {}
         }
       },
+      "GScraper/0.5.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard1.1/GScraper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/GScraper.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -3455,6 +3468,20 @@
         "lib/netstandard2.0/Google.Apis.YouTube.v3.dll",
         "lib/netstandard2.0/Google.Apis.YouTube.v3.pdb",
         "lib/netstandard2.0/Google.Apis.YouTube.v3.xml"
+      ]
+    },
+    "GScraper/0.5.1": {
+      "sha512": "FxRvYO0HxDOvr19H1tG1AlqWhvIKdDQj3gAht+JcIqPHnu/vM9Ds/pUrkSiLC7mtMOwd9AtvLc4zE3klvSSyTA==",
+      "type": "package",
+      "path": "gscraper/0.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "gscraper.0.5.1.nupkg.sha512",
+        "gscraper.nuspec",
+        "lib/netstandard1.1/GScraper.dll",
+        "lib/netstandard1.1/GScraper.xml"
       ]
     },
     "Humanizer.Core/2.8.26": {
@@ -10094,6 +10121,7 @@
       "DSharpPlus.Lavalink >= 4.0.0-rc1",
       "DSharpPlus.VoiceNext >= 4.0.0-rc1",
       "EFCore.BulkExtensions >= 3.2.7",
+      "GScraper >= 0.5.1",
       "GiphyDotNet >= 2.0.0",
       "Google.Apis.YouTube.v3 >= 1.49.0.2173",
       "Humanizer.Core >= 2.8.26",
@@ -10189,6 +10217,10 @@
           "EFCore.BulkExtensions": {
             "target": "Package",
             "version": "[3.2.7, )"
+          },
+          "GScraper": {
+            "target": "Package",
+            "version": "[0.5.1, )"
           },
           "GiphyDotNet": {
             "target": "Package",

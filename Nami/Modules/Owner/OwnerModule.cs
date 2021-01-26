@@ -32,6 +32,7 @@ using Nami.Modules.Owner.Extensions;
 using Nami.Modules.Owner.Services;
 using Nami.Services;
 using Nami.Services.Common;
+using GScraper;
 
 namespace Nami.Modules.Owner
 {
@@ -46,22 +47,39 @@ namespace Nami.Modules.Owner
         public async Task AnnounceAsync(CommandContext ctx,
                                        [RemainingText, Description("desc-announcement")] string message)
         {
-            if (!await ctx.WaitForBoolReplyAsync("q-announcement", args: Formatter.Strip(message)))
-                return;
-
-            var emb = new LocalizedEmbedBuilder(this.Localization, ctx.Guild?.Id);
-            emb.WithLocalizedTitle("str-announcement");
-            emb.WithDescription(message);
-            emb.WithColor(DiscordColor.Red);
+            if (!await ctx.WaitForBoolReplyAsync("q-announcement", args: Formatter.Strip(message))) return;
 
             var eb = new StringBuilder();
-            IEnumerable<(int, IEnumerable<DiscordGuild>)> shardGuilds = Nami.Bot!.Client.ShardClients
-                .Select(kvp => (kvp.Key, kvp.Value.Guilds.Values));
-            foreach ((int shardId, IEnumerable<DiscordGuild> guilds) in shardGuilds) {
-                foreach (DiscordGuild guild in guilds) {
-                    try {
-                        await guild.GetDefaultChannel().SendMessageAsync(embed: emb.Build());
-                    } catch {
+            IEnumerable<(int, IEnumerable<DiscordGuild>)> shardGuilds = Nami.Bot!.Client.ShardClients .Select(kvp => (kvp.Key, kvp.Value.Guilds.Values));
+            foreach ((int shardId, IEnumerable<DiscordGuild> guilds) in shardGuilds) 
+            {
+                foreach (DiscordGuild guild in guilds) 
+                {
+
+                    var emb = new LocalizedEmbedBuilder(this.Localization, ctx.Guild?.Id);
+                    emb.WithAuthor(ctx.Member.DisplayName, iconUrl: ctx.Member.AvatarUrl);
+                    emb.WithLocalizedTitle("str-announcement");
+                    emb.WithDescription($"@everyone {message}");
+                    emb.WithFooter($"Thank you for your time. {guild} Team", ctx.Member.AvatarUrl);
+                    emb.WithThumbnail(guild.IconUrl);
+                    emb.WithLocalizedTimestamp(new DateTimeOffset(DateTime.Now));
+                    emb.WithColor(DiscordColor.Orange);
+                    foreach (var item in message.Split(' ')) {
+                        if (Uri.IsWellFormedUriString(item, UriKind.Absolute)) {
+                            var gs = new GoogleScraper();
+                            var image = await gs.GetImagesAsync(item, 1, false);
+                            var field = emb.AddField("** **", "** **");
+                            field.WithImageUrl(image[0].ThumbnailLink);
+                        }
+                    }
+
+                    try 
+                    { 
+                        var announcementsChannel = guild.GetChannel(guild.Channels.ToList().Find(x => x.Value.Name.ToLower().Contains("announce")).Value.Id) ??
+                            guild.GetDefaultChannel();
+                        await announcementsChannel.SendMessageAsync(embed: emb.Build());
+                    } catch 
+                    {
                         eb.AppendLine(this.Localization.GetString(ctx.Guild?.Id, "cmd-err-announce", shardId, guild.Name, guild.Id));
                     }
                 }

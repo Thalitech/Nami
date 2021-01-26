@@ -13,13 +13,14 @@ namespace Nami.Database
         [JsonProperty("hostname")]
         public string Hostname { get; set; } = "localhost";
 
+        [JsonProperty("username")]
+        public string Username { get; set; } = "dev_user";
+
         [JsonProperty("password")]
-        public string Password { get; set; } = "password";
+        public string Password { get; set; } = "dev_pass";
 
         [JsonProperty("port")]
         public int Port { get; set; } = 5432;
 
-        [JsonProperty("username")]
-        public string Username { get; set; } = "username";
     }
 }

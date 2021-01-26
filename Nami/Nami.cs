@@ -74,6 +74,7 @@ namespace Nami
         private static void PrintBuildInformation()
         {
             var fileVersionInfo = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+            Console.Title = $"{Assembly.GetExecutingAssembly().GetName().Name} {fileVersionInfo.FileVersion}";
             Console.WriteLine($"{ApplicationName} {ApplicationVersion} ({fileVersionInfo.FileVersion})");
             Console.WriteLine();
         }

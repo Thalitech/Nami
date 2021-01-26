@@ -8,7 +8,7 @@ namespace Nami.Services.Common
 {
     public sealed class BotConfig
     {
-        public const string DefaultLocale= "en-GB";
+        public const string DefaultLocale= "en-US";
         public const string DefaultPrefix = "!";
 
 
@@ -43,7 +43,7 @@ namespace Nami.Services.Common
         public LogEventLevel LogLevel { get; set; } = LogEventLevel.Information;
 
         [JsonProperty("log-path")]
-        public string LogPath { get; set; } = "gf.log";
+        public string LogPath { get; set; } = "nami.log";
 
         [JsonProperty("log-file-rolling")]
         public RollingInterval RollingInterval { get; set; } = RollingInterval.Day;

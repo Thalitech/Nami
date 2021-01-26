@@ -88,10 +88,10 @@ namespace Nami.EventListeners
                 $"{Emojis.SmallBlueDiamond} I advise you to run the configuration wizard for this guild in order to quickly configure " +
                 $"functions like logging, notifications etc. The wizard can be invoked using {Formatter.Bold("config setup")} command.\n" +
                 $"{Emojis.SmallBlueDiamond} You can use the {Formatter.Bold("help")} command as a guide, though it is recommended to " +
-                $"read the documentation @ https://github.com/ivan-ristovic/the-godfather \n" +
+                $"read the documentation @ https://github.com/thalitech/nami \n" +
                 $"{Emojis.SmallBlueDiamond} If you have any questions or problems, feel free to use the {Formatter.Bold("report")} " +
                 $"command in order to send a message to the bot owners ({owners}). Alternatively, you can create an issue on " +
-                $"GitHub or join WorldMafia Discord server for quick support (https://worldmafia.net/discord)."
+                $"GitHub or join **Thalitech's Resort** Discord server for quick support (https://discord.gg/C77BjRvRJP)."
                 , Emojis.Wave
             );
         }

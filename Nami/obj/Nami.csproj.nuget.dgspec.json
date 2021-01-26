@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[3.2.7, )"
             },
+            "GScraper": {
+              "target": "Package",
+              "version": "[0.5.1, )"
+            },
             "GiphyDotNet": {
               "target": "Package",
               "version": "[2.0.0, )"

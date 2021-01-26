@@ -1,7 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using DSharpPlus;
 using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using Microsoft.Extensions.DependencyInjection;
+using Nami.Database;
 using Nami.EventListeners.Attributes;
 using Nami.EventListeners.Common;
 using Nami.Extensions;
@@ -13,6 +18,58 @@ namespace Nami.EventListeners
 {
     internal static partial class Listeners
     {
+        [AsyncEventListener(DiscordEventType.GuildAvailable)]
+        public static async Task OnGuildAvailable(NamiBot bot, GuildCreateEventArgs e)
+        {
+            new Thread(async () => {
+                DiscordServer.servers.Add(new DiscordServer(e.Guild));
+                Console.WriteLine($"{e.Guild.Name} is now registered ● {DateTime.Now}");
+                await GuildUpdater(e.Guild);
+                await Task.CompletedTask;
+            }).Start();
+            await Task.CompletedTask;
+        }
+       
+        [AsyncEventListener(DiscordEventType.GuildMemberAdded)]
+        public static Task OnGuildMemberAdded(NamiBot bot, GuildMemberAddEventArgs e)
+        {
+            new Thread(async () => {
+                var channel = e.Guild.Channels.ToList().Find(x => x.Value.Name.ToLower().Contains("announce")).Value;
+                if (channel == null) channel = e.Guild.SystemChannel;
+                var embed = new DiscordEmbedBuilder();
+                embed.Timestamp = new DateTimeOffset(DateTime.Now);
+                embed.Title = "Member Join";
+                embed.Color = DiscordColor.Green;
+                embed.Description = $"@everyone {e.Member.Mention} has joined, lest welcome them! :smile:";
+                embed.Footer = new DiscordEmbedBuilder.EmbedFooter() {
+                    Text = $"Thank you for your time. {e.Guild.Name} Team",
+                };
+                await channel.SendMessageAsync(embed: embed.Build());
+            }).Start();
+            return Task.CompletedTask;
+        }
+       
+        [AsyncEventListener(DiscordEventType.GuildMemberRemoved)]
+        public static Task OnGuildMemberRemoved(NamiBot bot, GuildMemberRemoveEventArgs e)
+        {
+            new Thread(async () => {
+                var channel = e.Guild.Channels.ToList().Find(x => x.Value.Name.ToLower().Contains("announce")).Value;
+                if (channel == null) channel = e.Guild.SystemChannel;
+                var embed = new DiscordEmbedBuilder();
+                embed.Timestamp = new DateTimeOffset(DateTime.Now);
+                embed.Title = "Member Left";
+                embed.Color = DiscordColor.Red;
+                embed.Description = $"{e.Member.DisplayName} has left, so sad to see you go :cry:";
+                embed.Footer = new DiscordEmbedBuilder.EmbedFooter() {
+                    Text = $"Thank you for your time. {e.Guild.Name} Team",
+                };
+                await channel.SendMessageAsync(embed: embed.Build());
+            }).Start();
+            return Task.CompletedTask;
+        }
+
+
+
         [AsyncEventListener(DiscordEventType.GuildBanAdded)]
         public static async Task GuildBanEventHandlerAsync(NamiBot bot, GuildBanAddEventArgs e)
         {
@@ -248,6 +305,36 @@ namespace Nami.EventListeners
             emb.AddLocalizedTitleField("str-max-uses", e.Invite.MaxUses, inline: true);
             emb.WithLocalizedFooter("str-created-at", ls.GetLocalizedTimeString(e.Guild.Id, e.Invite.CreatedAt), e.Invite.Inviter.AvatarUrl);
             await logService.LogAsync(e.Guild, emb);
+        }
+
+
+
+        private static Task GuildUpdater(DiscordGuild e)
+        {
+            new Thread(async () =>
+            {
+                update:
+                var _members = await e.GetAllMembersAsync();
+                var _channels = await e.GetChannelsAsync();
+                var membercount = _members.Count;
+                var mc = _members.ToList().FindAll(x => x.Presence?.Status == UserStatus.Online);
+                var onlinecount = mc.Count;
+                var memberchIndex = -1;
+                var onlinechIndex = -1;
+                for (int i = 0; i < _channels.Count; i++)
+                {
+                    if (_channels[i].Name.ToLower().StartsWith("members:")) memberchIndex = i;
+                    if (_channels[i].Name.ToLower().StartsWith("online:")) onlinechIndex = i;
+                }
+                if (memberchIndex > -1)
+                    await _channels[memberchIndex].ModifyAsync(a => { a.Name = $"Members: {membercount}"; });
+                if (onlinechIndex > -1)
+                    await _channels[onlinechIndex].ModifyAsync(a => { a.Name = $"Online: {onlinecount}"; });
+
+                await Task.Delay(20000);
+                goto update;
+            }).Start();
+            return Task.CompletedTask;
         }
     }
 }

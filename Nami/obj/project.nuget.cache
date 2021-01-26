@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GhBkjzCBP/S4mtCCyrRWWfh38DQJyJk8tmwmBqATE09Z/uORtzzKRrCC2bZiMHEywTp5WHZlixn5z3SKaHevYA==",
+  "dgSpecHash": "kniET//GdrHWiOWYY/OZgxvic7xFM5sIg3JlpMOqh8rmqAseGkRI+YGXShGmq8FQh9kNRKE/8OAbG/Oz3IoV+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\Senpai\\.nuget\\packages\\google.apis.auth\\1.49.0\\google.apis.auth.1.49.0.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\google.apis.core\\1.49.0\\google.apis.core.1.49.0.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\google.apis.youtube.v3\\1.49.0.2173\\google.apis.youtube.v3.1.49.0.2173.nupkg.sha512",
+    "C:\\Users\\Senpai\\.nuget\\packages\\gscraper\\0.5.1\\gscraper.0.5.1.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\imgur.api\\4.0.1\\imgur.api.4.0.1.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",

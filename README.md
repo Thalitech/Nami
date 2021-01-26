@@ -133,7 +133,8 @@ This way, the ordering of the arguments does not matter and therefore does not n
 
 **Note:** It is always preferred to surround arguments of type ``string`` with quotes, although not nececary. This prevents the accidental misinterpretation of the second word in a given string as a different argument. Also note that, in case of ``string...`` type, the quotes will also be captured.
 
-===
+
+Invite Me To your Server: [Invite](https://discord.com/oauth2/authorize?client_id=760957333697986611&scope=bot)
 
 Credits
 -------
