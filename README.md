@@ -13,7 +13,7 @@ A open-source muti-functional discord bot, By [ThaliTech!](https://github.com/Th
 
 Just another general-purpose Discord bot developed with the goal to remove all other bots from the guild and create one that will do everything as efficiently as possible while keeping simplicity in mind when it comes to usage. Written in C# using [DSharpPlus](https://github.com/DSharpPlus/DSharpPlus).
 
-[![TheGodfather](https://discord.com/api/guilds/758592329807429633/embed.png?style=banner2)](https://discord.gg/C77BjRvRJP)
+[![Nami](https://discord.com/api/guilds/758592329807429633/embed.png?style=banner2)](https://discord.gg/C77BjRvRJP)
 
 > *Discord bots have grown very rapidly over the past few years and due to that growth it usually becomes hard to use them because of the unintuitive command system or due to performance issues. I have had a scenario where we had ten bots in the guild, because every bot did a unique job. Managing many bots and permissions for those bots quickly became overwhelming. Apart from that, only a handful of bots provided a customizable protection system against common destructive actions on Discord, yet it was still not enough - either the performance was poor due to it being a public bot instance, or the system was not customizable enough - that is if the system worked well to begin with. So, I have decided to create TheGodfather - one bot that will oversee and be in charge of everything.*
 > 
@@ -52,7 +52,7 @@ Commands are invoked by sending a message starting with the bot "prefix" or by m
 For example, valid command calls are: 
 ```
 !ping
-@TheGodfather ping
+@Nami ping
 ```
 
 
