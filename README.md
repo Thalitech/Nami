@@ -3,7 +3,7 @@
 
 ![project icon](https://github.com/Thalitech/Nami/raw/main/bot-image.png)
 ===
-A open-source muti-functional discord bot, By [ThaliTech!](https://github.com/Thalitech)<br>
+A open-source muti-functional discord bot, By [ThaliTech](https://github.com/Thalitech)<br>
 [![Build Status](https://ci.appveyor.com/api/projects/status/axn087nlq6ha783x?svg=true)](https://ci.appveyor.com/project/Thalitech/nami)
 [![Issues](https://img.shields.io/github/issues/Thalitech/Nami)](https://github.com/Thalitech/Nami/issues)
 [![Stable release](https://img.shields.io/github/release/Thalitech/Nami.svg?label=stable)](https://github.com/Thalitech/Nami/releases)
