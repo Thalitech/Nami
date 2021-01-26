@@ -139,7 +139,7 @@ Invite Me To your Server: [Invite](https://discord.com/oauth2/authorize?client_i
 Credits
 -------
 
-  Name                | Sudoneim    | Git                                                                 | Job
+  Name                | Pseudonym   | Git                                                                 | Job
   --------------------| ------------| --------------------------------------------------------------------| ----------------------------
   Jean Gustave        | Thalitech   | [GitHub](https://github.com/Thalitech/)                             | Author
   Julia               | thebigowo   | [Gitea](https://gitea.thebigowo.xyz/julia)                          | for help
