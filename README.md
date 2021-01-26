@@ -10,6 +10,7 @@ A open-source muti-functional discord bot, By [ThaliTech!](https://github.com/Th
 [![Stable release](https://img.shields.io/github/release/Thalitech/Nami.svg?label=stable)](https://github.com/Thalitech/Nami/releases)
 [![Latest release](https://img.shields.io/github/tag-pre/Thalitech/Nami.svg?label=latest)](https://github.com/Thalitech/Nami/releases)
 [![License](https://img.shields.io/github/license/Thalitech/Nami)](https://github.com/Thalitech/Nami/blob/main/LICENSE.md)
+[![Nuget](https://img.shields.io/nuget/v/Nami)](https://www.nuget.org/packages/Nami/5.2.0)
 
 Just another general-purpose Discord bot developed with the goal to remove all other bots from the guild and create one that will do everything as efficiently as possible while keeping simplicity in mind when it comes to usage. Written in C# using [DSharpPlus](https://github.com/DSharpPlus/DSharpPlus).
 
