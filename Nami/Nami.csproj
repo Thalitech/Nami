@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/Thalitech/Nami</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/ivan-ristovic/the-godfather/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Thalitech/Nami</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/ivan-ristovic/the-godfather/master/Nami/icon.ico</PackageIconUrl>
+    <PackageIconUrl>https://github.com/Thalitech/Nami/blob/main/bot-image.png?raw=true</PackageIconUrl>
     <Version>5.0.0</Version>
     <PackageVersion>5.0.0.0</PackageVersion>
     <AssemblyVersion>5.0.0</AssemblyVersion>
