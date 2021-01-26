@@ -10131,14 +10131,14 @@
   "project": {
     "version": "5.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\Nami.csproj",
+      "projectUniqueName": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj",
       "projectName": "Nami",
-      "projectPath": "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\Nami.csproj",
+      "projectPath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj",
       "packagesPath": "C:\\Users\\Senpai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\obj\\",
+      "outputPath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\NuGet.Config",
+        "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\NuGet.Config",
         "C:\\Users\\Senpai\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

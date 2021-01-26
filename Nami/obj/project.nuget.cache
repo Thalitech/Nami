@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pLo+//P1o4VWJWF+sbpJY6zB+Q0ePd7JW5r5fScDIL3EewrFRp5PCJ6xCZL1d2ryLfW2WXmsjYu1oP3u+gQ/Zg==",
+  "dgSpecHash": "6W7v/MR0XHoZDx//oW3vPN/ceArtn9b6ja7DXZK8S25heTBLDJojNWHBlhsivJBZLyiAfLgGYvNxhDCzDKBf/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Senpai\\Documents\\GitPor\\GoldEngine\\Nami\\Nami.csproj",
+  "projectFilePath": "C:\\Users\\Senpai\\Documents\\GitPor\\Nami\\Nami\\Nami.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Senpai\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
     "C:\\Users\\Senpai\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",

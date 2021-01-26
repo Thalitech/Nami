@@ -39,7 +39,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 EXC=101
 
-cd TheGodfather
+cd Nami
 
 while [ $EXC -ne 0 ]; do
 
@@ -72,7 +72,7 @@ while [ $EXC -ne 0 ]; do
     EXC=$?
 
     if [ $EXC -ne 0 ]; then
-	    echo "!> TheGodfather exited with code $EXC. Relaunching in 5 seconds..." >&2
+	    echo "!> Nami exited with code $EXC. Relaunching in 5 seconds..." >&2
     fi
 	
     sleep 5

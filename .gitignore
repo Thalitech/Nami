@@ -288,5 +288,5 @@ __pycache__/
 *.xsd.cs
 *.mp3
 /Database/data.sql
-/TheGodfather/Resources/config.json
+/Nami/Resources/config.json
 *.db
