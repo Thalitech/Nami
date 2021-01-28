@@ -10,9 +10,10 @@
 **Aliases:**
 `None`
 **Examples:**
-
+**Arguments:**
+[`DiscordRole`]: *Role*
 ```xml
-!stream setstreamplayerrole
+!stream setstreamplayerrole @role
 ```
 </p></details>
 
