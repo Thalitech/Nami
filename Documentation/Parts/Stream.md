@@ -2,10 +2,10 @@
 *This module contains internet search commands such as Stream controlls.*
 
 
-## cat
+## Set Stream Player Role
 <details><summary markdown='span'>Expand for additional information</summary><p>
 
-*Retrieves a random cat image.*
+*Set the role that will be used as a badge to be applied once member has been a part of 3 streams.*
 
 **Aliases:**
 `None`
