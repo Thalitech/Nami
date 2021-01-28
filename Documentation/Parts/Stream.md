@@ -1,5 +1,5 @@
-# Module: Searches
-*This module contains internet search commands such as Stream controlls.*
+# Module: Stream
+*This module contains commands such as Stream controlls.*
 
 
 ## Set Stream Player Role
