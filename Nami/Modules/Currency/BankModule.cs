@@ -51,7 +51,7 @@ namespace Nami.Modules.Currency
                 if (balance is { }) {
                     string currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
                     CultureInfo culture = this.Localization.GetGuildCulture(ctx.Guild.Id);
-                    emb.WithLocalizedDescription("fmt-bank-acc-value", balance.Balance.ToWords(culture), currency);
+                    emb.WithLocalizedDescription("fmt-bank-acc-value", Convert.ToDecimal(balance.Balance).ToString(culture), currency);
                     emb.AddLocalizedTitleField("str-bank-acc-value-num", $"{balance.Balance:n0} {currency}");
                 } else {
                     emb.WithLocalizedDescription("fmt-bank-acc-none");
@@ -246,13 +246,15 @@ namespace Nami.Modules.Currency
             var config = await Cooldown.LoadConfigAsync();
 
             var working_member = config.Find(ctx.Guild, member);
-            string currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
+            var currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
+            var allowance = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Allowance;
+
 
             if (working_member == null) 
             {
                 config.Add(ctx.Guild, member, DateTime.Now.AddDays(1));
-                await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)member.Id, 1000);
-                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", member.Mention, 1000, config.Find(ctx.Guild, member).cooldaown, currency);
+                await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)member.Id, allowance);
+                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", member.Mention, allowance, config.Find(ctx.Guild, member).cooldaown, currency);
             } 
             else
             {

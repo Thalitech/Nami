@@ -7,7 +7,7 @@ namespace Nami.Database.Models
     public class BankAccount : IEquatable<BankAccount>
     {
         [NotMapped]
-        public static readonly int StartingBalance = 10000;
+        public static readonly decimal StartingBalance = 10000.00m;
 
 
         [Column("uid")]
@@ -24,7 +24,7 @@ namespace Nami.Database.Models
         public ulong GuildId { get => (ulong)this.GuildIdDb; set => this.GuildIdDb = (long)value; }
 
         [Column("balance")]
-        public long Balance { get; set; } = StartingBalance;
+        public decimal Balance { get; set; } = StartingBalance;
 
 
         public virtual GuildConfig GuildConfig { get; set; } = null!;
