@@ -251,9 +251,9 @@ namespace Nami.Modules.Currency
 
 
             if (working_member == null) {
-                await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)_member.Id, 1000);
+                await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)member.Id, 1000);
                 config.Add(ctx.Guild, member, DateTime.Now.AddDays(1));
-                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).cooldaown);
+                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", member.Mention, 1000, config.Find(ctx.Guild, member).cooldaown);
             } else {
                 if (working_member.cooldaown.Date == DateTime.Now.Date && working_member.cooldaown.Date != working_member.created.Date) 
                 {
