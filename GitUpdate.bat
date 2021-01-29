@@ -1,4 +1,4 @@
-set /A _date=date
+set _date=date
 git add *
 git commit --all -m "Auto Push %_date%"
 git push
