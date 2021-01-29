@@ -736,7 +736,7 @@
   "fmt-ar-rem": "**Unregistered automatic roles**:\n\n{0}",
   "fmt-ban": "{0} **BANNED** {1} and removed past {2} days of that user's message history!",
   "fmt-bank-acc": "{0} Bank account for {1}",
-  "fmt-bank-acc-none": "No existing account! Use command `bank register` to open an account.",
+  "fmt-bank-acc-none": "No existing account! Use command `!bank register` to open an account.",
   "fmt-bank-acc-value": "Account value: *{0}*",
   "fmt-bank-footer": "\"Your money is safe in my hands\" - Nami",
   "fmt-bank-grant": "{0} found **{1:n0}** {2} in a dumpster! Congratulations!",
