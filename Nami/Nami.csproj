@@ -680,4 +680,8 @@
     </None>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd &quot;$(ProjectDir)&quot;&#xD;&#xA;cd ..&#xD;&#xA;call &quot;AutoGitUpdate.bat&quot;" />
+  </Target>
+
 </Project>
