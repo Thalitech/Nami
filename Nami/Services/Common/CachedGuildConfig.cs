@@ -9,7 +9,7 @@ namespace Nami.Services.Common
         public const decimal DefaultAllowance = 1500.00m;
         public const string DefaultStarboardEmoji = ":star:";
         public const int DefaultStarboardSensitivity = 5;
-        public const string DefaultTimezoneId = "Central Europe Standard Time";
+        public const string DefaultTimezoneId = "Central Standard Time";
 
         public string Currency { get; set; } = DefaultCurrency;
         public decimal Allowance { get; set; } = DefaultAllowance;
