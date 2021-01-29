@@ -48,8 +48,12 @@ namespace Nami.Modules.Currency
                 return libs.Find(x => x.id == member.Id);
             }
         }
-        internal void Add(DiscordGuild guild, DiscordMember member)
+        internal void Add(DiscordGuild guild, DiscordMember member, DateTime date = default)
         {
+            if (date == default)
+                date = DateTime.Today;
+
+
             var cd = new CooldownData();
             cd.gid = guild.Id;
             cd.id = member.Id;

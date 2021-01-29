@@ -240,29 +240,32 @@ namespace Nami.Modules.Currency
         [Aliases("allow", "all")]
         [RequirePrivilegedUser]
       //  [Cooldown(5, 86400, CooldownBucketType.User)]
-        public async Task allowance(CommandContext ctx, [Description("desc-member")] DiscordMember member = default)
+        public async Task allowance(CommandContext ctx, [Description("desc-member")] DiscordMember _member = default)
         {
-            var _member = member ?? ctx.Member;
+            var member = _member ?? ctx.Member;
             var config = await Cooldown.LoadConfigAsync();
-            var fmember = config.Find(ctx.Guild, _member);
-            if(fmember != null && fmember.created != DateTime.Today && !fmember.IsTomorrow()) 
-            {
-                await ctx.InfoAsync(this.ModuleColor, emoji: DiscordEmoji.FromName(ctx.Client, ":x:"), "desc-bank-allow-cooldown");
-                return;
-            }
 
-            await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, _member.Id, 1000);
 
-            if (config.Find(ctx.Guild, _member) != null) {
-                config.Find(ctx.Guild, _member).date.AddDays(1);
-                config.Save();
-            } else
-                config.Add(ctx.Guild, _member);
+            var working_member = config.Find(ctx.Guild, member);
 
-            if (_member.Id == ctx.User.Id) 
-            {
-                string currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
+
+
+            if (working_member == null) {
+                await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)_member.Id, 1000);
+                config.Add(ctx.Guild, member, DateTime.Today.AddDays(1));
                 await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).date);
+            } else {
+                if (working_member.date == DateTime.Today && working_member.date != working_member.created) 
+                {
+                    await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)_member.Id, 1000);
+                    config.Find(ctx.Guild, member).date.AddDays(1);
+                    config.Save();
+                    await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).date);
+                }
+                else
+                {
+                    await ctx.InfoAsync(this.ModuleColor, emoji: DiscordEmoji.FromName(ctx.Client, ":x:"), "desc-bank-allow-cooldown");
+                }
             }
         }
         #endregion
