@@ -40,15 +40,13 @@ namespace Nami.Modules.Currency
         internal void Add(DiscordGuild guild, DiscordMember member, DateTime date = default)
         {
             if (date == default)
-                date = DateTime.Today;
-
-
+                date = DateTime.Now;
             var cd = new CooldownData();
             cd.gid = guild.Id;
             cd.id = member.Id;
-            cd.date = DateTime.Today;
-            cd.date.AddDays(1);
-            cd.created = DateTime.Today;
+            cd.cooldaown = date;
+            cd.cooldaown.AddDays(1);
+            cd.created = DateTime.Now;
             libs.Add(cd);
             Save();
         }
@@ -69,12 +67,12 @@ namespace Nami.Modules.Currency
 
         [JsonProperty("id")]
         public ulong id { get; set; }
-        [JsonProperty("date")]
-        public DateTime date { get; set; } = DateTime.Now;
+        [JsonProperty("cooldown")]
+        public DateTime cooldaown { get; set; } = DateTime.Now;
         [JsonProperty("created")]
         internal DateTime created { get; set; } = DateTime.Today;
         
-        internal bool IsTomorrow() => date.Day < DateTime.Now.Day;
+        internal bool IsTomorrow() => cooldaown.Day < DateTime.Now.Day;
 
         internal void AddDay()
         {

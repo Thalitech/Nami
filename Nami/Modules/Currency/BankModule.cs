@@ -252,15 +252,15 @@ namespace Nami.Modules.Currency
 
             if (working_member == null) {
                 await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)_member.Id, 1000);
-                config.Add(ctx.Guild, member, DateTime.Today.AddDays(1));
-                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).date);
+                config.Add(ctx.Guild, member, DateTime.Now.AddDays(1));
+                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).cooldaown);
             } else {
-                if (working_member.date == DateTime.Today && working_member.date != working_member.created) 
+                if (working_member.cooldaown.Date == DateTime.Now.Date && working_member.cooldaown.Date != working_member.created.Date) 
                 {
                     await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)_member.Id, 1000);
-                    config.Find(ctx.Guild, member).date.AddDays(1);
+                    config.Find(ctx.Guild, member).cooldaown.AddDays(1);
                     config.Save();
-                    await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).date);
+                    await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).cooldaown);
                 }
                 else
                 {
