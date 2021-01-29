@@ -5,4 +5,5 @@ set mytime=%time%
 git add *
 git commit --all -m "Auto Push %mydate%"
 git push
-pause
+echo closeing in 5s
+sleep 5000
