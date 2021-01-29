@@ -13,10 +13,10 @@
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Thalitech/Nami</PackageProjectUrl>
     <PackageIconUrl></PackageIconUrl>
-    <Version>5.2</Version>
+    <Version>5.3</Version>
     <PackageVersion>5.2.0.0</PackageVersion>
-    <AssemblyVersion>5.2.0</AssemblyVersion>
-    <FileVersion>5.2.0</FileVersion>
+    <AssemblyVersion>5.3.0</AssemblyVersion>
+    <FileVersion>5.3.0</FileVersion>
 	<Copyright>Copyright © All Rights Reserved</Copyright>
 	<AssemblyName>Nami</AssemblyName>
 	<RootNamespace>Nami</RootNamespace>
