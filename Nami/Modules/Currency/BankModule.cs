@@ -265,7 +265,7 @@ namespace Nami.Modules.Currency
                 }
                 else
                 {
-                    await ctx.InfoAsync(this.ModuleColor, emoji: DiscordEmoji.FromName(ctx.Client, ":x:"), "desc-bank-allow-cooldown");
+                    await ctx.InfoAsync(this.ModuleColor, emoji: DiscordEmoji.FromName(ctx.Client, ":x:"), "fmt-bank-allow-cooldown", config.Find(ctx.Guild, ctx.Member).cooldaown);
                 }
             }
         }
