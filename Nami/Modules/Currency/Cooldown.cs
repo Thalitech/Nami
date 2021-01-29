@@ -38,18 +38,26 @@ namespace Nami.Modules.Currency
             else 
             {
                 var cd = new CooldownData();
+                cd.gid = guild.Id;
                 cd.id = member.Id;
                 cd.date = DateTime.Today;
+                cd.date.AddDays(1);
                 cd.created = DateTime.Today;
-
                 libs.Add(cd);
-
-                var config_file = "Resources/config_cooldow.json";
-                // Save new config file 
-                var json = JsonConvert.SerializeObject(this, Formatting.Indented);
-                File.WriteAllTextAsync(config_file, json);
+                Save();
                 return libs.Find(x => x.id == member.Id);
             }
+        }
+        internal void Add(DiscordGuild guild, DiscordMember member)
+        {
+            var cd = new CooldownData();
+            cd.gid = guild.Id;
+            cd.id = member.Id;
+            cd.date = DateTime.Today;
+            cd.date.AddDays(1);
+            cd.created = DateTime.Today;
+            libs.Add(cd);
+            Save();
         }
 
         internal void Save()
@@ -59,6 +67,7 @@ namespace Nami.Modules.Currency
             var json = JsonConvert.SerializeObject(this, Formatting.Indented);
             File.WriteAllTextAsync(config_file, json);
         }
+
     }
     public class CooldownData
     {
@@ -73,5 +82,10 @@ namespace Nami.Modules.Currency
         internal DateTime created { get; set; } = DateTime.Today;
         
         internal bool IsTomorrow() => date.Day < DateTime.Now.Day;
+
+        internal void AddDay()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

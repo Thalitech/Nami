@@ -245,7 +245,7 @@ namespace Nami.Modules.Currency
             var _member = member ?? ctx.Member;
             var config = await Cooldown.LoadConfigAsync();
             var fmember = config.Find(ctx.Guild, _member);
-            if(fmember.created != DateTime.Today && !fmember.IsTomorrow()) 
+            if(fmember != null && fmember.created != DateTime.Today && !fmember.IsTomorrow()) 
             {
                 await ctx.InfoAsync(this.ModuleColor, emoji: DiscordEmoji.FromName(ctx.Client, ":x:"), "desc-bank-allow-cooldown");
                 return;
@@ -253,8 +253,11 @@ namespace Nami.Modules.Currency
 
             await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, _member.Id, 1000);
 
-            config.Find(ctx.Guild, _member).date.AddDays(1);
-            config.Save();
+            if (config.Find(ctx.Guild, _member) != null) {
+                config.Find(ctx.Guild, _member).date.AddDays(1);
+                config.Save();
+            } else
+                config.Add(ctx.Guild, _member);
 
             if (_member.Id == ctx.User.Id) 
             {
