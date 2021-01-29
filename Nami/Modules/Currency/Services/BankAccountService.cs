@@ -36,10 +36,10 @@ namespace Nami.Modules.Currency.Services
         public override IQueryable<BankAccount> GroupSelector(IQueryable<BankAccount> entities, ulong grid)
             => entities.Where(acc => (ulong)acc.GuildIdDb == grid);
 
-        public Task IncreaseBankAccountAsync(ulong gid, ulong uid, decimal change)
+        public Task IncreaseBankAccountAsync(ulong gid, ulong uid, double change)
             => this.ModifyBankAccountAsync(gid, uid, b => b + change);
 
-        public async Task<bool> TryDecreaseBankAccountAsync(ulong gid, ulong uid, decimal change)
+        public async Task<bool> TryDecreaseBankAccountAsync(ulong gid, ulong uid, double change)
         {
             using NamiDbContext db = this.dbb.CreateContext();
             BankAccount? account = await this.GetAsync(gid, uid);
@@ -53,7 +53,7 @@ namespace Nami.Modules.Currency.Services
             return true;
         }
 
-        public async Task ModifyBankAccountAsync(ulong gid, ulong uid, Func<decimal, decimal> balanceModifier)
+        public async Task ModifyBankAccountAsync(ulong gid, ulong uid, Func<double, double> balanceModifier)
         {
             using NamiDbContext db = this.dbb.CreateContext();
 

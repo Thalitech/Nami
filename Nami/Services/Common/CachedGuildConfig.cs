@@ -6,13 +6,13 @@ namespace Nami.Services.Common
     public sealed class CachedGuildConfig
     {
         public const string DefaultCurrency = "NUD";
-        public const decimal DefaultAllowance = 1500.00m;
+        public const double DefaultAllowance = 1500.00;
         public const string DefaultStarboardEmoji = ":star:";
         public const int DefaultStarboardSensitivity = 5;
         public const string DefaultTimezoneId = "Central Standard Time";
 
         public string Currency { get; set; } = DefaultCurrency;
-        public decimal Allowance { get; set; } = DefaultAllowance;
+        public double Allowance { get; set; } = DefaultAllowance;
         public string Prefix { get; set; } = BotConfig.DefaultPrefix;
         public string Locale {
             get => this.locale;
