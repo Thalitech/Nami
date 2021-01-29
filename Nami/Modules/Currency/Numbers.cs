@@ -25,7 +25,7 @@ namespace Nami.Modules.Currency
         private static string? changeToWords(string? numb, bool isCurrency)
         {
             String val = "", wholeNo = numb, points = "", andStr = "", pointStr = "";
-            String endStr = (isCurrency) ? ("Only") : ("");
+            String endStr = (isCurrency) ? ("Zero") : ("");
             try {
                 int decimalPlace = numb.IndexOf(".");
                 if (decimalPlace > 0) {
