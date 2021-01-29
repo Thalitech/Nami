@@ -244,25 +244,23 @@ namespace Nami.Modules.Currency
         {
             var _member = member ?? ctx.Member;
             var config = await Cooldown.LoadConfigAsync();
-            if(!config.Find(_member).IsTomorrow()) 
+            var fmember = config.Find(_member);
+            if(fmember.created != DateTime.Today && !fmember.IsTomorrow()) 
             {
-                await ctx.InfoAsync(this.ModuleColor, DiscordEmoji.FromName(ctx.Client, ":x:"));
+                await ctx.InfoAsync(this.ModuleColor, emoji: DiscordEmoji.FromName(ctx.Client, ":x:"), "desc-bank-allow-cooldown");
                 return;
             }
 
-            await this.Service.AddAsync(new BankAccount
-            {
-                GuildId = ctx.Guild.Id,
-                UserId = _member.Id,
-            });
+            await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, _member.Id, 1000);
 
-            if(member.Id == ctx.User.Id) 
+            config.Find(_member).date.AddDays(1);
+            config.Save();
+
+            if (_member.Id == ctx.User.Id) 
             {
                 string currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
                 await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-register", ctx.User.Mention, BankAccount.StartingBalance, currency);
             }
-
-            config.Find(member).SetToMorrow();
         }
         #endregion
     }

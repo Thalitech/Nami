@@ -57,6 +57,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\Converters\RepeatModeConverter.cs" />
+    <Compile Remove="Common\Converters\TimeWindowConverter.cs" />
+    <Compile Remove="Modules\Search\ImgurModule.cs" />
+    <Compile Remove="Modules\Search\Services\ImgurService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="gfdb.db" />
     <None Remove="icon.ico" />
     <None Remove="Resources\default_config.b" />

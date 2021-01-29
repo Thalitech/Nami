@@ -13,12 +13,12 @@ namespace Nami.Database.Models
         [ForeignKey("Stream")]
         [Column("gid")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long GuildIdDb { get; set; }
+        public long GuildIdDb { get; private set; }
        
         [NotMapped] public ulong GuildId { get => (ulong)this.GuildIdDb; set => this.GuildIdDb = (long)value; }
 
         [Column("member_id"), Required, MaxLength(NameLimit)]
-        public ulong? MemberID { get; set; } = default!;
+        public ulong MemberID { get; set; } = default!;
 
         [Column("joined"), Required, MaxLength(UrlLimit)]
         public int Joined { get; set; } = default!;

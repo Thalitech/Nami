@@ -232,7 +232,8 @@ namespace Nami.Services
         public async Task<TEntity?> GetAsync(TGroupId grid, TEntityId entityId)
         {
             TEntity? res = null;
-            using (NamiDbContext db = this.dbb.CreateContext()) {
+            using (NamiDbContext db = this.dbb.CreateContext())
+            {
                 DbSet<TEntity> set = this.DbSetSelector(db);
                 res = await set.FindAsync(this.EntityPrimaryKeySelector(grid, entityId));
             }

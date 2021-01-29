@@ -35,10 +35,12 @@ namespace Nami.Modules.Currency
         {
             if (libs != null  && libs.Count > 0 && libs.Find(x => x.id == member.Id) != null)
                 return libs.Find(x => x.id == member.Id);
-            else {
+            else 
+            {
                 var cd = new CooldownData();
                 cd.id = member.Id;
-                cd.date = DateTime.Today.AddDays(1);
+                cd.date = DateTime.Today;
+                cd.created = DateTime.Today;
 
                 libs.Add(cd);
 
@@ -49,21 +51,25 @@ namespace Nami.Modules.Currency
                 return libs.Find(x => x.id == member.Id);
             }
         }
+
+        internal void Save()
+        {
+            var config_file = "Resources/config_cooldow.json";
+            // Save new config file 
+            var json = JsonConvert.SerializeObject(this, Formatting.Indented);
+            File.WriteAllTextAsync(config_file, json);
+        }
     }
     public class CooldownData
     {
+
         [JsonProperty("id")]
         public ulong id { get; set; }
         [JsonProperty("date")]
         public DateTime date { get; set; } = DateTime.Now;
-
-        internal TimeSpan SetToMorrow()
-        {
-            var today = DateTime.Today;
-            var tomorrow = today.AddDays(1);
-            return tomorrow.TimeOfDay;
-        }
-
-        internal bool IsTomorrow() => date == DateTime.Now;
+        [JsonProperty("created")]
+        internal DateTime created { get; set; } = DateTime.Today;
+        
+        internal bool IsTomorrow() => date.Day < DateTime.Now.Day;
     }
 }

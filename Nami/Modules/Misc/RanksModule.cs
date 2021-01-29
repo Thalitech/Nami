@@ -156,11 +156,14 @@ namespace Nami.Modules.Misc
                         ranks.Add(rank, gr.Name);
                 }
 
+                emb.AddField(user?.Username ?? unknown, $"Level ({rank}) ({xpc.Xp} XP)");
+
+                /*
                 if (ctx.Guild is { } && ranks.TryGetValue(rank, out string? name))
                     emb.AddField(user?.Username ?? unknown, $"{name} ({rank}) ({xpc.Xp} XP)");
                 else
                     emb.AddField(user?.Username ?? unknown, $"LVL {rank} ({xpc.Xp} XP)");
-
+                */
             }
 
             await ctx.RespondAsync(embed: emb.Build());

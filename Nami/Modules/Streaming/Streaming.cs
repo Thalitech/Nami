@@ -4,10 +4,14 @@ using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using Nami.Attributes;
+using Nami.Common;
 using Nami.Database;
+using Nami.Database.Models;
 using Nami.Extensions;
 using Nami.Modules.Administration.Extensions;
+using Nami.Modules.Administration.Services;
 using Nami.Modules.Streaming.Services;
 using Nami.Services;
 
@@ -17,7 +21,7 @@ namespace Nami.Modules.Streaming
     [Aliases("str")]
     [RequireGuild]
     [Cooldown(3, 5, CooldownBucketType.Guild)]
-    public sealed class StreamingModule : NamiServiceModule<StreamingConfigService>
+    public sealed class StreamingModule : NamiServiceModule<StreamingService>
     {
         #region stream
         [GroupCommand]
@@ -56,33 +60,11 @@ namespace Nami.Modules.Streaming
         public async Task AddCounter(CommandContext ctx, 
             [Description("desc-member")]DiscordMember member)
         {
-            var cfg = await BotConfigService.LoadConfigAsync();
-            var db = await DbContextBuilder.LoadConfigAsync(cfg);
-            var dbctx = db.CreateContext();
-
-            var da = dbctx.Streams;
-
-
-            /*
-            var file = Path.Combine(Directory.CreateDirectory("Resources/").FullName, $"MembersSRJ.json");
-            var data = new Dictionary<ulong, int>();
-            if (File.Exists(file))
-                data = JsonConvert.DeserializeObject<Dictionary<ulong, int>>(File.ReadAllText(file));
-            if (data.Count <= 0 || data[member.Id] < 3) {
-                if (data.ContainsKey(member.Id)) data[member.Id]++;
-                else data.Add(member.Id, 1);
-                await ctx.RespondAsync($"An SRJ has beend added to **{member.Username}** they have **{data[member.Id]}** SRJ's");
-                File.WriteAllText(file, JsonConvert.SerializeObject(data, Formatting.Indented));
-
-                if (data[member.Id] >= 3) {
-                    await ctx.RespondAsync($"The member {member.Username}'s rank has pass the threshold but thre hasn't been a role for use to add.");
-                    // Add role to user and keep track just incase we want to remove a time.
-                    await member.GrantRoleAsync(ctx.Guild.Roles.ToList().Find(x => x.Value.Name == "Thicc Players").Value,
-                        $"The member {member.Username}'s rank has pass the threshold but thre hasn't been a role for use to add.");
-                }
-                return;
-            }
-            */
+            
+            await this.Service.IncreaseStreamAsync(ctx.Guild.Id, member.Id, 1);
+            string joined = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
+            await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-stream-joined", member.Mention, "1+", joined);
+            var cur = await this.Service.GetAsync(ctx.Guild.Id, ctx.Member.Id);
         }
 
         [Command("-")]
@@ -92,10 +74,10 @@ namespace Nami.Modules.Streaming
         public async Task RemoveCounter(CommandContext ctx,
             [Description("desc-member")] DiscordMember member)
         {
-            var cfg = await BotConfigService.LoadConfigAsync();
-            var db = await DbContextBuilder.LoadConfigAsync(cfg);
-            var dbctx = db.CreateContext();
-            var role = cfg.CurrentConfiguration.StreamerGuessRole;
+            await this.Service.TryDecreaseStreamAsync(ctx.Guild.Id, member.Id, 1);
+            string joined = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
+            await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-stream-leave", member.Mention, "1-", joined);
+            var cur = await this.Service.GetAsync(ctx.Guild.Id, ctx.Member.Id);
         }
 
         [Command("info")]
