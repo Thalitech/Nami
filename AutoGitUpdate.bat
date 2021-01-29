@@ -5,4 +5,4 @@ set mytime=%time%
 
 git add *
 git commit --all -m "Auto Push [%mydate%][%mytime%] (%1)"
-git push
+git push -f
