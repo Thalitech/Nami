@@ -35,18 +35,7 @@ namespace Nami.Modules.Currency
         {
             if (libs != null  && libs.Count > 0 && libs.Find(x => x.id == member.Id) != null)
                 return libs.Find(x => x.gid == guild.Id && x.id == member.Id);
-            else 
-            {
-                var cd = new CooldownData();
-                cd.gid = guild.Id;
-                cd.id = member.Id;
-                cd.date = DateTime.Today;
-                cd.date.AddDays(1);
-                cd.created = DateTime.Today;
-                libs.Add(cd);
-                Save();
-                return libs.Find(x => x.id == member.Id);
-            }
+            return default;
         }
         internal void Add(DiscordGuild guild, DiscordMember member, DateTime date = default)
         {
