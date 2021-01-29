@@ -48,7 +48,8 @@ namespace Nami.Modules.Currency
                 emb.WithColor(this.ModuleColor);
                 emb.WithLocalizedTitle("fmt-bank-acc", Emojis.MoneyBag, member.ToDiscriminatorString());
                 emb.WithThumbnail(member.AvatarUrl);
-                if (balance is { }) {
+                if (balance is { }) 
+                {
                     string currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
                     CultureInfo culture = this.Localization.GetGuildCulture(ctx.Guild.Id);
                     emb.WithLocalizedDescription("fmt-bank-acc-value", Convert.ToDecimal(balance.Balance).ToString(culture), currency);
