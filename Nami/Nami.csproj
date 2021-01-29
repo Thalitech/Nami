@@ -28,6 +28,7 @@
 	<PackageTags>Discord Bot, Bot, Discord, Music, Games, Admin</PackageTags>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<NeutralLanguage>en</NeutralLanguage>
+	<Configurations>Debug;Release;Both</Configurations>
   </PropertyGroup>
   
   <Target Name="AddAssemblyAliasToReactiveAsync" AfterTargets="ResolveAssemblyReferences">
