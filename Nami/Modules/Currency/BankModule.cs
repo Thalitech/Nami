@@ -53,7 +53,7 @@ namespace Nami.Modules.Currency
                     string currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
                     CultureInfo culture = this.Localization.GetGuildCulture(ctx.Guild.Id);
                     emb.WithLocalizedDescription("fmt-bank-acc-value", Numbers.ToWords(balance.Balance));
-                    emb.AddLocalizedTitleField("str-bank-acc-value-num", $"§{ balance.Balance} {currency}");
+                    emb.AddLocalizedTitleField("str-bank-acc-value-num", $"{ balance.Balance} {currency}");
                 } else {
                     emb.WithLocalizedDescription("fmt-bank-acc-none");
                 }
