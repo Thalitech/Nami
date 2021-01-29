@@ -262,7 +262,7 @@ namespace Nami.Modules.Currency
             if (_member.Id == ctx.User.Id) 
             {
                 string currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
-                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-register", ctx.User.Mention, BankAccount.StartingBalance, currency);
+                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).date);
             }
         }
         #endregion
