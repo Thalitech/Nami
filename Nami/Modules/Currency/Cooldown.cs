@@ -31,10 +31,10 @@ namespace Nami.Modules.Currency
             return config;
         }
 
-        public CooldownData Find(DiscordMember? member) 
+        public CooldownData Find(DiscordGuild guild, DiscordMember? member) 
         {
             if (libs != null  && libs.Count > 0 && libs.Find(x => x.id == member.Id) != null)
-                return libs.Find(x => x.id == member.Id);
+                return libs.Find(x => x.gid == guild.Id && x.id == member.Id);
             else 
             {
                 var cd = new CooldownData();
@@ -62,6 +62,8 @@ namespace Nami.Modules.Currency
     }
     public class CooldownData
     {
+        [JsonProperty("gid")]
+        public ulong gid { get; set; }
 
         [JsonProperty("id")]
         public ulong id { get; set; }
