@@ -45,7 +45,6 @@ namespace Nami.Modules.Currency
             cd.gid = guild.Id;
             cd.id = member.Id;
             cd.cooldaown = date;
-            cd.cooldaown.AddDays(1);
             cd.created = DateTime.Now;
             libs.Add(cd);
             Save();

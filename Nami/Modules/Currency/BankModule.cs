@@ -246,12 +246,13 @@ namespace Nami.Modules.Currency
             var config = await Cooldown.LoadConfigAsync();
 
             var working_member = config.Find(ctx.Guild, member);
+            string currency = ctx.Services.GetRequiredService<GuildConfigService>().GetCachedConfig(ctx.Guild.Id).Currency;
 
             if (working_member == null) 
             {
                 config.Add(ctx.Guild, member, DateTime.Now.AddDays(1));
                 await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)member.Id, 1000);
-                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", member.Mention, 1000, config.Find(ctx.Guild, member).cooldaown);
+                await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", member.Mention, 1000, config.Find(ctx.Guild, member).cooldaown, currency);
             } 
             else
             {
@@ -260,7 +261,7 @@ namespace Nami.Modules.Currency
                     config.Find(ctx.Guild, member).cooldaown.AddDays(1);
                     config.Save();
                     await this.Service.IncreaseBankAccountAsync(ctx.Guild.Id, (ulong)_member.Id, 1000);
-                    await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).cooldaown);
+                    await ctx.ImpInfoAsync(this.ModuleColor, Emojis.MoneyBag, "fmt-bank-allow", ctx.User.Mention, 1000, config.Find(ctx.Guild, ctx.Member).cooldaown, currency);
                 }
                 else
                 {
