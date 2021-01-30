@@ -37,7 +37,7 @@ namespace Nami.Modules.Currency
                         pointStr = translateCents(points);
                     }
                 }
-                val = String.Format("{0} {1}{2} {3}", translateWholeNumber(wholeNo).Trim(), andStr, pointStr, endStr);
+                val = String.Format("{0} {1}{2} Dollars and {3} Cents", translateWholeNumber(wholeNo).Trim(), andStr, pointStr, endStr);
             } catch {; }
             return val;
         }

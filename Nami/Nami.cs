@@ -76,7 +76,11 @@ namespace Nami
         private static void PrintBuildInformation()
         {
             var fileVersionInfo = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
-            Console.Title = $"{Assembly.GetExecutingAssembly().GetName().Name} {fileVersionInfo.FileVersion}";
+#if (DEBUG)
+            Console.Title = $"{Assembly.GetExecutingAssembly().GetName().Name} {fileVersionInfo.FileVersion} (DEBUG)";
+#elif (RELEASE)
+            Console.Title = $"{Assembly.GetExecutingAssembly().GetName().Name} {fileVersionInfo.FileVersion} (RELEASE)";
+#endif
             Console.WriteLine($"{ApplicationName} {ApplicationVersion} ({fileVersionInfo.FileVersion})");
             Console.WriteLine();
         }
@@ -128,6 +132,6 @@ namespace Nami
     
             Log.Information("Cleanup complete! Powering off");
         }
-        #endregion
+#endregion
     }
 }
