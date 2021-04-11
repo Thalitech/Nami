@@ -20,11 +20,24 @@ using Nami.Extensions;
 using Nami.Modules.Administration.Services;
 using Nami.Modules.Misc.Common;
 using Nami.Services;
+using Microsoft.Extensions.Hosting;
+using System.Diagnostics;
+using System.Threading;
+using Microsoft.Extensions.Logging;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
+using Microsoft.EntityFrameworkCore;
 
 namespace Nami
 {
-    public sealed class NamiBot
+    public sealed class NamiBot : BackgroundService
     {
+        public static string ApplicationName { get; set; } = string.Empty;
+        public static string ApplicationVersion { get; set; } = string.Empty;
+
+        internal static NamiBot? Bot { get; set; }
+        private static PeriodicTasksService? PeriodicService { get; set; }
+        public static ILogger logger { get; private set; }
+
         public ServiceProvider Services => this.services ?? throw new BotUninitializedException();
         public BotConfigService Config => this.config ?? throw new BotUninitializedException();
         public DbContextBuilder Database => this.database ?? throw new BotUninitializedException();
@@ -44,6 +57,98 @@ namespace Nami
         private IReadOnlyDictionary<int, VoiceNextExtension>? vnext;
         private IReadOnlyDictionary<int, LavalinkExtension>? lavalink;
         private IReadOnlyDictionary<string, Command>? commands;
+
+        public NamiBot(ILogger<NamiBot> _logger)
+        {
+            AssemblyName info = Assembly.GetExecutingAssembly().GetName();
+            ApplicationName = info.Name ?? "Nami";
+            ApplicationVersion = $"v{info.Version?.ToString() ?? "<unknown>"}";
+
+            logger = _logger;
+        }
+
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            mPrintBuildInformation();
+
+            try {
+                BotConfigService cfg = await mLoadBotConfigAsync();
+                Log.Logger = LogExt.CreateLogger(cfg.CurrentConfiguration);
+                NamiBot.logger.LogInformation("Logger created.");
+
+                DbContextBuilder dbb = await mInitializeDatabaseAsync(cfg);
+
+                await mStartAsync(cfg, dbb);
+                logger.LogInformation("Booting complete!");
+
+                CancellationToken token = Bot?.Services.GetRequiredService<BotActivityService>().MainLoopCts.Token
+                    ?? throw new InvalidOperationException("Bot not initialized");
+                await Task.Delay(Timeout.Infinite, token);
+            } catch (TaskCanceledException ex) {
+                logger.LogInformation(ex, "Shutdown signal received!");
+                Console.ReadLine();
+            } catch (Exception e) {
+                Log.Fatal(e, "Critical exception occurred");
+                Console.ReadLine();
+                Environment.ExitCode = 1;
+            } finally {
+                await mDisposeAsync();
+            }
+        }
+
+
+        #region Setup
+        private static void mPrintBuildInformation()
+        {
+            var fileVersionInfo = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
+#if (DEBUG)
+            Console.Title = $"{Assembly.GetExecutingAssembly().GetName().Name} {fileVersionInfo.FileVersion} (DEBUG)";
+#elif (RELEASE)
+            Console.Title = $"{Assembly.GetExecutingAssembly().GetName().Name} {fileVersionInfo.FileVersion} (RELEASE)";
+#endif
+            logger.LogInformation($"{ApplicationName} {ApplicationVersion} ({fileVersionInfo.FileVersion})");
+        }
+        private static async Task<BotConfigService> mLoadBotConfigAsync()
+        {
+            logger.LogInformation("Loading configuration... ");
+
+            var cfg = new BotConfigService();
+            await cfg.LoadConfigAsync();
+            return cfg;
+        }
+        private static async Task<DbContextBuilder> mInitializeDatabaseAsync(BotConfigService cfg)
+        {
+            logger.LogInformation("Establishing database connection");
+            var dbb = new DbContextBuilder(cfg.CurrentConfiguration.DatabaseConfig);
+
+            logger.LogInformation("Testing database context creation");
+            using (NamiDbContext db = dbb.CreateContext()) {
+                IEnumerable<string> pendingMigrations = await db.Database.GetPendingMigrationsAsync();
+                if (pendingMigrations.Any()) {
+                    logger.LogInformation("Applying pending database migrations: {PendingDbMigrations}", pendingMigrations);
+                    await db.Database.MigrateAsync();
+                }
+            }
+
+            return dbb;
+        }
+        private static Task mStartAsync(BotConfigService cfg, DbContextBuilder dbb)
+        {
+            Bot = new NamiBot(cfg, dbb);
+            PeriodicService = new PeriodicTasksService(Bot, cfg.CurrentConfiguration);
+            return Bot.StartAsync();
+        }
+        private static async Task mDisposeAsync()
+        {
+            logger.LogInformation("Cleaning up ...");
+
+            PeriodicService?.Dispose();
+            if (Bot is { })
+                await Bot.DisposeAsync();
+
+            logger.LogInformation("Cleanup complete! Powering off");
+        }
+        #endregion
 
 
         public NamiBot(BotConfigService cfg, DbContextBuilder dbb)
@@ -65,7 +170,7 @@ namespace Nami
 
         public async Task StartAsync()
         {
-            Log.Information("Initializing the bot...");
+            logger.LogInformation("Initializing the bot...");
 
             this.client = this.SetupClient();
 
@@ -116,7 +221,7 @@ namespace Nami
 
         private ServiceProvider SetupServices()
         {
-            Log.Information("Initializing services...");
+            logger.LogInformation("Initializing services...");
             return new ServiceCollection()
                 .AddSingleton(this.Config)
                 .AddSingleton(this.Database)
