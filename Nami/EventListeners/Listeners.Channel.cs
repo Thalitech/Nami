@@ -19,13 +19,13 @@ namespace Nami.EventListeners
     internal static partial class Listeners
     {
         [AsyncEventListener(DiscordEventType.DmChannelCreated)]
-        public static Task DmChannelCreateEventHandlerAsync(NamiBot bot, DmChannelCreateEventArgs e)
+        public static Task DmChannelCreateEventHandlerAsync(NamiBot bot, ChannelCreateEventArgs e)
         {
             LogExt.Debug(
                 bot.GetId(null),
                 new[] { "Create: DM {Channel}, recipients:", "{Recipients}" },
                 e.Channel,
-                e.Channel.Recipients.Humanize(Environment.NewLine)
+                e.Channel.Users.Humanize(Environment.NewLine)
             );
             return Task.CompletedTask;
         }

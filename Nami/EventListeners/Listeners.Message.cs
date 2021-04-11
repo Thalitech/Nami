@@ -50,7 +50,11 @@ namespace Nami.EventListeners
             }
             ms.Seek(0, SeekOrigin.Begin);
             DiscordChannel? chn = gcs.GetLogChannelForGuild(e.Guild);
-            await (chn?.SendFileAsync($"{e.Channel.Name}-deleted-messages.txt", ms, embed: emb.Build()) ?? Task.CompletedTask);
+
+            var builder = new DiscordMessageBuilder();
+            builder.WithFile($"{e.Channel.Name}-deleted-messages.txt", ms);
+            builder.WithEmbed(emb.Build());
+            await (chn?.SendMessageAsync(builder) ?? Task.CompletedTask);
         }
 
         [AsyncEventListener(DiscordEventType.MessageCreated)]

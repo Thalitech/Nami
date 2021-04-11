@@ -63,8 +63,12 @@ namespace Nami.Modules.Games.Common
 
                 var emb = new LocalizedEmbedBuilder(lcs, this.Channel.GuildId);
                 emb.WithLocalizedDescription("fmt-game-quiz-q", i + 1);
-                await this.Channel.SendFileAsync("flag.png", new FileStream(question, FileMode.Open), embed: emb.Build());
 
+                var builder = new DiscordMessageBuilder();
+                builder.WithEmbed(emb.Build());
+                builder.WithFile("flag.png", new FileStream(question, FileMode.Open));
+
+                await this.Channel.SendMessageAsync(builder);
                 bool timeout = true;
                 var failed = new ConcurrentHashSet<ulong>();
                 var answerRegex = new Regex($@"\b{_countries[question]}\b", RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);

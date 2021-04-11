@@ -74,10 +74,15 @@ namespace Nami.Modules.Currency.Common
                 using var ms = new MemoryStream();
                 wof.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 ms.Position = 0;
-                await this.Channel.SendFileAsync("wof.png", ms, embed: new DiscordEmbedBuilder {
+
+                var builder = new DiscordMessageBuilder();
+                builder.WithFile("wof.png", ms);
+                builder.WithEmbed(new DiscordEmbedBuilder {
                     Description = lcs.GetString(this.gid, "fmt-casino-win", this.user.Mention, this.WonAmount.ToWords(culture), this.WonAmount, this.currency),
                     Color = DiscordColor.DarkGreen
-                });
+                }.Build());
+
+                await this.Channel.SendMessageAsync(builder);
             } catch (Exception e) {
                 Log.Error("Failed to process wheel of fortune image!", e);
             }

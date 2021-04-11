@@ -294,7 +294,11 @@ namespace Nami.Modules.Misc
 
             return ctx.Services.GetRequiredService<FilteringService>().TextContainsFilter(ctx.Guild.Id, text, out _)
                 ? throw new CommandFailedException(ctx, "cmd-err-say")
-                : ctx.RespondAsync(Formatter.BlockCode(Formatter.Strip(text)), isTTS: true);
+                : ctx.RespondAsync(new DiscordMessageBuilder() 
+                {
+                    Content = Formatter.BlockCode(Formatter.Strip(text)),
+                    IsTTS = true,
+                });
         }
         #endregion
 
@@ -374,10 +378,14 @@ namespace Nami.Modules.Misc
             }
 
             using System.IO.Stream ms = this.Service.Rate(users.Select(u => (u.ToDiscriminatorString(), u.Id)));
-            await ctx.RespondWithFileAsync("Rating.jpg", ms, embed: new DiscordEmbedBuilder {
+
+            var builder = new DiscordMessageBuilder();
+            builder.WithFile("Rating.jpg", ms);
+            builder.WithEmbed(new DiscordEmbedBuilder {
                 Description = this.Localization.GetString(ctx.Guild?.Id, "fmt-rating", Emojis.Ruler, users.Select(u => u.Mention).JoinWith(", ")),
                 Color = this.ModuleColor,
-            });
+            }.Build());
+            await ctx.RespondAsync(builder);
         }
         #endregion
     }

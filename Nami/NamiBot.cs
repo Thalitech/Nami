@@ -71,7 +71,8 @@ namespace Nami
         {
             mPrintBuildInformation();
 
-            try {
+            try
+            {
                 BotConfigService cfg = await mLoadBotConfigAsync();
                 Log.Logger = LogExt.CreateLogger(cfg.CurrentConfiguration);
                 NamiBot.logger.LogInformation("Logger created.");
@@ -84,14 +85,18 @@ namespace Nami
                 CancellationToken token = Bot?.Services.GetRequiredService<BotActivityService>().MainLoopCts.Token
                     ?? throw new InvalidOperationException("Bot not initialized");
                 await Task.Delay(Timeout.Infinite, token);
-            } catch (TaskCanceledException ex) {
+            } 
+            catch (TaskCanceledException ex) 
+            {
                 logger.LogInformation(ex, "Shutdown signal received!");
                 Console.ReadLine();
-            } catch (Exception e) {
-                Log.Fatal(e, "Critical exception occurred");
-                Console.ReadLine();
+            } 
+            catch (Exception e) 
+            {
+                logger.LogCritical(e, "Critical exception occurred");
                 Environment.ExitCode = 1;
-            } finally {
+            } finally 
+            {
                 await mDisposeAsync();
             }
         }

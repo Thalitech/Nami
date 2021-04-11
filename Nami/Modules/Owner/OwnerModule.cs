@@ -538,7 +538,9 @@ namespace Nami.Modules.Owner
             }
 
             using FileStream? fs = fi.OpenRead();
-            await ctx.RespondWithFileAsync(fs);
+            var builder = new DiscordMessageBuilder();
+            builder.WithFile(fs);
+            await ctx.RespondAsync(builder);
         }
 
         [Command("log"), Priority(0)]

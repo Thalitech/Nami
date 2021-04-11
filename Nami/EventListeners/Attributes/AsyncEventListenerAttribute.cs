@@ -70,7 +70,7 @@ namespace Nami.EventListeners.Attributes
                         cnext.CommandExecuted += OnEventWithArgs;
                     break;
                 case DiscordEventType.DmChannelCreated:
-                    bot.Client.DmChannelCreated += OnEventWithArgs;
+                    bot.Client.ChannelCreated += OnEventWithArgs;
                     break;
                 case DiscordEventType.DmChannelDeleted:
                     bot.Client.DmChannelDeleted += OnEventWithArgs;

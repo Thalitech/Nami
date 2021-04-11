@@ -64,7 +64,8 @@ namespace Nami.Modules.Administration
             [RequireUserPermissions(Permissions.Administrator)]
             public async Task DownloadAsync(CommandContext ctx)
             {
-                if (!await this.Service.WithBackupZipAsync(ctx.Guild.Id, s => ctx.RespondWithFileAsync("backup.zip", s)))
+                
+                if (!await this.Service.WithBackupZipAsync(ctx.Guild.Id, s => ctx.RespondAsync(new DiscordMessageBuilder().WithFile("backup.zip", s))))
                     throw new CommandFailedException(ctx, "cmd-err-backup");
             }
             #endregion

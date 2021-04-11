@@ -22,7 +22,7 @@ namespace Nami.Services.Common
         public int DatabaseSyncInterval { get; set; } = 600;
 
         [JsonProperty("token")]
-        public string? Token { get; set; }
+        public string? Token { get; set; } = "";
 
         [JsonProperty("prefix")]
         public string Prefix { get; set; } = DefaultPrefix;

@@ -88,7 +88,9 @@ namespace Nami.Modules.Games.Common
                 using var ms = new MemoryStream();
                 image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 ms.Position = 0;
-                await this.Channel.SendFileAsync("typing-challenge.png", ms);
+                var builder = new DiscordMessageBuilder();
+                builder.WithFile("typing-challenge.png", ms);
+                await this.Channel.SendMessageAsync(builder);
             }
 
             await this.Interactivity.WaitForMessageAsync(

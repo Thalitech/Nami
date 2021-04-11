@@ -16,8 +16,11 @@ namespace Nami.Services
         public BotConfig CurrentConfiguration { get; private set; } = new BotConfig();
 
 
-        public async Task<BotConfig> LoadConfigAsync(string path = "Resources/config.json")
+        public async Task<BotConfig> LoadConfigAsync(string path = default)
         {
+            if (string.IsNullOrEmpty(path))
+                path = $"{new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName}/Resources/config.json".Replace("/", "\\");
+
             string json = "{}";
             var utf8 = new UTF8Encoding(false);
             var fi = new FileInfo(path);
