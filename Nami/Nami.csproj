@@ -86,7 +86,7 @@
     <PackageReference Include="DSharpPlus.VoiceNext" Version="4.0.0-rc3" />
     <PackageReference Include="EFCore.BulkExtensions" Version="5.0.6" />
     <PackageReference Include="GiphyDotNet" Version="2.0.0" />
-    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.51.0.2287" />
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.52.0.2364" />
     <PackageReference Include="GScraper" Version="0.5.3" />
     <PackageReference Include="Humanizer.Core" Version="2.8.26" />
     <PackageReference Include="Imgur.API" Version="5.0.0" />
